@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bai"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/lan">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="入口"
+            android:textColor="@color/bai"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/main2_realplay"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/circle_rectangle_blue_base"
+        android:foreground="@drawable/ripple_bg_gray"
+        android:text="预览"
+        android:textColor="@color/bai" />
+
+    <Button
+        android:id="@+id/main2_replay"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/circle_rectangle_blue_base"
+        android:foreground="@drawable/ripple_bg_gray"
+        android:text="回放"
+        android:textColor="@color/bai" />
+
+    <Button
+        android:id="@+id/main2_alarm"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/circle_rectangle_blue_base"
+        android:foreground="@drawable/ripple_bg_gray"
+        android:text="报警"
+        android:textColor="@color/bai" />
+
+    <Button
+        android:id="@+id/main2_delete"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/circle_rectangle_blue_base"
+        android:foreground="@drawable/ripple_bg_gray"
+        android:text="删除设备"
+        android:textColor="@color/bai" />
+
+    <Button
+        android:id="@+id/main2_logout"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/circle_rectangle_blue_base"
+        android:foreground="@drawable/ripple_bg_gray"
+        android:text="退出登录"
+        android:textColor="@color/bai" />
+
+</LinearLayout>

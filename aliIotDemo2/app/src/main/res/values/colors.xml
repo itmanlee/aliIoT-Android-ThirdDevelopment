@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="lan">#4D61B3</color>
+    <color name="lan_s">#c6d0f4</color>
+    <color name="bai_s">#d6d8df</color>
+    <color name="bai">#ffffff</color>
+    <color name="bai_m">#c6d0f4</color>
+    <color name="hui">#d4d4d4</color>
+    <color name="hui_s">#e9e4e4</color>
+    <color name="hei">#1d1b1b</color>
+
+    <color name="color_4D4D4D">#4D4D4D</color>
+    <color name="color_C64D4D4D">#C64D4D4D</color>
+    <color name="color_8F8E94">#8F8E94</color>
+    <color name="color_ED001D">#ED001D</color>
+    <color name="color_1F6BC4">#1F6BC4</color>
+    <color name="color_EFEEF1">#EFEEF1</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_555555">#555555</color>
+    <color name="color_EFEFEF">#EFEFEF</color>
+    <color name="color_47C1DF">#47C1DF</color>
+    <color name="color_9B9B9B">#9B9B9B</color>
+    <color name="color_F7F7F7">#F7F7F7</color>
+    <color name="color_F6F6F6">#F7F7F7</color>
+    <color name="color_CCCCCC">#CCCCCC</color>
+    <color name="color_EDEDED">#EDEDED</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_1FC88B">#1FC88B</color>
+    <color name="test">#0079FF</color>
+
+</resources>

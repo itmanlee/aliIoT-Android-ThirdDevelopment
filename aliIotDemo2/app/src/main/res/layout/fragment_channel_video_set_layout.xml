@@ -1,0 +1,1681 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bai_s"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/channel_video_set_layout_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/lan">
+
+        <ImageView
+            android:id="@+id/channel_video_set_layout_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/arrow_left_white"
+            android:foreground="@drawable/ripple_bg_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="录像配置"
+            android:textColor="@color/bai"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/channel_video_set_layout_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:text="完成"
+            android:textColor="@color/bai"
+            android:textSize="18sp"
+            android:foreground="@drawable/ripple_bg_gray"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_title">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bai">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_choose_channel_cl"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="视频通道"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_im"
+                    />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="CH01"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_video_model_cl"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_choose_channel_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_choose_channel_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_choose_channel_cl">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_video_model_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_video_model_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="录像模式"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_video_model_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_video_model_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_video_model_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_video_model_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_video_model_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_video_model_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_video_model_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text=""
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_video_model_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_video_model_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_video_model_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_video_model_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_week_cl"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_video_model_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_video_model_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_video_model_cl">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_week_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_week_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="星期"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_week_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_week_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_week_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_week_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_week_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_week_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_week_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="@string/sun_chinese"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_week_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_week_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_week_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_week_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_week_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_week_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_week_cl">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="时间段"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start1"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start1_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start1_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start1_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start1_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start1_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start1_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start1_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start1_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start1_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start1_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start1_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start1_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start1_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end1"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start1"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start1"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start1">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end1_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end1_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end1_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end1_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end1_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end1_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end1_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end1_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end1_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end1_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end1_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end1_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end1_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start1
+                ,channel_video_set_layout_time_quantum_cl_end1" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start2"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end1">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start2_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start2_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start2_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start2_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start2_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start2_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start2_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start2_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start2_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start2_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start2_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start2_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end2"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start2"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start2"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start2">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end2_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end2_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end2_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end2_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end2_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end2_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end2_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end2_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end2_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end2_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end2_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end2_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start2
+                ,channel_video_set_layout_time_quantum_cl_end2" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start3"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end2">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start3_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start3_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start3_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start3_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start3_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start3_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start3_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start3_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start3_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start3_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start3_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start3_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start3_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end3"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start3"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start3"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start3">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end3_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end3_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end3_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end3_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end3_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end3_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end3_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end3_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end3_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end3_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end3_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end3_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end3_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start3
+                ,channel_video_set_layout_time_quantum_cl_end3" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start4"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end3">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start4_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start4_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start4_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start4_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start4_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start4_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start4_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start4_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start4_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start4_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start4_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start4_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start4_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end4"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start4"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start4"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start4">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end4_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end4_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end4_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end4_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end4_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end4_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end4_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end4_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end4_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end4_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end4_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end4_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end4_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start4
+                ,channel_video_set_layout_time_quantum_cl_end4" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start5"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end4">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start5_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start5_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start5_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start5_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start5_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start5_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start5_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start5_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start5_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start5_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start5_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start5_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start5_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end5"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start5"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start5"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start5">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end5_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end5_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end5_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end5_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end5_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end5_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end5_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end5_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end5_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end5_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end5_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end5_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end5_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start5
+                ,channel_video_set_layout_time_quantum_cl_end5" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start6"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end5">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start6_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start6_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start6_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start6_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start6_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start6_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start6_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start6_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start6_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start6_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start6_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start6_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start6_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end6"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start6"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start6"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start6">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end6_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end6_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end6_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end6_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end6_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end6_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end6_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end6_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end6_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end6_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end6_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end6_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end6_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start6
+                ,channel_video_set_layout_time_quantum_cl_end6" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start7"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end6">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start7_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start7_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start7_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start7_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start7_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start7_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start7_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start7_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start7_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start7_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start7_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start7_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start7_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end7"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start7"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start7"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start7">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end7_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end7_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end7_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end7_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end7_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end7_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end7_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end7_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end7_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end7_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end7_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end7_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end7_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start7
+                ,channel_video_set_layout_time_quantum_cl_end7" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_start8"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end7">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start8_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start8_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="开始时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start8_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start8_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start8_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start8_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start8_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start8_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_start8_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start8_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start8_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start8_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_start8_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_end8"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_start8"
+                app:layout_constraintRight_toRightOf="@id/channel_video_set_layout_time_quantum_cl_start8"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_start8">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end8_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end8_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="结束时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end8_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end8_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end8_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end8_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end8_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end8_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_time_quantum_cl_end8_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="00:00"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end8_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_time_quantum_cl_end8_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_time_quantum_cl_end8_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_time_quantum_cl_end8_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.Group
+                android:id="@+id/channel_video_set_layout_time_quantum_cl_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start8
+                ,channel_video_set_layout_time_quantum_cl_end8" />
+
+            <LinearLayout
+                android:id="@+id/channel_video_set_layout_time_ly"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end8" >
+
+                <RelativeLayout
+                    android:id="@+id/channel_video_set_layout_remove_time_quantum"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:foreground="@drawable/ripple_bg_gray">
+
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/icon_sub_gray"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/channel_video_set_layout_add_time_quantum"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:foreground="@drawable/ripple_bg_gray">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:background="@mipmap/icon_add_gray"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/channel_video_set_layout_line"
+                android:layout_width="0dp"
+                android:layout_height="5dp"
+                android:background="@color/bai_m"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_ly" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_prerecord_time_cl"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_ly">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_prerecord_time_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_prerecord_time_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="预录时间"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_prerecord_time_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_prerecord_time_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_prerecord_time_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_prerecord_time_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_prerecord_time_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_prerecord_time_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_prerecord_time_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="不"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_prerecord_time_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_prerecord_time_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_prerecord_time_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_prerecord_time_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/channel_video_set_layout_video_delay_cl"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_48"
+                android:foreground="@drawable/ripple_bg_gray"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_prerecord_time_cl">
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_video_delay_im"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_video_delay_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="录像延迟"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_video_delay_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_video_delay_im"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_video_delay_im" />
+
+                <ImageView
+                    android:id="@+id/channel_video_set_layout_video_delay_select"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginRight="16dp"
+                    android:background="@mipmap/arrow_left_white"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_video_delay_im"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_video_delay_im" />
+
+                <TextView
+                    android:id="@+id/channel_video_set_layout_video_delay_tv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:minWidth="@dimen/dp_25"
+                    android:text="不"
+                    android:textColor="@color/hei"
+                    android:textSize="@dimen/font_size_14"
+                    app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_video_delay_im"
+                    app:layout_constraintLeft_toRightOf="@id/channel_video_set_layout_video_delay_tv"
+                    app:layout_constraintRight_toLeftOf="@id/channel_video_set_layout_video_delay_select"
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_video_delay_im" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/bai_m"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aliIoT.demo.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/lan">
+
+        <ImageView
+            android:id="@+id/regist_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/arrow_left_white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注册"
+            android:textColor="@color/bai"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/user_name_icon" />
+
+        <EditText
+            android:id="@+id/regist_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:ellipsize="end"
+            android:hint="请输入手机号或者邮箱"
+            android:inputType="text"
+            android:textColor="@color/hei"
+            android:textColorHint="@color/hei"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/bai_s"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <EditText
+            android:id="@+id/regist_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:ellipsize="end"
+            android:hint="请输入验证码"
+            android:inputType="text"
+            android:textColor="@color/hei"
+            android:textColorHint="@color/hei"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/regist_getcode"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/circle_rectangle_blue_base"
+            android:foreground="@drawable/ripple_bg_gray"
+            android:text="获取验证码"
+            android:textColor="@color/bai" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/bai_s"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/password_icon" />
+
+        <EditText
+            android:id="@+id/regist_psw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:ellipsize="end"
+            android:hint="请输入密码"
+            android:inputType="text"
+            android:textColor="@color/hei"
+            android:textColorHint="@color/hei"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/bai_s"/>
+
+    <Button
+        android:id="@+id/regist_regist"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/circle_rectangle_blue_base"
+        android:foreground="@drawable/ripple_bg_gray"
+        android:text="注册"
+        android:textColor="@color/bai" />
+
+</LinearLayout>

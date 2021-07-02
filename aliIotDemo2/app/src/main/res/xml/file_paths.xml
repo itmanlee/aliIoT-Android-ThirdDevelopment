@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--<external-path-->
+    <!--name="files_root"-->
+    <!--path="Android/data/com.enzhi.monitord/" />-->
+    <!--&lt;!&ndash;external-path代表外部存储区域的根目录下的文件&ndash;&gt;-->
+    <!--<external-path-->
+    <!--name="external_storage_root"-->
+    <!--path="." />-->
+    <!--&lt;!&ndash;放在内部存储里面&ndash;&gt;-->
+    <!--<root-path-->
+    <!--name="camera_photos"-->
+    <!--path="." />-->
+    <!--<external-path-->
+    <!--name="download"-->
+    <!--path="." />-->
+    <!--
+        <files-path/>代表的根目录： Context.getFilesDir()
+        <cache-path/>代表的根目录: getCacheDir()
+        <external-path/>代表的根目录: Environment.getExternalStorageDirectory()
+        <external-files-path/>代表的根目录: Context.getExternalFilesDir(String) Context.getExternalFilesDir(null).
+        <external-cache-path />代表的根目录: Context.getExternalCacheDir().
+        <root-path />代表设备的根目录new File("/");
+        -->
+    <!-- path=""代表根目录，也可以指定特定目录，name="camera_picture"是虚拟目录camera_picture -->
+    <root-path
+        name="root"
+        path="." />
+    <files-path
+        name="files"
+        path="." />
+    <cache-path
+        name="cache"
+        path="." />
+    <external-path
+        name="external"
+        path="." />
+    <external-path
+        name="download"
+        path="." />
+    <external-files-path
+        name="external_files"
+        path="." />
+    <external-cache-path
+        name="external_cache"
+        path="." />
+    <external-cache-path
+        name="download"
+        path="." />
+</paths><!--path：需要临时授权访问的路径（.代表所有路径）
+    name：就是你给这个访问路径起个名字-->

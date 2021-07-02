@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bai"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/lan">
+
+        <ImageView
+            android:id="@+id/realplay_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@mipmap/arrow_left_white"
+            android:foreground="@drawable/ripple_bg_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="预览"
+            android:textColor="@color/bai"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+
+    <com.aliIoT.demo.util.PlayLayout
+        android:id="@+id/realplay_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+    </com.aliIoT.demo.util.PlayLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/realplay_bt1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="抓拍"
+                    android:textColor="@color/bai" />
+
+
+                <Button
+                    android:id="@+id/realplay_bt2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="录像"
+                    android:textColor="@color/bai" />
+
+                <Button
+                    android:id="@+id/realplay_bt3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="监听"
+                    android:textColor="@color/bai" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/realplay_bt4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="对讲"
+                    android:textColor="@color/bai" />
+
+
+                <Button
+                    android:id="@+id/realplay_bt5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="清晰度"
+                    android:textColor="@color/bai" />
+
+                <Button
+                    android:id="@+id/realplay_bt6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="色彩"
+                    android:textColor="@color/bai" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/realplay_bt7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="云台"
+                    android:textColor="@color/bai" />
+
+
+                <Button
+                    android:id="@+id/realplay_bt8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="osd"
+                    android:textColor="@color/bai" />
+
+                <Button
+                    android:id="@+id/realplay_bt9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="灯板"
+                    android:textColor="@color/bai" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/realplay_bt10"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="镜像"
+                    android:textColor="@color/bai" />
+
+
+                <Button
+                    android:id="@+id/realplay_bt11"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="配置"
+                    android:textColor="@color/bai" />
+
+                <Button
+                    android:id="@+id/realplay_bt12"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="监听"
+                    android:textColor="@color/bai"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/realplay_flip"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bai_s"
+            android:clickable="true"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/realplay_flip_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="取消"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/bai" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/realplay_flip_tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="关闭"
+                    android:textSize="15sp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/bai" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/realplay_flip_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="水平镜像"
+                    android:textSize="15sp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/bai" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/realplay_flip_tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="垂直镜像"
+                    android:textSize="15sp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/bai" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/realplay_flip_tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/circle_rectangle_blue_base"
+                    android:foreground="@drawable/ripple_bg_gray"
+                    android:text="顺时针180旋转"
+                    android:textSize="15sp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:textColor="@color/bai" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/realplay_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:background="@color/bai_s"
+            android:clickable="true"
+            android:visibility="gone">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--调节区域-->
+                <LinearLayout
+                    android:id="@+id/frag_light_config_linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:orientation="vertical">
+
+                    <!--取消、保存区域-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_below="@id/frag_light_config_linear"
+                        android:layout_weight="2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/realplay_light_cancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp"
+                            android:text="@string/cancle"
+                            android:textColor="@color/hei"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/bai"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+
+                    <RelativeLayout
+                        android:id="@+id/realplay_light_day_night"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="15dp"
+                            android:text="日夜切换"
+                            android:textColor="@color/hei"
+                            android:textSize="15sp" />
+                        <!--用户操作-->
+                        <LinearLayout
+                            android:id="@+id/ctrl_light_day_night_model"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/realplay_light_day_night_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:text=""
+                                android:textColor="@color/hei"
+                                android:textSize="15sp" />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:background="@mipmap/arrow_left_white" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/bai"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+                    <!--1、灯板工作模式-->
+                    <RelativeLayout
+                        android:id="@+id/realplay_light_mode"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="15dp"
+                            android:text="灯板类型"
+                            android:textColor="@color/hei"
+                            android:textSize="15sp" />
+                        <!--用户操作-->
+                        <LinearLayout
+                            android:id="@+id/ctrl_light_work_model"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/realplay_light_mode_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="1dp"
+                                android:text=""
+                                android:textColor="@color/hei"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:background="@mipmap/arrow_left_white" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/bai"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+
+                    <!--2、红外灯板状态-->
+                    <RelativeLayout
+                        android:id="@+id/realplay_light_control"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="15dp"
+                            android:text="控制方式"
+                            android:textColor="@color/hei"
+                            android:textSize="15sp" />
+                        <!--用户操作-->
+                        <LinearLayout
+                            android:id="@+id/ctrl_Infrared_work_condition"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/realplay_light_control_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="@color/hei"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:background="@mipmap/arrow_left_white" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/bai"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+
+                    <!--3、亮度（ProgressBar版），范围为0—100-->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="3">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="15dp"
+                                    android:text="亮度"
+                                    android:textColor="@color/hei"
+                                    android:textSize="15sp" />
+
+                                <TextView
+                                    android:id="@+id/realplay_light_pro_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="15dp"
+                                    android:text="0"
+                                    android:textColor="@color/hei"
+                                    android:textSize="15sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <SeekBar
+                                    android:id="@+id/realplay_light_control_sb"
+                                    style="?android:attr/progressBarStyleHorizontal"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:max="100"
+                                    android:min="1"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/bai"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"/>
+
+                    <!--保存-->
+                    <RelativeLayout
+                        android:id="@+id/realplay_light_commit"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="保存"
+                            android:textColor="@color/hei"
+                            android:textSize="16sp" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/realplay_osd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bai_s"
+            android:clickable="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="显示通道名称"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <CheckBox
+                    android:id="@+id/realplay_osd_cb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="显示时间和日期"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <CheckBox
+                    android:id="@+id/realplay_osd_cb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:visibility="gone">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="显示网络状态"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <CheckBox
+                    android:id="@+id/realplay_osd_cb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/realplay_osd_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:foreground="@drawable/ripple_bg_gray"
+                android:text="取消"
+                android:textSize="16sp"
+                android:textColor="@color/hei"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/realplay_ptz"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bai_s"
+            android:clickable="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.5" />
+
+                <RelativeLayout
+                    android:id="@+id/realplay_ptz_ptz"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="40dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/realplay_ptz_ptz_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="云台"
+                        android:textColor="@color/hei"
+                        android:textSize="16dp"
+                        android:foreground="@drawable/ripple_bg_gray" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/realplay_ptz_yzd"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/realplay_ptz_yzd_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="预置点"
+                        android:textColor="@color/hui_s"
+                        android:textSize="16sp"
+                        android:foreground="@drawable/ripple_bg_gray"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/realplay_ptz_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="取消"
+                    android:textColor="@color/hei"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="5dp"
+                    android:foreground="@drawable/ripple_bg_gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.aliIoT.demo.util.RemoteControlView
+                    android:id="@+id/realplay_ptz_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"/>
+
+                <FrameLayout
+                    android:id="@+id/realplay_ptz_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1">
+
+                    <!--yxy预置点设置部分-->
+                    <LinearLayout
+                        android:id="@+id/realplay_ptz_preset"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:text="预置点"
+                                android:textColor="@color/hei"
+                                android:textSize="14sp" />
+                            <LinearLayout
+                                android:id="@+id/realplay_ptz_yzd_ly"
+                                android:layout_width="match_parent"
+                                android:layout_height="100dp"
+                                android:layout_marginLeft="10dp">
+                                <com.itheima.wheelpicker.WheelPicker
+                                    android:id="@+id/realplay_ptz_wp"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    app:wheel_atmospheric="true"
+                                    app:wheel_curved="true"
+                                    app:wheel_cyclic="true"
+                                    app:wheel_item_text_color="@color/hei"
+                                    app:wheel_item_text_size="15sp"
+                                    app:wheel_selected_item_position="1"
+                                    app:wheel_selected_item_text_color="@color/lan"
+                                    app:wheel_visible_item_count="4" />
+
+                                <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@mipmap/arrow_left_white"
+                                    android:visibility="gone" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="15dp">
+
+                            <RelativeLayout
+                                android:id="@+id/realplay_ptz_sz"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_weight="1"
+                                android:foreground="@drawable/ripple_bg_gray">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="设置"
+                                    android:textColor="@color/hei"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/realplay_ptz_use"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginLeft="10dp"
+                                android:layout_weight="1"
+                                android:foreground="@drawable/ripple_bg_gray">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_centerVertical="true"
+                                    android:text="调用"
+                                    android:textColor="@color/hei"
+                                    android:textSize="14sp" />
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!--云台设置部分-->
+                    <LinearLayout
+                        android:id="@+id/realplay_ptz_ptz_ly"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible"
+                        android:gravity="center">
+
+                        <!--yxy变倍-->
+                        <LinearLayout
+                            android:id="@+id/realplay_ptz_zoom_ly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:visibility="visible"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:id="@+id/realplay_ptz_zoom_in"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left|center"
+                                android:padding="5dp"
+                                android:textSize="20sp"
+                                android:text="+"
+                                android:textColor="@color/hei"
+                                android:clickable="true" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:text="变倍"
+                                android:textColor="@color/hei"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/realplay_ptz_zoom_out"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center"
+                                android:layout_marginRight="15dp"
+                                android:textSize="20sp"
+                                android:padding="5dp"
+                                android:text="-"
+                                android:textColor="@color/hei"
+                                android:clickable="true" />
+                        </LinearLayout>
+
+                        <!--yxy聚焦-->
+                        <LinearLayout
+                            android:id="@+id/realplay_ptz_focus_ly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:visibility="visible"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:id="@+id/realplay_ptz_focus_in"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center"
+                                android:textSize="20sp"
+                                android:padding="5dp"
+                                android:text="+"
+                                android:textColor="@color/hei"
+                                android:clickable="true" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:text="聚焦"
+                                android:textColor="@color/hei"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/realplay_ptz_focus_out"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center"
+                                android:layout_marginRight="15dp"
+                                android:textSize="20sp"
+                                android:padding="5dp"
+                                android:text="-"
+                                android:textColor="@color/hei"
+                                android:clickable="true" />
+                        </LinearLayout>
+
+                        <!--yxy光圈-->
+                        <LinearLayout
+                            android:id="@+id/realplay_ptz_iris_ly"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:visibility="visible"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:id="@+id/realplay_ptz_iris_in"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center"
+                                android:textSize="20sp"
+                                android:padding="5dp"
+                                android:text="+"
+                                android:textColor="@color/hei"
+                                android:clickable="true"  />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="center"
+                                android:text="光圈"
+                                android:textColor="@color/hei"
+                                android:textSize="14sp" />
+                            <TextView
+                                android:id="@+id/realplay_ptz_iris_out"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right|center"
+                                android:layout_marginRight="15dp"
+                                android:textSize="20sp"
+                                android:padding="5dp"
+                                android:text="-"
+                                android:textColor="@color/hei"
+                                android:clickable="true" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/realplay_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bai_s"
+            android:clickable="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:text="亮度"/>
+
+                <SeekBar
+                    android:id="@+id/realplay_color_sb1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:min="1"
+                    android:max="256"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/realplay_color_tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="0"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:text="对比度"/>
+
+                <SeekBar
+                    android:id="@+id/realplay_color_sb2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:min="1"
+                    android:max="256"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/realplay_color_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="0"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:text="饱和度"/>
+
+                <SeekBar
+                    android:id="@+id/realplay_color_sb3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:min="1"
+                    android:max="256"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/realplay_color_tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="0"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:text="色度"/>
+
+                <SeekBar
+                    android:id="@+id/realplay_color_sb4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:min="1"
+                    android:max="256"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/realplay_color_tv4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="@color/hei"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="0"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/realplay_color_default"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/hei"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center_horizontal"
+                android:text="恢复默认"/>
+
+            <TextView
+                android:id="@+id/realplay_color_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@color/hei"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="取消"/>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

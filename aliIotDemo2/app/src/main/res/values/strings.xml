@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">aliIotDemo2</string>
+    <string name="application_lacks_necessary_running_permissions">应用缺乏必要的运行权限,可能会造成程序使用异常，是否去打开?</string>
+    <string name="sure">确定</string>
+    <string name="cancle">取消</string>
+
+    <string name="light_cofig_InfraredMode">红外灯</string>
+    <string name="light_cofig_WarmLightMode">暖光灯</string>
+    <string name="light_cofig_WhiteLightMode">白光灯</string>
+    <string name="light_cofig_Dual_Light_mode">双光源</string>
+    <string name="light_cofig_close">关闭</string>
+    <string name="light_cofig_Manual">手动</string>
+    <string name="light_cofig_automatic">自动</string>
+    <string name="light_cofig_Out_of_range">亮度值超出范围</string>
+    <string name="light_cofig_day_ligth_external_trigger">外部触发</string>
+    <string name="light_cofig_day_ligth_automatic">自动</string>
+    <string name="light_cofig_day_ligth_colours">彩色</string>
+    <string name="light_cofig_day_ligth_black_white">黑白</string>
+    <string name="light_config_get_lightWorkModel_fail">设备无法提供灯板工作模式</string>
+    <string name="light_config_get_infraredCondition_fail">设备无法提供红外灯板状态</string>
+    <string name="light_config_get_light_fail">设备无法提供亮度值</string>
+    <string name="light_config_dev_erro">设备存在异常</string>
+
+    <string name="stream_type_main">主码流</string>
+    <string name="stream_type_child">子码流</string>
+    <string name="av_type_video">视频流</string>
+    <string name="av_type_media">复合流</string>
+    <string name="resolution_type_1080">1080p</string>
+    <string name="resolution_type_720">720p</string>
+    <string name="BITTYPE_TYPE_FINAL">定码率</string>
+    <string name="BITTYPE_TYPE_VARIABLE">变码率</string>
+    <string name="pic_quality_0">最好</string>
+    <string name="pic_quality_1">次好</string>
+    <string name="pic_quality_2">较好</string>
+    <string name="pic_quality_3">一般</string>
+    <string name="pic_quality_4">较差</string>
+    <string name="pic_quality_5">差</string>
+    <string name="i_frame_interval">帧/S</string>
+    <string name="set_recording_plan_success">设置录像计划成功</string>
+    <string name="set_encode_success">编码配置成功</string>
+    <string name="choose_time_zone">选择时区</string>
+    <string name="time_set_success">时间设置成功</string>
+    <string name="daylight_saving_time_set_success">夏令时设置成功,设备重启完成后,再查看</string>
+    <string name="str_vbr">变码率</string>
+    <string name="str_cbr">定码率</string>
+    <string name="str_frame_full">全帧率</string>
+
+    <string name="zero_hour">00:00</string>
+    <string name="end_hour">23:59</string>
+    <string name="video_set">录像配置</string>
+    <string name="channel_setting">通道配置</string>
+    <string name="video_model">录像模式</string>
+    <string name="week">星期</string>
+    <string name="week2">周</string>
+    <string name="time_quantum">时间段</string>
+    <string name="prerecord_time">预录时间</string>
+    <string name="prerecord_no">不预录</string>
+    <string name="video_delay">录像延迟</string>
+    <string name="video_delay_no">不延迟</string>\
+    <string name="wrong_time_setting">时间段%d,结束时间不大于开始时间，请修改</string>
+
+    <string name="all_select_no">全不选</string>
+    <string name="all_select">全选</string>
+    <string name="complete">完成</string>
+    <string name="compile">编辑</string>
+
+    <string name="action_authcode_login">三方自有账号</string>
+    <string name="action_switch_env">环境切换</string>
+
+</resources>

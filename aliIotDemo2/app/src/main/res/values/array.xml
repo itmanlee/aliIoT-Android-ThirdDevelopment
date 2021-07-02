@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--                 分包需注意的资源start                                -->
+    <string-array name="initial_batch">
+        <item>0bd6</item>
+        <item>05da</item>
+        <item>0376</item>
+        <item>0377</item>
+        <item>02f4</item>
+        <item>0bd3</item>
+        <item>0b70</item>
+    </string-array>
+    <!--                 分包需注意的资源end                                -->
+
+    <string-array name="report_info">
+        <item>头像、资料作假</item>
+        <item>广告、营销</item>
+        <item>诈骗、托儿</item>
+        <item>色情低俗</item>
+        <item>恶意骚扰、不文明语言</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="lunar_first_of_month">
+        <item>春节</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>冬月</item>
+        <item>腊月</item>
+    </string-array>
+
+    <string-array name="tradition_festival">
+        <item>除夕</item>
+        <item>0101春节</item>
+        <item>0115元宵</item>
+        <item>0505端午</item>
+        <item>0707七夕</item>
+        <item>0815中秋</item>
+        <item>0909重阳</item>
+    </string-array>
+
+    <string-array name="lunar_str">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array>
+
+    <string-array name="solar_festival" tools:ignore="InconsistentArrays">
+        <item>0101元旦</item>
+        <item>0214情人节</item>
+        <item>0308妇女节</item>
+        <item>0312植树节</item>
+        <item>0315消权日</item>
+        <item>0401愚人节</item>
+        <item>0422地球日</item>
+        <item>0501劳动节</item>
+        <item>0504青年节</item>
+        <item>0601儿童节</item>
+        <item>0701建党节</item>
+        <item>0801建军节</item>
+        <item>0910教师节</item>
+        <item>1001国庆节</item>
+        <item>1031万圣节</item>
+        <item>1111光棍节</item>
+        <item>1224平安夜</item>
+        <item>1225圣诞节</item>
+    </string-array>
+
+    <string-array name="solar_term">
+        <item>春分</item>
+        <item>清明</item>
+        <item>谷雨</item>
+        <item>立夏</item>
+        <item>小满</item>
+        <item>芒种</item>
+        <item>夏至</item>
+        <item>小暑</item>
+        <item>大暑</item>
+        <item>立秋</item>
+        <item>处暑</item>
+        <item>白露</item>
+        <item>秋分</item>
+        <item>寒露</item>
+        <item>霜降</item>
+        <item>立冬</item>
+        <item>小雪</item>
+        <item>大雪</item>
+        <item>冬至</item>
+        <item>小寒</item>
+        <item>大寒</item>
+        <item>立春</item>
+        <item>雨水</item>
+        <item>惊蛰</item>
+    </string-array>
+
+    <string-array name="special_festivals">
+        <item>母亲节</item>
+        <item>父亲节</item>
+        <item>感恩节</item>
+    </string-array>
+
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="sun_chinese">周日</string>
+    <string name="mon_chinese">周一</string>
+    <string name="tue_chinese">周二</string>
+    <string name="wed_chinese">周三</string>
+    <string name="thu_chinese">周四</string>
+    <string name="fri_chinese">周五</string>
+    <string name="sat_chinese">周六</string>
+
+    <string-array name="week_string_array">
+        <item>SUN</item>
+        <item>Mon</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+    </string-array>
+
+    <string-array name="week_array">
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+        <item>周日</item>
+    </string-array>
+
+    <string-array name="week_array2">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+
+
+    <string-array name="year_view_week_string_array">
+        <item>S</item>
+        <item>M</item>
+        <item>T</item>
+        <item>W</item>
+        <item>T</item>
+        <item>F</item>
+        <item>S</item>
+    </string-array>
+
+    <string-array name="month_string_array">
+        <item>JAN</item>
+        <item>FEB</item>
+        <item>MAR</item>
+        <item>APR</item>
+        <item>MAY</item>
+        <item>JUN</item>
+        <item>JUL</item>
+        <item>AUG</item>
+        <item>SEP</item>
+        <item>OCT</item>
+        <item>NOV</item>
+        <item>DEC</item>
+    </string-array>
+
+    <integer-array name="trunk_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </integer-array>
+
+    <string-array name="trunk_string_array">
+        <item>辛</item>
+        <item>壬</item>
+        <item>癸</item>
+        <item>甲</item>
+        <item>乙</item>
+        <item>丙</item>
+        <item>丁</item>
+        <item>戊</item>
+        <item>己</item>
+        <item>庚</item>
+    </string-array>
+
+    <integer-array name="branch_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </integer-array>
+
+    <string-array name="month_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+
+    <string-array name="branch_string_array">
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+        <item>未</item>
+        <item>申</item>
+    </string-array>
+
+    <string-array name="device_set_array">
+        <item>设备信息</item>
+        <item>设备别名</item>
+        <item>时间配置</item>
+        <item>夏令时配置</item>
+        <!--<item>推送报警</item>-->
+        <item>推送配置</item>
+        <item>推送间隔</item>
+        <item>报警声音配置</item>
+        <item>恢复默认</item>
+        <item>重启设备</item>
+        <item>固件升级</item>
+    </string-array>
+
+    <string-array name="locat_set_array">
+        <item>消息回放提前量(秒)</item>
+        <item>磁盘预留空间(MB)</item>
+        <item>循环播放</item>
+        <item>软解码</item>
+        <item>报警通知</item>
+    </string-array>
+
+    <string-array name="alarm_event_array">
+        <item>所有类型</item>
+        <item>移动侦测</item>
+        <item>人脸识别</item>
+        <item>人形检测</item>
+        <item>视频遮挡</item>
+        <item>电动车检测</item>
+        <item>输入报警</item>
+        <item>安全帽检测</item>
+        <item>离岗检测</item>
+        <item>区域检测</item>
+        <item>逆行检测</item>
+        <item>目标计数</item>
+
+
+    </string-array>
+
+    <string-array name="message_advance_second">
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="disk_space">
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>500</item>
+        <item>1024</item>
+    </string-array>
+
+    <string-array name="device_base_info_option">
+        <item>基本信息</item>
+        <item>网络信息</item>
+        <item>通道状态</item>
+        <item>磁盘信息</item>
+    </string-array>
+
+    <string-array name="device_base_info">
+        <item>设备名称</item>
+        <item>设备类型</item>
+        <item>联网方式</item>
+        <item>序列号</item>
+        <item>CCID号</item>
+        <item>最后上线</item>
+        <item>通道总数</item>
+        <item>报警输入总数</item>
+        <item>报警输出总数</item>
+        <item>固件版本</item>
+        <item>P2P版本</item>
+    </string-array>
+
+    <string-array name="net_work_info">
+        <item>网卡地址</item>
+        <item>IP地址</item>
+        <item>DHCP</item>
+        <item>子网掩码</item>
+        <item>物理网址</item>
+        <item>HTTP端口</item>
+        <item>RTMP端口</item>
+        <item>自动获取DNS</item>
+        <item>首选DNS</item>
+        <item>备选DNS</item>
+        <item>默认路由</item>
+    </string-array>
+
+    <string-array name="device_time_set">
+        <item>与手机端时间同步</item>
+        <item>系统时间</item>
+        <item>时区</item>
+        <item>NTP校时</item>
+        <item>时间服务器</item>
+        <item>时间间隔(小时)</item>
+        <item>夏令时</item>
+        <item>开始时间</item>
+        <item>结束时间</item>
+        <item>偏移时间</item>
+    </string-array>
+
+    <string-array name="encode_set_array">
+        <item>视频通道</item>
+        <item>编码设置</item>
+        <item>码流类型</item>
+        <item>分辨率</item>
+        <item>位率类型</item>
+        <item>位率上限</item>
+        <item>视频帧率</item>
+        <item>图像质量</item>
+        <item>编码类型</item>
+        <item>I帧间隔</item>
+    </string-array>
+
+    <string-array name="child_device_info_array">
+        <item>通道号</item>
+        <item>设备序列号</item>
+        <item>硬件版本号</item>
+        <item>软件版本号</item>
+        <item>报警输入数</item>
+        <item>报警输出数</item>
+    </string-array>
+
+    <string-array name="my_set_array">
+        <item>消息中心</item>
+        <item>本地配置</item>
+        <item>工具</item>
+        <item>清理缓存</item>
+        <item>意见反馈</item>
+        <item>帮助</item>
+        <item>关于</item>
+    </string-array>
+
+    <string-array name="record_delay_time">
+        <item>1min</item>
+        <item>2min</item>
+        <item>5min</item>
+        <item>10min</item>
+    </string-array>
+
+    <string-array name="nvr_record_delay_time">
+        <item>不延时</item>
+        <item>3min</item>
+        <item>5min</item>
+        <item>10min</item>
+    </string-array>
+
+    <string-array name="record_pre_time">
+        <item>不预录</item>
+        <item>5s</item>
+        <item>10s</item>
+    </string-array>
+
+    <string-array name="nvr_record_pre_time">
+        <item>不预录</item>
+        <item>5s</item>
+        <item>10s</item>
+        <item>15s</item>
+        <item>20s</item>
+        <item>25s</item>
+        <item>30s</item>
+    </string-array>
+
+    <string-array name="record_mode">
+        <item>停止录像</item>
+        <item>定时录像</item>
+        <item>报警录像</item>
+        <item>定时报警录像</item>
+    </string-array>
+
+    <string-array name="time_zone">
+        <item>(UTC-12:00)国际日期变更线西</item>
+        <item>(UTC-11:00)中途岛,萨摩亚群岛</item>
+        <item>(UTC-10:00)夏威夷</item>
+        <item>(UTC-09:30)马克萨斯群岛</item>
+        <item>(UTC-09:00)阿拉斯加</item>
+        <item>(UTC-08:00)太平洋时间(美国和加拿大)</item>
+        <item>(UTC-07:00)山地时间(美国和加拿大)</item>
+        <item>(UTC-06:00)中部时间(美国和加拿大)</item>
+        <item>(UTC-05:00)东部时间(美国和加拿大)</item>
+        <item>(UTC-04:00)大西洋时间(加拿大)</item>
+        <item>(UTC-03:30)纽芬兰</item>
+        <item>(UTC-03:00)乔治敦,巴西利亚</item>
+        <item>(UTC-02:00)中大西洋</item>
+        <item>(UTC-01:00)福德角群岛,亚速尔群岛</item>
+        <item>(UTC-00:00)格林威治标准时间:都柏林,爱丁堡,伦敦,里斯本</item>
+        <item>(UTC+01:00)阿姆斯特丹,柏林,罗马,巴黎</item>
+        <item>(UTC+02:00)雅典,耶路撒冷,伊斯坦布尔</item>
+        <item>(UTC+03:00)巴格尔,科威特</item>
+        <item>(UTC+03:30)德黑兰</item>
+        <item>(UTC+04:00)莫斯科,圣彼得堡,伏尔加格勒</item>
+        <item>(UTC+04:30)喀布尔</item>
+        <item>(UTC+05:00)伊斯兰堡,卡拉奇,塔什干</item>
+        <item>(UTC+05:30)马德拉斯,钦奈,加尔各答,孟买,新德里</item>
+        <item>(UTC+05:45)加德满都</item>
+        <item>(UTC+06:00)阿拉木母,达卡,新西伯利亚</item>
+        <item>(UTC+06:30)仰光</item>
+        <item>(UTC+07:00)曼谷,河内,雅加达</item>
+        <item>(UTC+08:00)北京,台北,香港特别行政区,乌鲁木齐,新加坡</item>
+        <item>(UTC+09:00)首尔,大阪,札幌,东京</item>
+        <item>(UTC+09:30)阿德莱德,达尔文</item>
+        <item>(UTC+10:00)堪培拉,墨尔本,悉尼</item>
+        <item>(UTC+11:00)所罗门群岛,新喀里多尼亚</item>
+        <item>(UTC+12:00)奥克兰,惠林顿,裴济,马加丹</item>
+        <item>(UTC+13:00)努库阿洛法</item>
+    </string-array>
+
+    <string-array name="device_ai_array">
+        <item>人形检测</item>
+        <item>人脸库</item>
+        <item>电动车检测</item>
+    </string-array>
+
+    <string-array name="device_link_break">
+        <item>检查您的设备是否已通电；</item>
+        <item>检查设备网线是否正常连接；</item>
+        <item>若您是用wifi连接，请确认是否修改设备所在环境的WIFI名称和密码；</item>
+        <item>设备IP和局域网里其他设备IP冲突；</item>
+        <item>路由器设置了白名单或黑名单；</item>
+        <item>路由器不能正常上网，将路由器和监控设备重启，重新连接网络；</item>
+        <item>如果网线正常连接，录像机设备请在系统桌面上查看是否已上线；</item>
+        <item>如果未上线，录像机设备请在系统桌面鼠标右键选择网络监测，根据诊断结果处理对应断开的连接；</item>
+    </string-array>
+    <string-array name="device_show_control">
+        <item>显示通道名称</item>
+        <item>显示时间和日期</item>
+        <item>显示网络状态</item>
+    </string-array>
+    <string-array name="card_4g_set_meal">
+        <item>月套餐</item>
+        <item>季套餐</item>
+        <item>年套餐</item>
+    </string-array>
+</resources>
