@@ -34,7 +34,7 @@ public class HttpUtils {
                 addHeader("client-name", "" + Build.MODEL + "&" + Build.VERSION.SDK_INT).
                 addHeader("pack-name", pInfo == null ? "" : pInfo.packageName).
                 addHeader("version", pInfo == null ? "" : pInfo.versionName).
-                addHeader("app-vendor", "ENZ")
+                addHeader("app-vendor", "TEST-DEMO")
                 .url(url).mediaType(MediaType.parse("application/json; charset=utf-8"))
                 .content(content).build();
 
@@ -56,7 +56,7 @@ public class HttpUtils {
                 addHeader("client-name", "" + Build.MODEL + "&" + Build.VERSION.SDK_INT).
                 addHeader("pack-name", pInfo == null ? "" : pInfo.packageName).
                 addHeader("version", pInfo == null ? "" : pInfo.versionName).
-                addHeader("app-vendor", "ENZ")
+                addHeader("app-vendor", "TEST-DEMO")
                 .url(url).build();
 
         return call;
