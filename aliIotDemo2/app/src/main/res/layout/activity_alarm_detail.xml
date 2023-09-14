@@ -16,7 +16,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
-            android:background="@mipmap/arrow_left_white"/>
+            android:background="@mipmap/arrow_left_white" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,9 +42,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="15dp"
+            android:text="设备昵称:"
             android:textColor="@color/hei"
-            android:textSize="16sp"
-            android:text="设备昵称:"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/alarm_detail_name"
@@ -52,9 +52,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
+            android:text="xxxxxxx"
             android:textColor="@color/hei"
-            android:textSize="16sp"
-            android:text="xxxxxxx"/>
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -66,9 +66,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="15dp"
+            android:text="报警类型:"
             android:textColor="@color/hei"
-            android:textSize="16sp"
-            android:text="报警类型:"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/alarm_detail_type"
@@ -76,9 +76,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
+            android:text="xxxxxxx"
             android:textColor="@color/hei"
-            android:textSize="16sp"
-            android:text="xxxxxxx"/>
+            android:textSize="16sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -90,9 +90,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="15dp"
+            android:text="报警内容:"
             android:textColor="@color/hei"
-            android:textSize="16sp"
-            android:text="报警内容:"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/alarm_detail_content"
@@ -100,9 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
+            android:text="xxxxxxx"
             android:textColor="@color/hei"
-            android:textSize="16sp"
-            android:text="xxxxxxx"/>
+            android:textSize="16sp" />
     </LinearLayout>
 
 

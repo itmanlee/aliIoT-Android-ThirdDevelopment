@@ -3,11 +3,12 @@ package com.aliIoT.demo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.aliIoT.demo.util.ConstUtil;
 import com.aliIoT.demo.util.MyApplication;
@@ -27,15 +28,14 @@ import org.json.JSONObject;
  */
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener {
 
+    public final static int ALIYUNSERVICE_DEVICE_RESTOREDEFAULT = 3;
+    static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
+    static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
     Button mRealPlayButton;
     Button mRePlayButton;
     Button mAlarmButton;
     Button mLogoutButton;
     Button mDeleteButton;
-
-    static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
-    static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
-    public final static int ALIYUNSERVICE_DEVICE_RESTOREDEFAULT = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

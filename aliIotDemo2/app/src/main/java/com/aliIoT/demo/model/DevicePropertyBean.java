@@ -12,6 +12,17 @@ import javax.annotation.Nonnull;
  * Created by hjt on 2020/7/23
  */
 public class DevicePropertyBean implements Parcelable {
+    public static final Creator<DevicePropertyBean> CREATOR = new Creator<DevicePropertyBean>() {
+        @Override
+        public DevicePropertyBean createFromParcel(Parcel in) {
+            return new DevicePropertyBean(in);
+        }
+
+        @Override
+        public DevicePropertyBean[] newArray(int size) {
+            return new DevicePropertyBean[size];
+        }
+    };
     private int CloudStorageBean;
     private String SerialNo;
     private String P2PVersion;
@@ -21,7 +32,6 @@ public class DevicePropertyBean implements Parcelable {
     private String HardVersion;
     private String Vendor;
     private String BuildDate;
-
     private int AlarmFrequencyLevel;//发送频率
     private int AlarmSwitch;//报警开关
     private boolean UpgradeStatus;//true：有新版本；false：已经最新；
@@ -47,6 +57,9 @@ public class DevicePropertyBean implements Parcelable {
     private String LastOnlineTime;
     private int AlarmInCount;
     private int AlarmOutCount;
+    private List<String> SmartAbilityList;
+    private int AINum;
+    private int AONum;
 
     protected DevicePropertyBean(Parcel in) {
         CloudStorageBean = in.readInt();
@@ -86,6 +99,9 @@ public class DevicePropertyBean implements Parcelable {
         SmartAbilityList = in.createStringArrayList();
         AINum = in.readInt();
         AONum = in.readInt();
+    }
+
+    public DevicePropertyBean() {
     }
 
     @Override
@@ -134,18 +150,6 @@ public class DevicePropertyBean implements Parcelable {
         return 0;
     }
 
-    public static final Creator<DevicePropertyBean> CREATOR = new Creator<DevicePropertyBean>() {
-        @Override
-        public DevicePropertyBean createFromParcel(Parcel in) {
-            return new DevicePropertyBean(in);
-        }
-
-        @Override
-        public DevicePropertyBean[] newArray(int size) {
-            return new DevicePropertyBean[size];
-        }
-    };
-
     public List<String> getSmartAbilityList() {
         return SmartAbilityList;
     }
@@ -185,11 +189,6 @@ public class DevicePropertyBean implements Parcelable {
     public void setEBike(boolean EBike) {
         this.EBike = EBike;
     }
-
-    private List<String> SmartAbilityList;
-
-    private int AINum;
-    private int AONum;
 
     public NetLteConfigBean getmNetLteConfigBean() {
         return mNetLteConfigBean;
@@ -297,7 +296,8 @@ public class DevicePropertyBean implements Parcelable {
             }
             if (mbean.getAlarmInCount() != null) {
                 this.AlarmInCount = mbean.getAlarmInCount().getValue();
-            }if (mbean.getAlarmOutCount() != null) {
+            }
+            if (mbean.getAlarmOutCount() != null) {
                 this.AlarmOutCount = mbean.getAlarmOutCount().getValue();
             }
 
@@ -353,10 +353,6 @@ public class DevicePropertyBean implements Parcelable {
             }
         }
     }
-
-    public DevicePropertyBean() {
-    }
-
 
     public int getCloudStorageBean() {
         return CloudStorageBean;

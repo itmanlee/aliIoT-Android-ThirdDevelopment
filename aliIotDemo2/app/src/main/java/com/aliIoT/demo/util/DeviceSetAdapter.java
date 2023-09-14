@@ -1,9 +1,11 @@
 package com.aliIoT.demo.util;
 
-import android.support.constraint.ConstraintLayout;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.aliIoT.demo.R;
 import com.aliIoT.demo.model.TitleItemBean;
@@ -12,14 +14,10 @@ import com.aliIoT.demo.model.TitleItemBean;
  * Created by hjt on 2020/6/15
  */
 public class DeviceSetAdapter extends BaseAdapter<TitleItemBean, DeviceSetAdapter.OnItemClick> {
-    public interface OnItemClick {
-        void OnItemViewClick(TitleItemBean t, int postion);
-    }
-
-    private long timeInterval = 300L;
-    private long mLastClickTime;
     final int VIEW_TYPE_TITLE = 0;
     final int VIEW_TYPE_ITEM = 1;
+    private long timeInterval = 300L;
+    private long mLastClickTime;
 
     @Override
     public int getLayoutId(int viewType) {
@@ -107,6 +105,10 @@ public class DeviceSetAdapter extends BaseAdapter<TitleItemBean, DeviceSetAdapte
                 }
             });
         }
+    }
+
+    public interface OnItemClick {
+        void OnItemViewClick(TitleItemBean t, int postion);
     }
 
 

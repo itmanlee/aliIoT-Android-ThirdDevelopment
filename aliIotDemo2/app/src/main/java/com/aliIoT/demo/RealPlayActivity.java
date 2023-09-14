@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -28,6 +24,11 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
 
 import com.aliIoT.demo.model.LightConfigResultBean;
 import com.aliIoT.demo.model.OSDBean;
@@ -67,6 +68,16 @@ import java.util.List;
  */
 public class RealPlayActivity extends AppCompatActivity implements View.OnClickListener, PermissionUtils.PermissionGrant, RemoteControlView.RemoteListener {
 
+    //!请求type
+    static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
+    static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
+    static final int MIRROR_FLIP = 3;
+    static final int LIGHT_CONFIG = 4;
+    static final int LIGHT_CONFIG_SET = 5;
+    static final int GET_OSD_INFO = 6;
+    static final int SET_OSD_INFO = 7;
+    static final int ALIYUNSERVICE_GET_VIDEOEFFECT = 8;
+    static final int ALIYUNSERVICE_SET_VIDEOEFFECT = 9;
     ImageView mBackView;
     Button mCaptureButton;
     Button mRecordButton;
@@ -79,15 +90,11 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
     Button mLightButton;
     Button mImageButton;
     Button mConfigButton;
-
     PlayLayout mViewLinearLayout;
     VideoPlayHelper videoPlayHelper = new VideoPlayHelper(MyApplication.getInstance());
     String iotID = MyApplication.getInstance().getIotID();
-
     String permissionRead_Write[] = new String[]{PermissionUtils.PERMISSION_READ_EXTERNAL_STORAGE, PermissionUtils.PERMISSION_WRITE_EXTERNAL_STORAGE};
     String permissionAudio[] = new String[]{PermissionUtils.PERMISSION_RECORD_AUDIO, PermissionUtils.PERMISSION_RECORD_AUDIO};
-
-
     //!镜像
     LinearLayout mImageLinearLayout;
     TextView mImage4CancelTextView;
@@ -95,7 +102,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
     TextView mImage4HorTextView;
     TextView mImage4VerTextView;
     TextView mImage4180TextView;
-
     //!灯板
     ConstraintLayout mLightLayout;
     TextView mLight4CancelTextView;
@@ -108,15 +114,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
     TextView mLight4SeekbarTextView;
     SeekBar mLight4Seekbar;
     RelativeLayout mLight4CommitLayout;
-
-    private String lightWorkModel_value = "";//1、灯板工作模式选择值（当前）
-    private int infraredWorkCondition_value = 0;//2、红外灯板状态（当前获取）
-    private int lightBrightness_Value = 0;//3、亮度
-    private List<String> SupportLightsList = new ArrayList<String>();//5、支持的灯板模式（原始值）
-    private List<String> SupportLightsListShow = new ArrayList<String>();//用于展示的集合
-    private int flag;//0：红外+暖光，1：红外+白光
-    private LightConfigResultBean lightConfigResultBean;
-
     //!osd
     LinearLayout mOsdLayout;
     CheckBox mOsd4CheckBox1;
@@ -124,7 +121,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
     CheckBox mOsd4CheckBox3;
     TextView mOsd4CancelView;
     OSDBean osd;
-
     //!ptz
     LinearLayout mPTZLayout;
     RelativeLayout mPTZ4PTZLayout;
@@ -145,8 +141,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
     TextView mPTZ4PTZFocusout;
     TextView mPTZ4PTZIrisin;
     TextView mPTZ4PTZIrisout;
-    private ArrayList<Integer> mPresetPoint;
-
     //!color
     LinearLayout mColorLinearLayout;
     SeekBar mColorSeekBar1;
@@ -159,20 +153,16 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
     TextView mColorTextView4;
     TextView mColorDefault;
     TextView mColorCancel;
-
     Gson gson = new Gson();
-    //!请求type
-    static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
-    static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
-    static final int MIRROR_FLIP = 3;
-    static final int LIGHT_CONFIG = 4;
-    static final int LIGHT_CONFIG_SET = 5;
-    static final int GET_OSD_INFO = 6;
-    static final int SET_OSD_INFO = 7;
-    static final int ALIYUNSERVICE_GET_VIDEOEFFECT = 8;
-    static final int ALIYUNSERVICE_SET_VIDEOEFFECT = 9;
-
-
+    boolean isRecord = false;
+    PopupWindow mSerarchWindow = null;
+    private String lightWorkModel_value = "";//1、灯板工作模式选择值（当前）
+    private int infraredWorkCondition_value = 0;//2、红外灯板状态（当前获取）
+    private int lightBrightness_Value = 0;//3、亮度
+    private List<String> SupportLightsList = new ArrayList<String>();//5、支持的灯板模式（原始值）
+    private List<String> SupportLightsListShow = new ArrayList<String>();//用于展示的集合
+    private int flag;//0：红外+暖光，1：红外+白光
+    private LightConfigResultBean lightConfigResultBean;
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
@@ -286,6 +276,10 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
             return false;
         }
     });
+    private ArrayList<Integer> mPresetPoint;
+    private LiveIntercomV2 mLiveIntercomV2;
+    //对讲状态
+    private boolean mLiveIntercomStatus = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -927,8 +921,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
-    boolean isRecord = false;
-
     private boolean startRecord(VideoPlayHelper videoPlayHelper) {
         if ((!ActivityCompat.shouldShowRequestPermissionRationale(RealPlayActivity.this, permissionRead_Write[0]) || !ActivityCompat.shouldShowRequestPermissionRationale(RealPlayActivity.this, permissionRead_Write[1]))
                 && !PermissionUtils.requestMultiPermissions(RealPlayActivity.this, new int[]{6, 7}, this)) {
@@ -955,7 +947,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
             return false;
         }
     }
-
 
     private void stopRecord(VideoPlayHelper videoPlayHelper) {
         boolean b = videoPlayHelper.stopRecord();
@@ -987,10 +978,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
             }
         }
     }
-
-    private LiveIntercomV2 mLiveIntercomV2;
-    //对讲状态
-    private boolean mLiveIntercomStatus = false;
 
     private LiveIntercomV2 initVoiceIntercom(String iotId) {
         // 创建语音对讲实例
@@ -1162,8 +1149,6 @@ public class RealPlayActivity extends AppCompatActivity implements View.OnClickL
             mLight4Seekbar.setFocusable(false);
         }
     }
-
-    PopupWindow mSerarchWindow = null;
 
     public void showDialog(List<String> lists, TextView tv, String title) {
 

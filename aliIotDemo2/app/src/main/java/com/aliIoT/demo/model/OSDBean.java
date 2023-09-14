@@ -8,6 +8,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class OSDBean implements Parcelable {
 
+    public static final Creator<OSDBean> CREATOR = new Creator<OSDBean>() {
+        @Override
+        public OSDBean createFromParcel(Parcel in) {
+            return new OSDBean(in);
+        }
+
+        @Override
+        public OSDBean[] newArray(int size) {
+            return new OSDBean[size];
+        }
+    };
     /**
      * ChanName : IpCamera
      * IsShowChanName : 1
@@ -57,6 +68,80 @@ public class OSDBean implements Parcelable {
     private Integer OSDHourType;
 
     public OSDBean() {
+    }
+
+    protected OSDBean(Parcel in) {
+        ChanName = in.readString();
+        if (in.readByte() == 0) {
+            IsShowChanName = null;
+        } else {
+            IsShowChanName = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            ChanNameTopLeftX = null;
+        } else {
+            ChanNameTopLeftX = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            ChanNameTopLeftY = null;
+        } else {
+            ChanNameTopLeftY = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            ChanNameTopLeftW = null;
+        } else {
+            ChanNameTopLeftW = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            ChanNameTopLeftH = null;
+        } else {
+            ChanNameTopLeftH = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            OSDTopLeftX = null;
+        } else {
+            OSDTopLeftX = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            OSDTopLeftY = null;
+        } else {
+            OSDTopLeftY = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            OSDTopLeftW = null;
+        } else {
+            OSDTopLeftW = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            OSDTopLeftH = null;
+        } else {
+            OSDTopLeftH = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            OSDType = null;
+        } else {
+            OSDType = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            IsDisplayWeek = null;
+        } else {
+            IsDisplayWeek = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            IsShowOSD = null;
+        } else {
+            IsShowOSD = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            OSDAttribute = null;
+        } else {
+            OSDAttribute = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            OSDHourType = null;
+        } else {
+            OSDHourType = in.readInt();
+        }
     }
 
     public Integer getIsShowOSD() {
@@ -179,80 +264,6 @@ public class OSDBean implements Parcelable {
         this.OSDHourType = OSDHourType;
     }
 
-    protected OSDBean(Parcel in) {
-        ChanName = in.readString();
-        if (in.readByte() == 0) {
-            IsShowChanName = null;
-        } else {
-            IsShowChanName = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            ChanNameTopLeftX = null;
-        } else {
-            ChanNameTopLeftX = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            ChanNameTopLeftY = null;
-        } else {
-            ChanNameTopLeftY = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            ChanNameTopLeftW = null;
-        } else {
-            ChanNameTopLeftW = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            ChanNameTopLeftH = null;
-        } else {
-            ChanNameTopLeftH = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            OSDTopLeftX = null;
-        } else {
-            OSDTopLeftX = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            OSDTopLeftY = null;
-        } else {
-            OSDTopLeftY = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            OSDTopLeftW = null;
-        } else {
-            OSDTopLeftW = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            OSDTopLeftH = null;
-        } else {
-            OSDTopLeftH = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            OSDType = null;
-        } else {
-            OSDType = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            IsDisplayWeek = null;
-        } else {
-            IsDisplayWeek = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            IsShowOSD = null;
-        } else {
-            IsShowOSD = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            OSDAttribute = null;
-        } else {
-            OSDAttribute = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            OSDHourType = null;
-        } else {
-            OSDHourType = in.readInt();
-        }
-    }
-
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(ChanName);
@@ -346,16 +357,4 @@ public class OSDBean implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<OSDBean> CREATOR = new Creator<OSDBean>() {
-        @Override
-        public OSDBean createFromParcel(Parcel in) {
-            return new OSDBean(in);
-        }
-
-        @Override
-        public OSDBean[] newArray(int size) {
-            return new OSDBean[size];
-        }
-    };
 }

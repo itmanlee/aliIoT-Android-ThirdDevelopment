@@ -9,9 +9,9 @@ public class ConstUtil {
     public static final String KEY_USERID = "userid";
     public static final String KEY_TOKEN = "token";
     public static final String KEY_IDENTITYID = "identityId";
-    public static final String KEY_SERVERSITE  = "serverSite";
-    public static final String KEY_AUTHCODE  = "authCode";
-    public static final String KEY_IOTID  = "iotid";
+    public static final String KEY_SERVERSITE = "serverSite";
+    public static final String KEY_AUTHCODE = "authCode";
+    public static final String KEY_IOTID = "iotid";
 
 
     public static final String mUrl = "http://oauth20.p2p-platform.com:10001";
@@ -33,36 +33,36 @@ public class ConstUtil {
 
 
     //!PTZ控制命令宏定义
-    public static final int CLOUDEYE_PTZ_CTRL_STOP              =100;	  //!控制停止
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_UP	        =101;	//!向上
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_DOWN	        =102;	//!向下
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_LEFT	        =103;	//!向左
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_RIGHT	    =104;	//!向右
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_UPLEFT	    =105;	//!向左上
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_DOWNLEFT	    =106;	//!向右下
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_UPRIGHT	    =107;	//!向右上
-    public static final int CLOUDEYE_PTZ_CTRL_MOVE_DOWNRIGHT	=108;	//!向右下
-    public static final int CLOUDEYE_PTZ_CTRL_IRIS_IN	        =109;
-    public static final int CLOUDEYE_PTZ_CTRL_IRIS_OUT	        =110;
-    public static final int CLOUDEYE_PTZ_CTRL_FOCUS_IN	        =111;	//!焦点靠近
-    public static final int CLOUDEYE_PTZ_CTRL_FOCUS_OUT	        =112;	//!焦点远离
-    public static final int CLOUDEYE_PTZ_CTRL_ZOOM_IN	        =113;	//!放大
-    public static final int CLOUDEYE_PTZ_CTRL_ZOOM_OUT	        =114;	//!缩小
-    public static final int CLOUDEYE_PTZ_CTRL_SET_PRESET	    =115;	//!设置预置点
-    public static final int CLOUDEYE_PTZ_CTRL_CALL_PRESET	    =116;	//!到达预置点
-    public static final int CLOUDEYE_PTZ_CTRL_DELETE_PRESET	    =117;	//!删除预置点
-    public static final int CLOUDEYE_PTZ_CTRL_BEGIN_CRUISE_SET	=118;
-    public static final int CLOUDEYE_PTZ_CTRL_SET_CRUISE	    =119;
-    public static final int CLOUDEYE_PTZ_CTRL_END_CRUISE_SET	=120;
-    public static final int CLOUDEYE_PTZ_CTRL_CALL_CRUISE	    =121;
-    public static final int CLOUDEYE_PTZ_CTRL_DELETE_CRUISE	    =122;
-    public static final int CLOUDEYE_PTZ_CTRL_STOP_CRUISE	    =123;
-    public static final int CLOUDEYE_PTZ_CTRL_AUTO_SCAN	        =124;
-    public static final int CLOUDEYE_PTZ_CTRL_RAINBRUSH_START	=125;	//!开灯
-    public static final int CLOUDEYE_PTZ_CTRL_RAINBRUSH_STOP	=126;	//!关灯
-    public static final int CLOUDEYE_PTZ_CTRL_LIGHT_ON	        =127;
-    public static final int CLOUDEYE_PTZ_CTRL_LIGHT_OFF	        =128;
-    public static final int CLOUDEYE_PTZ_CTRL_MAX 	            =129;
+    public static final int CLOUDEYE_PTZ_CTRL_STOP = 100;      //!控制停止
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_UP = 101;    //!向上
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_DOWN = 102;    //!向下
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_LEFT = 103;    //!向左
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_RIGHT = 104;    //!向右
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_UPLEFT = 105;    //!向左上
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_DOWNLEFT = 106;    //!向右下
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_UPRIGHT = 107;    //!向右上
+    public static final int CLOUDEYE_PTZ_CTRL_MOVE_DOWNRIGHT = 108;    //!向右下
+    public static final int CLOUDEYE_PTZ_CTRL_IRIS_IN = 109;
+    public static final int CLOUDEYE_PTZ_CTRL_IRIS_OUT = 110;
+    public static final int CLOUDEYE_PTZ_CTRL_FOCUS_IN = 111;    //!焦点靠近
+    public static final int CLOUDEYE_PTZ_CTRL_FOCUS_OUT = 112;    //!焦点远离
+    public static final int CLOUDEYE_PTZ_CTRL_ZOOM_IN = 113;    //!放大
+    public static final int CLOUDEYE_PTZ_CTRL_ZOOM_OUT = 114;    //!缩小
+    public static final int CLOUDEYE_PTZ_CTRL_SET_PRESET = 115;    //!设置预置点
+    public static final int CLOUDEYE_PTZ_CTRL_CALL_PRESET = 116;    //!到达预置点
+    public static final int CLOUDEYE_PTZ_CTRL_DELETE_PRESET = 117;    //!删除预置点
+    public static final int CLOUDEYE_PTZ_CTRL_BEGIN_CRUISE_SET = 118;
+    public static final int CLOUDEYE_PTZ_CTRL_SET_CRUISE = 119;
+    public static final int CLOUDEYE_PTZ_CTRL_END_CRUISE_SET = 120;
+    public static final int CLOUDEYE_PTZ_CTRL_CALL_CRUISE = 121;
+    public static final int CLOUDEYE_PTZ_CTRL_DELETE_CRUISE = 122;
+    public static final int CLOUDEYE_PTZ_CTRL_STOP_CRUISE = 123;
+    public static final int CLOUDEYE_PTZ_CTRL_AUTO_SCAN = 124;
+    public static final int CLOUDEYE_PTZ_CTRL_RAINBRUSH_START = 125;    //!开灯
+    public static final int CLOUDEYE_PTZ_CTRL_RAINBRUSH_STOP = 126;    //!关灯
+    public static final int CLOUDEYE_PTZ_CTRL_LIGHT_ON = 127;
+    public static final int CLOUDEYE_PTZ_CTRL_LIGHT_OFF = 128;
+    public static final int CLOUDEYE_PTZ_CTRL_MAX = 129;
 
     public static final int TITLE_ITEM_TYPE_ITEM_TITLE = 0x200;
     public static final int TITLE_ITEM_TYPE_DEVICE_INFO = 0x201;

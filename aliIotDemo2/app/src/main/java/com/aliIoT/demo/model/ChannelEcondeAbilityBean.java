@@ -18,6 +18,17 @@ import java.util.Map;
  */
 public class ChannelEcondeAbilityBean implements Parcelable {
 
+    public static final Creator<ChannelEcondeAbilityBean> CREATOR = new Creator<ChannelEcondeAbilityBean>() {
+        @Override
+        public ChannelEcondeAbilityBean createFromParcel(Parcel source) {
+            return new ChannelEcondeAbilityBean(source);
+        }
+
+        @Override
+        public ChannelEcondeAbilityBean[] newArray(int size) {
+            return new ChannelEcondeAbilityBean[size];
+        }
+    };
     /**
      * StreamType : 1
      * AVType : [["Main Stream", 0], ["Aux Stream", 1], ["Third Stream", 3]]
@@ -51,6 +62,56 @@ public class ChannelEcondeAbilityBean implements Parcelable {
     private Map<Integer, String> VideoEncTypeMap;
     private String minBitRate;
     private String maxBitRate;
+
+    public ChannelEcondeAbilityBean() {
+    }
+
+    protected ChannelEcondeAbilityBean(Parcel in) {
+        this.StreamType = in.readInt();
+        this.AVType = in.readString();
+        this.FrameRate = in.readString();
+        this.BitType = in.readString();
+        this.BitRate = in.readString();
+        this.ResultCode = in.readInt();
+        this.Resolution = in.readString();
+        int AVTypeMapSize = in.readInt();
+        this.AVTypeMap = new HashMap<Integer, String>(AVTypeMapSize);
+        for (int i = 0; i < AVTypeMapSize; i++) {
+            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
+            String value = in.readString();
+            this.AVTypeMap.put(key, value);
+        }
+        int FrameRateMapSize = in.readInt();
+        this.FrameRateMap = new HashMap<Integer, String>(FrameRateMapSize);
+        for (int i = 0; i < FrameRateMapSize; i++) {
+            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
+            String value = in.readString();
+            this.FrameRateMap.put(key, value);
+        }
+        int BitTypeMapSize = in.readInt();
+        this.BitTypeMap = new HashMap<Integer, String>(BitTypeMapSize);
+        for (int i = 0; i < BitTypeMapSize; i++) {
+            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
+            String value = in.readString();
+            this.BitTypeMap.put(key, value);
+        }
+        int BitRateMapSize = in.readInt();
+        this.BitRateMap = new HashMap<Integer, String>(BitRateMapSize);
+        for (int i = 0; i < BitRateMapSize; i++) {
+            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
+            String value = in.readString();
+            this.BitRateMap.put(key, value);
+        }
+        int ResolutionMapSize = in.readInt();
+        this.ResolutionMap = new HashMap<Integer, String>(ResolutionMapSize);
+        for (int i = 0; i < ResolutionMapSize; i++) {
+            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
+            String value = in.readString();
+            this.ResolutionMap.put(key, value);
+        }
+        this.minBitRate = in.readString();
+        this.maxBitRate = in.readString();
+    }
 
     public String getMinBitRate() {
         return minBitRate;
@@ -219,7 +280,7 @@ public class ChannelEcondeAbilityBean implements Parcelable {
                 JSONArray o = (JSONArray) jsonArray.get(i);
                 //注意此处写死未考虑通用性
                 if ("FULL".equals(o.getString(0))) {
-                    FrameRateMap.put(o.getInt(1),"全帧率");
+                    FrameRateMap.put(o.getInt(1), "全帧率");
                 } else {
                     FrameRateMap.put(o.getInt(1), o.getString(0));
                 }
@@ -385,66 +446,4 @@ public class ChannelEcondeAbilityBean implements Parcelable {
         dest.writeString(this.minBitRate);
         dest.writeString(this.maxBitRate);
     }
-
-    public ChannelEcondeAbilityBean() {
-    }
-
-    protected ChannelEcondeAbilityBean(Parcel in) {
-        this.StreamType = in.readInt();
-        this.AVType = in.readString();
-        this.FrameRate = in.readString();
-        this.BitType = in.readString();
-        this.BitRate = in.readString();
-        this.ResultCode = in.readInt();
-        this.Resolution = in.readString();
-        int AVTypeMapSize = in.readInt();
-        this.AVTypeMap = new HashMap<Integer, String>(AVTypeMapSize);
-        for (int i = 0; i < AVTypeMapSize; i++) {
-            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
-            String value = in.readString();
-            this.AVTypeMap.put(key, value);
-        }
-        int FrameRateMapSize = in.readInt();
-        this.FrameRateMap = new HashMap<Integer, String>(FrameRateMapSize);
-        for (int i = 0; i < FrameRateMapSize; i++) {
-            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
-            String value = in.readString();
-            this.FrameRateMap.put(key, value);
-        }
-        int BitTypeMapSize = in.readInt();
-        this.BitTypeMap = new HashMap<Integer, String>(BitTypeMapSize);
-        for (int i = 0; i < BitTypeMapSize; i++) {
-            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
-            String value = in.readString();
-            this.BitTypeMap.put(key, value);
-        }
-        int BitRateMapSize = in.readInt();
-        this.BitRateMap = new HashMap<Integer, String>(BitRateMapSize);
-        for (int i = 0; i < BitRateMapSize; i++) {
-            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
-            String value = in.readString();
-            this.BitRateMap.put(key, value);
-        }
-        int ResolutionMapSize = in.readInt();
-        this.ResolutionMap = new HashMap<Integer, String>(ResolutionMapSize);
-        for (int i = 0; i < ResolutionMapSize; i++) {
-            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
-            String value = in.readString();
-            this.ResolutionMap.put(key, value);
-        }
-        this.minBitRate = in.readString();
-        this.maxBitRate = in.readString();
-    }
-
-    public static final Creator<ChannelEcondeAbilityBean> CREATOR = new Creator<ChannelEcondeAbilityBean>() {
-        @Override
-        public ChannelEcondeAbilityBean createFromParcel(Parcel source) {
-            return new ChannelEcondeAbilityBean(source);
-        }
-
-        @Override
-        public ChannelEcondeAbilityBean[] newArray(int size) {
-            return new ChannelEcondeAbilityBean[size];
-        }
-    };
 }

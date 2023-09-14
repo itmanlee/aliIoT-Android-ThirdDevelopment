@@ -11,6 +11,17 @@ import org.json.JSONObject;
  * Created by hjt on 2020/9/3
  */
 public class ExtDataBean implements Parcelable {
+    public static final Creator<ExtDataBean> CREATOR = new Creator<ExtDataBean>() {
+        @Override
+        public ExtDataBean createFromParcel(Parcel source) {
+            return new ExtDataBean(source);
+        }
+
+        @Override
+        public ExtDataBean[] newArray(int size) {
+            return new ExtDataBean[size];
+        }
+    };
     /*{"iotId":"31nytPc8CdzeSYzmsrw3000000",
     "extParam":"{\"eventId\":\"b3eea6d1a30b47e28cfaf901a5c84940_1600391415744\",
     \"alarmType\":1,\"eventType\":1,\"eventTimeUtc\":1600362615744}",
@@ -30,6 +41,21 @@ public class ExtDataBean implements Parcelable {
     private int alarmType;
     private int eventType;
     private String extParam;
+
+    public ExtDataBean() {
+    }
+
+    protected ExtDataBean(Parcel in) {
+        this.iotId = in.readString();
+        this.icon = in.readString();
+        this.productKey = in.readString();
+        this.productName = in.readString();
+        this.categoryId = in.readInt();
+        this.eventId = in.readString();
+        this.alarmType = in.readInt();
+        this.eventType = in.readInt();
+        this.extParam = in.readString();
+    }
 
     public String getEventId() {
         return eventId;
@@ -103,9 +129,6 @@ public class ExtDataBean implements Parcelable {
         this.categoryId = categoryId;
     }
 
-    public ExtDataBean() {
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -123,30 +146,6 @@ public class ExtDataBean implements Parcelable {
         dest.writeInt(this.eventType);
         dest.writeString(this.extParam);
     }
-
-    protected ExtDataBean(Parcel in) {
-        this.iotId = in.readString();
-        this.icon = in.readString();
-        this.productKey = in.readString();
-        this.productName = in.readString();
-        this.categoryId = in.readInt();
-        this.eventId = in.readString();
-        this.alarmType = in.readInt();
-        this.eventType = in.readInt();
-        this.extParam = in.readString();
-    }
-
-    public static final Creator<ExtDataBean> CREATOR = new Creator<ExtDataBean>() {
-        @Override
-        public ExtDataBean createFromParcel(Parcel source) {
-            return new ExtDataBean(source);
-        }
-
-        @Override
-        public ExtDataBean[] newArray(int size) {
-            return new ExtDataBean[size];
-        }
-    };
 
     public void initExtParam() {
         if (!TextUtils.isEmpty(getExtParam())) {

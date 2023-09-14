@@ -5,14 +5,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.aliIoT.demo.AlarmActivity;
+import com.aliIoT.demo.R;
+import com.aliIoT.demo.model.PushMessageBean;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.aliIoT.demo.AlarmActivity;
-import com.aliIoT.demo.R;
-import com.aliIoT.demo.model.PushMessageBean;
 
 /**
  * Created by hjt on 2020/7/18
@@ -20,6 +20,7 @@ import com.aliIoT.demo.model.PushMessageBean;
 public class AlarmMessageAdapter extends BaseAdapter<PushMessageBean, AlarmMessageAdapter.AlarmMessageAdapterLongClick> {
     Map<String, PushMessageBean> map = new HashMap();
     int showType;
+    AlarmMessageAdapterLongClick mClick;
 
     @Override
     public int getLayoutId(int viewType) {
@@ -29,8 +30,6 @@ public class AlarmMessageAdapter extends BaseAdapter<PushMessageBean, AlarmMessa
     public void setClick(AlarmMessageAdapterLongClick mClick) {
         this.mClick = mClick;
     }
-
-    AlarmMessageAdapterLongClick mClick;
 
     public void setType(int type) {
         map.clear();
@@ -75,12 +74,6 @@ public class AlarmMessageAdapter extends BaseAdapter<PushMessageBean, AlarmMessa
         notifyDataSetChanged();
     }
 
-    public interface AlarmMessageAdapterLongClick {
-        void selsectChange();
-
-        void adapeterClick(PushMessageBean mPushMessageBean);
-    }
-
     @Override
     protected void setBindViewHolder(SmipleViewHolder holder, int position) {
         PushMessageBean alarmMessageBean = list.get(position);
@@ -101,7 +94,7 @@ public class AlarmMessageAdapter extends BaseAdapter<PushMessageBean, AlarmMessa
 
             tv2.setText(TimeUtils.millisecondToTime(alarmMessageBean.getGmtCreate()));
             tv3.setText(alarmMessageBean.getTitle());//mPushMessageBean.getExtData().getEventId()
-            if (alarmMessageBean.getExtData() != null &&AlarmActivity.mAlarmEventIdPicBeanMap.get(alarmMessageBean.getExtData().getEventId())!=null) {
+            if (alarmMessageBean.getExtData() != null && AlarmActivity.mAlarmEventIdPicBeanMap.get(alarmMessageBean.getExtData().getEventId()) != null) {
                 GlideUtils.loadImageCache(MyApplication.getInstance()
                         , AlarmActivity.mAlarmEventIdPicBeanMap.get(alarmMessageBean.getExtData().getEventId()).getPicUrl()
                         , GlideUtils.optionsAddDefultErrorImage(GlideUtils.creatRequestOptions(), R.mipmap.ic_launcher, R.mipmap.ic_launcher), im);
@@ -148,6 +141,12 @@ public class AlarmMessageAdapter extends BaseAdapter<PushMessageBean, AlarmMessa
                 });
             }
         }
+    }
+
+    public interface AlarmMessageAdapterLongClick {
+        void selsectChange();
+
+        void adapeterClick(PushMessageBean mPushMessageBean);
     }
 
 }

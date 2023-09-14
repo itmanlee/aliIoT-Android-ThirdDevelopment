@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.aliIoT.demo.model.AliyunChannelAbilityBean;
 import com.aliIoT.demo.model.ChannelAbilityBean;
@@ -32,24 +33,20 @@ import org.json.JSONObject;
  */
 public class ChannelConfigActivity extends AppCompatActivity implements View.OnClickListener {
 
-    ImageView mBackView;
-    LinearLayout mInfoLinearLayout;
-    LinearLayout mEcodeSetLinearLayout;
-    LinearLayout mVideoSetLayout;
-
-    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanMain;
-    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanChild;
-    private ChannelAbilityBean mChannelAbilityBean;
-
-    String iotID = MyApplication.getInstance().getIotID();
-    Gson gson = new Gson();
-
     static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
     static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
     static final int ALIYUNSERVICE_GET_CHANNELABILITY = 3;
     static final int ALIYUNSERVICE_DEVICE_ENCODE_ABILITY_MAIN = 4;
     static final int ALIYUNSERVICE_DEVICE_ENCODE_ABILITY_CHILD = 5;
-
+    ImageView mBackView;
+    LinearLayout mInfoLinearLayout;
+    LinearLayout mEcodeSetLinearLayout;
+    LinearLayout mVideoSetLayout;
+    String iotID = MyApplication.getInstance().getIotID();
+    Gson gson = new Gson();
+    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanMain;
+    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanChild;
+    private ChannelAbilityBean mChannelAbilityBean;
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {

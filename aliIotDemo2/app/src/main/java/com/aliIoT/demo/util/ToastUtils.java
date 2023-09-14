@@ -10,23 +10,22 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.aliIoT.demo.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.aliIoT.demo.R;
-
 public class ToastUtils {
+    private static ToastUtils mToastUtils = null;
+    Handler mainHandle = new Handler((Looper.getMainLooper()));
+    private Map<Context, String> map = new HashMap<>();
+    private Toast toast;
+
     public static ToastUtils getToastUtils() {
         if (mToastUtils == null)
             mToastUtils = new ToastUtils();
         return mToastUtils;
     }
-
-    private static ToastUtils mToastUtils = null;
-    private Map<Context, String> map = new HashMap<>();
-    private Toast toast;
-    Handler mainHandle = new Handler((Looper.getMainLooper()));
 
     public void addContext(Context c) {
         if (c != null)

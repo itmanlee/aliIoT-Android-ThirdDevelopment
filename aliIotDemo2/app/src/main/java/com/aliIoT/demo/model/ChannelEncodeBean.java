@@ -7,10 +7,31 @@ import android.os.Parcelable;
  * Created by hjt on 2020/6/20
  */
 public class ChannelEncodeBean implements Parcelable {
+    public static final Creator<ChannelEncodeBean> CREATOR = new Creator<ChannelEncodeBean>() {
+        @Override
+        public ChannelEncodeBean createFromParcel(Parcel source) {
+            return new ChannelEncodeBean(source);
+        }
+
+        @Override
+        public ChannelEncodeBean[] newArray(int size) {
+            return new ChannelEncodeBean[size];
+        }
+    };
     private String iotid;
     private String fratherIotId;
     private String channelName;
     private AliyunChannelEncodeBean mAliyunChannelEncodeBean;
+
+    public ChannelEncodeBean() {
+    }
+
+    protected ChannelEncodeBean(Parcel in) {
+        this.iotid = in.readString();
+        this.fratherIotId = in.readString();
+        this.channelName = in.readString();
+        this.mAliyunChannelEncodeBean = in.readParcelable(AliyunChannelEncodeBean.class.getClassLoader());
+    }
 
     public String getIotid() {
         return iotid;
@@ -44,7 +65,6 @@ public class ChannelEncodeBean implements Parcelable {
         this.mAliyunChannelEncodeBean = mAliyunChannelEncodeBean;
     }
 
-
     @Override
     public int describeContents() {
         return 0;
@@ -58,29 +78,7 @@ public class ChannelEncodeBean implements Parcelable {
         dest.writeParcelable(this.mAliyunChannelEncodeBean, flags);
     }
 
-    public ChannelEncodeBean() {
-    }
-
-    protected ChannelEncodeBean(Parcel in) {
-        this.iotid = in.readString();
-        this.fratherIotId = in.readString();
-        this.channelName = in.readString();
-        this.mAliyunChannelEncodeBean = in.readParcelable(AliyunChannelEncodeBean.class.getClassLoader());
-    }
-
-    public static final Creator<ChannelEncodeBean> CREATOR = new Creator<ChannelEncodeBean>() {
-        @Override
-        public ChannelEncodeBean createFromParcel(Parcel source) {
-            return new ChannelEncodeBean(source);
-        }
-
-        @Override
-        public ChannelEncodeBean[] newArray(int size) {
-            return new ChannelEncodeBean[size];
-        }
-    };
-
-    public  ChannelEncodeBean copyChannelEncodeBean() {
+    public ChannelEncodeBean copyChannelEncodeBean() {
         ChannelEncodeBean channelEncodeBean = new ChannelEncodeBean();
         channelEncodeBean.setChannelName(channelName);
         channelEncodeBean.setIotid(iotid);

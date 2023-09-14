@@ -1,17 +1,19 @@
 package com.aliIoT.demo.util;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 public abstract class BaseAdapter<T, V> extends RecyclerView.Adapter<SmipleViewHolder> {
+    List<T> list;
+    V listener;
+
     public List<T> getList() {
         return list;
     }
-
-    List<T> list;
 
     public void setData(List<T> list) {
         this.list = list;
@@ -22,14 +24,12 @@ public abstract class BaseAdapter<T, V> extends RecyclerView.Adapter<SmipleViewH
         this.listener = listener;
     }
 
-    V listener;
-
     public abstract int getLayoutId(int viewType);
 
     @NonNull
     @Override
     public SmipleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        SmipleViewHolder viewHolder = SmipleViewHolder.getHolder(MyApplication.getInstance(), parent, getLayoutId(viewType),viewType);
+        SmipleViewHolder viewHolder = SmipleViewHolder.getHolder(MyApplication.getInstance(), parent, getLayoutId(viewType), viewType);
         return viewHolder;
     }
 

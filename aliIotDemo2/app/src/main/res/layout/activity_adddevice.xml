@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bai"
@@ -44,8 +42,8 @@
             android:layout_marginRight="10dp"
             android:layout_weight="3"
             android:background="@drawable/edit_circle"
-            android:text="3JWTCE5ZWGgD8ZOvDaIH"
-            android:paddingLeft="10dp" />
+            android:paddingLeft="10dp"
+            android:text="3JWTCE5ZWGgD8ZOvDaIH" />
 
     </LinearLayout>
 
@@ -108,9 +106,9 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:inputType="number"
             android:layout_weight="3"
             android:background="@drawable/edit_circle"
+            android:inputType="number"
             android:paddingLeft="10dp"
             android:text="1" />
 
@@ -120,17 +118,17 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/bai_s"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/adddevice_add"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:padding="5dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/circle_rectangle_blue_base"
         android:foreground="@drawable/ripple_bg_gray"
+        android:padding="5dp"
         android:text="添加设备"
         android:textColor="@color/bai" />
 
@@ -139,12 +137,12 @@
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:padding="5dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/circle_rectangle_blue_base"
         android:foreground="@drawable/ripple_bg_gray"
+        android:padding="5dp"
         android:text="退出登录"
         android:textColor="@color/bai"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 </LinearLayout>

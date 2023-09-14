@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bai"
@@ -20,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:background="@mipmap/arrow_left_white"
-            android:foreground="@drawable/ripple_bg_gray"/>
+            android:foreground="@drawable/ripple_bg_gray" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -224,9 +223,9 @@
             android:id="@+id/realplay_flip"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:background="@color/bai_s"
             android:clickable="true"
+            android:orientation="vertical"
             android:visibility="gone">
 
             <RelativeLayout
@@ -237,26 +236,26 @@
                     android:id="@+id/realplay_flip_close"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/circle_rectangle_blue_base"
                     android:foreground="@drawable/ripple_bg_gray"
-                    android:text="取消"
-                    android:paddingRight="10dp"
                     android:paddingLeft="10dp"
                     android:paddingTop="5dp"
+                    android:paddingRight="10dp"
                     android:paddingBottom="5dp"
-                    android:textSize="15sp"
-                    android:textColor="@color/bai" />
+                    android:text="取消"
+                    android:textColor="@color/bai"
+                    android:textSize="15sp" />
 
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/realplay_flip_tv1"
@@ -266,18 +265,18 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/circle_rectangle_blue_base"
                     android:foreground="@drawable/ripple_bg_gray"
-                    android:text="关闭"
-                    android:textSize="15sp"
-                    android:paddingRight="10dp"
                     android:paddingLeft="10dp"
                     android:paddingTop="5dp"
+                    android:paddingRight="10dp"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/bai" />
+                    android:text="关闭"
+                    android:textColor="@color/bai"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/realplay_flip_tv2"
@@ -286,18 +285,18 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/circle_rectangle_blue_base"
                     android:foreground="@drawable/ripple_bg_gray"
-                    android:text="水平镜像"
-                    android:textSize="15sp"
-                    android:paddingRight="10dp"
                     android:paddingLeft="10dp"
                     android:paddingTop="5dp"
+                    android:paddingRight="10dp"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/bai" />
+                    android:text="水平镜像"
+                    android:textColor="@color/bai"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/realplay_flip_tv3"
@@ -306,18 +305,18 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/circle_rectangle_blue_base"
                     android:foreground="@drawable/ripple_bg_gray"
-                    android:text="垂直镜像"
-                    android:textSize="15sp"
-                    android:paddingRight="10dp"
                     android:paddingLeft="10dp"
                     android:paddingTop="5dp"
+                    android:paddingRight="10dp"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/bai" />
+                    android:text="垂直镜像"
+                    android:textColor="@color/bai"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <TextView
                     android:id="@+id/realplay_flip_tv4"
@@ -327,28 +326,28 @@
                     android:layout_marginRight="10dp"
                     android:background="@drawable/circle_rectangle_blue_base"
                     android:foreground="@drawable/ripple_bg_gray"
-                    android:text="顺时针180旋转"
-                    android:textSize="15sp"
-                    android:paddingRight="10dp"
                     android:paddingLeft="10dp"
                     android:paddingTop="5dp"
+                    android:paddingRight="10dp"
                     android:paddingBottom="5dp"
-                    android:textColor="@color/bai" />
+                    android:text="顺时针180旋转"
+                    android:textColor="@color/bai"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.ConstraintLayout
             android:id="@+id/realplay_light"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:background="@color/bai_s"
             android:clickable="true"
-            android:visibility="gone">
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
 
             <LinearLayout
 
@@ -388,15 +387,16 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/bai"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:background="@color/bai" />
 
                     <RelativeLayout
                         android:id="@+id/realplay_light_day_night"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="2">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -414,6 +414,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_centerInParent="true"
                             android:orientation="horizontal">
+
                             <TextView
                                 android:id="@+id/realplay_light_day_night_tv"
                                 android:layout_width="wrap_content"
@@ -422,6 +423,7 @@
                                 android:text=""
                                 android:textColor="@color/hei"
                                 android:textSize="15sp" />
+
                             <ImageView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -433,9 +435,9 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/bai"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:background="@color/bai" />
                     <!--1、灯板工作模式-->
                     <RelativeLayout
                         android:id="@+id/realplay_light_mode"
@@ -481,9 +483,9 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/bai"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:background="@color/bai" />
 
                     <!--2、红外灯板状态-->
                     <RelativeLayout
@@ -529,9 +531,9 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/bai"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:background="@color/bai" />
 
                     <!--3、亮度（ProgressBar版），范围为0—100-->
                     <FrameLayout
@@ -552,8 +554,8 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
                                     android:layout_alignParentLeft="true"
+                                    android:layout_alignParentBottom="true"
                                     android:layout_marginLeft="15dp"
                                     android:text="亮度"
                                     android:textColor="@color/hei"
@@ -563,8 +565,8 @@
                                     android:id="@+id/realplay_light_pro_tv"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentBottom="true"
                                     android:layout_alignParentRight="true"
+                                    android:layout_alignParentBottom="true"
                                     android:layout_marginRight="15dp"
                                     android:text="0"
                                     android:textColor="@color/hei"
@@ -581,10 +583,10 @@
                                     style="?android:attr/progressBarStyleHorizontal"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:max="100"
-                                    android:min="1"
                                     android:layout_marginLeft="15dp"
-                                    android:layout_marginRight="15dp" />
+                                    android:layout_marginRight="15dp"
+                                    android:max="100"
+                                    android:min="1" />
                             </RelativeLayout>
                         </LinearLayout>
                     </FrameLayout>
@@ -592,9 +594,9 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="0.5dp"
-                        android:background="@color/bai"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"/>
+                        android:layout_marginRight="10dp"
+                        android:background="@color/bai" />
 
                     <!--保存-->
                     <RelativeLayout
@@ -617,101 +619,107 @@
             </LinearLayout>
 
 
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/realplay_osd"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:background="@color/bai_s"
             android:clickable="true"
+            android:orientation="vertical"
             android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
                     android:text="显示通道名称"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"/>
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <CheckBox
                     android:id="@+id/realplay_osd_cb1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
                     android:text="显示时间和日期"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"/>
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <CheckBox
                     android:id="@+id/realplay_osd_cb2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:visibility="gone">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
                     android:text="显示网络状态"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"/>
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <CheckBox
                     android:id="@+id/realplay_osd_cb3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_gravity="center_vertical" />
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="15dp" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/realplay_osd_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:padding="10dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
                 android:foreground="@drawable/ripple_bg_gray"
+                android:padding="10dp"
                 android:text="取消"
-                android:textSize="16sp"
-                android:textColor="@color/hei"/>
+                android:textColor="@color/hei"
+                android:textSize="16sp" />
 
         </LinearLayout>
 
@@ -719,9 +727,9 @@
             android:id="@+id/realplay_ptz"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:background="@color/bai_s"
             android:clickable="true"
+            android:orientation="vertical"
             android:visibility="gone">
 
             <LinearLayout
@@ -740,15 +748,16 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="40dp"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/realplay_ptz_ptz_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:foreground="@drawable/ripple_bg_gray"
                         android:text="云台"
                         android:textColor="@color/hei"
-                        android:textSize="16dp"
-                        android:foreground="@drawable/ripple_bg_gray" />
+                        android:textSize="16dp" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -757,32 +766,35 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:orientation="vertical">
+
                     <TextView
                         android:id="@+id/realplay_ptz_yzd_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
+                        android:foreground="@drawable/ripple_bg_gray"
                         android:text="预置点"
                         android:textColor="@color/hui_s"
-                        android:textSize="16sp"
-                        android:foreground="@drawable/ripple_bg_gray"/>
+                        android:textSize="16sp" />
                 </RelativeLayout>
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
+
                 <TextView
                     android:id="@+id/realplay_ptz_exit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="取消"
-                    android:textColor="@color/hei"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginBottom="10dp"
+                    android:foreground="@drawable/ripple_bg_gray"
                     android:padding="5dp"
-                    android:foreground="@drawable/ripple_bg_gray"/>
+                    android:text="取消"
+                    android:textColor="@color/hei" />
             </LinearLayout>
 
             <LinearLayout
@@ -795,7 +807,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1" />
 
                 <FrameLayout
                     android:id="@+id/realplay_ptz_content"
@@ -812,11 +824,13 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical"
                         android:visibility="gone">
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="1">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -825,11 +839,13 @@
                                 android:text="预置点"
                                 android:textColor="@color/hei"
                                 android:textSize="14sp" />
+
                             <LinearLayout
                                 android:id="@+id/realplay_ptz_yzd_ly"
                                 android:layout_width="match_parent"
                                 android:layout_height="100dp"
                                 android:layout_marginLeft="10dp">
+
                                 <com.itheima.wheelpicker.WheelPicker
                                     android:id="@+id/realplay_ptz_wp"
                                     android:layout_width="0dp"
@@ -866,6 +882,7 @@
                                 android:layout_gravity="center_horizontal"
                                 android:layout_weight="1"
                                 android:foreground="@drawable/ripple_bg_gray">
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -903,27 +920,29 @@
                         android:id="@+id/realplay_ptz_ptz_ly"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:orientation="vertical"
-                        android:visibility="visible"
-                        android:gravity="center">
+                        android:visibility="visible">
 
                         <!--yxy变倍-->
                         <LinearLayout
                             android:id="@+id/realplay_ptz_zoom_ly"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:visibility="visible"
-                            android:layout_margin="10dp">
+                            android:layout_margin="10dp"
+                            android:visibility="visible">
+
                             <TextView
                                 android:id="@+id/realplay_ptz_zoom_in"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="left|center"
+                                android:clickable="true"
                                 android:padding="5dp"
-                                android:textSize="20sp"
                                 android:text="+"
                                 android:textColor="@color/hei"
-                                android:clickable="true" />
+                                android:textSize="20sp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -934,17 +953,18 @@
                                 android:text="变倍"
                                 android:textColor="@color/hei"
                                 android:textSize="14sp" />
+
                             <TextView
                                 android:id="@+id/realplay_ptz_zoom_out"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right|center"
                                 android:layout_marginRight="15dp"
-                                android:textSize="20sp"
+                                android:clickable="true"
                                 android:padding="5dp"
                                 android:text="-"
                                 android:textColor="@color/hei"
-                                android:clickable="true" />
+                                android:textSize="20sp" />
                         </LinearLayout>
 
                         <!--yxy聚焦-->
@@ -952,18 +972,20 @@
                             android:id="@+id/realplay_ptz_focus_ly"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:visibility="visible"
-                            android:layout_margin="10dp">
+                            android:layout_margin="10dp"
+                            android:visibility="visible">
+
                             <TextView
                                 android:id="@+id/realplay_ptz_focus_in"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right|center"
-                                android:textSize="20sp"
+                                android:clickable="true"
                                 android:padding="5dp"
                                 android:text="+"
                                 android:textColor="@color/hei"
-                                android:clickable="true" />
+                                android:textSize="20sp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -974,17 +996,18 @@
                                 android:text="聚焦"
                                 android:textColor="@color/hei"
                                 android:textSize="14sp" />
+
                             <TextView
                                 android:id="@+id/realplay_ptz_focus_out"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right|center"
                                 android:layout_marginRight="15dp"
-                                android:textSize="20sp"
+                                android:clickable="true"
                                 android:padding="5dp"
                                 android:text="-"
                                 android:textColor="@color/hei"
-                                android:clickable="true" />
+                                android:textSize="20sp" />
                         </LinearLayout>
 
                         <!--yxy光圈-->
@@ -992,18 +1015,20 @@
                             android:id="@+id/realplay_ptz_iris_ly"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:visibility="visible"
-                            android:layout_margin="10dp">
+                            android:layout_margin="10dp"
+                            android:visibility="visible">
+
                             <TextView
                                 android:id="@+id/realplay_ptz_iris_in"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right|center"
-                                android:textSize="20sp"
+                                android:clickable="true"
                                 android:padding="5dp"
                                 android:text="+"
                                 android:textColor="@color/hei"
-                                android:clickable="true"  />
+                                android:textSize="20sp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -1014,17 +1039,18 @@
                                 android:text="光圈"
                                 android:textColor="@color/hei"
                                 android:textSize="14sp" />
+
                             <TextView
                                 android:id="@+id/realplay_ptz_iris_out"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="right|center"
                                 android:layout_marginRight="15dp"
-                                android:textSize="20sp"
+                                android:clickable="true"
                                 android:padding="5dp"
                                 android:text="-"
                                 android:textColor="@color/hei"
-                                android:clickable="true" />
+                                android:textSize="20sp" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -1039,9 +1065,9 @@
             android:id="@+id/realplay_color"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:background="@color/bai_s"
             android:clickable="true"
+            android:orientation="vertical"
             android:visibility="gone">
 
             <LinearLayout
@@ -1051,32 +1077,32 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="亮度"/>
+                    android:layout_weight="1"
+                    android:text="亮度"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
                 <SeekBar
                     android:id="@+id/realplay_color_sb1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="4"
-                    android:min="1"
                     android:max="256"
-                    android:layout_gravity="center_vertical"/>
+                    android:min="1" />
 
                 <TextView
                     android:id="@+id/realplay_color_tv1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="0"/>
+                    android:text="0"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -1087,32 +1113,32 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="对比度"/>
+                    android:layout_weight="1"
+                    android:text="对比度"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
                 <SeekBar
                     android:id="@+id/realplay_color_sb2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="4"
-                    android:min="1"
                     android:max="256"
-                    android:layout_gravity="center_vertical"/>
+                    android:min="1" />
 
                 <TextView
                     android:id="@+id/realplay_color_tv2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="0"/>
+                    android:text="0"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -1123,32 +1149,32 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="饱和度"/>
+                    android:layout_weight="1"
+                    android:text="饱和度"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
                 <SeekBar
                     android:id="@+id/realplay_color_sb3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="4"
-                    android:min="1"
                     android:max="256"
-                    android:layout_gravity="center_vertical"/>
+                    android:min="1" />
 
                 <TextView
                     android:id="@+id/realplay_color_tv3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="0"/>
+                    android:text="0"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -1159,32 +1185,32 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
-                    android:text="色度"/>
+                    android:layout_weight="1"
+                    android:text="色度"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
                 <SeekBar
                     android:id="@+id/realplay_color_sb4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="4"
-                    android:min="1"
                     android:max="256"
-                    android:layout_gravity="center_vertical"/>
+                    android:min="1" />
 
                 <TextView
                     android:id="@+id/realplay_color_tv4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
-                    android:textColor="@color/hei"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:text="0"/>
+                    android:text="0"
+                    android:textColor="@color/hei"
+                    android:textSize="15sp" />
 
             </LinearLayout>
 
@@ -1192,25 +1218,25 @@
                 android:id="@+id/realplay_color_default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="@color/hei"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="40dp"
                 android:layout_gravity="center_horizontal"
-                android:text="恢复默认"/>
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="15dp"
+                android:text="恢复默认"
+                android:textColor="@color/hei"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/realplay_color_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="@color/hei"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center_horizontal"
-                android:text="取消"/>
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:text="取消"
+                android:textColor="@color/hei"
+                android:textSize="15sp" />
 
         </LinearLayout>
 

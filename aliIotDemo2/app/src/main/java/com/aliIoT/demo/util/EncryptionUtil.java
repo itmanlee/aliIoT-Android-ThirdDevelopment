@@ -2,12 +2,11 @@ package com.aliIoT.demo.util;
 
 import android.text.TextUtils;
 
+import com.aliIoT.demo.model.ParameterVerifyBean;
 
 import java.security.MessageDigest;
 import java.util.Collections;
 import java.util.List;
-
-import com.aliIoT.demo.model.ParameterVerifyBean;
 
 /**
  *
@@ -30,7 +29,7 @@ public class EncryptionUtil {
 
     public static int creatIndexRandom(int count) {
         int i = (int) (Math.random() * count);
-         i = 2;
+        i = 2;
         return i;
     }
 

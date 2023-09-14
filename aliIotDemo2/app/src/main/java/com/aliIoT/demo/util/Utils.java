@@ -14,6 +14,8 @@ import android.util.Base64;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.aliIoT.demo.R;
+import com.aliIoT.demo.model.DeviceInfoBean;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -31,13 +33,12 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 import java.util.zip.Inflater;
 
-import com.aliIoT.demo.R;
-import com.aliIoT.demo.model.DeviceInfoBean;
-
 /**
  * Created by hjt on 2020/9/16
  */
 public class Utils {
+    public final static String secretKey = "WuHanEnZhiCoLtd";
+
     /**
      * 检测字符串是否为纯数字或带有@符
      *
@@ -283,14 +284,6 @@ public class Utils {
         }
     }
 
-    public String streamTypeToString(int mStreamType) {
-        String str = MyApplication.getInstance().getString(R.string.stream_type_main);
-        if (mStreamType == ConstUtil.STREAMTYPE_CHILD) {
-            str = MyApplication.getInstance().getString(R.string.stream_type_child);
-        }
-        return str;
-    }
-
     public static boolean isInteger(String str) {
         Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
 
@@ -320,8 +313,6 @@ public class Utils {
         }
         return str;
     }
-
-    public final static String secretKey = "WuHanEnZhiCoLtd";
 
     //!去掉byte中多余的0
     public static String byteToStr(byte[] buffer) {
@@ -538,18 +529,17 @@ public class Utils {
         return baos.toByteArray();
     }
 
-
-
     /**
      * 包括空格判断
+     *
      * @param input
      * @return
      */
-    public static boolean containSpace(CharSequence input){
+    public static boolean containSpace(CharSequence input) {
         return Pattern.compile("\\s+").matcher(input).find();
     }
 
-    public static boolean containSpace(String input){
+    public static boolean containSpace(String input) {
         return Pattern.compile("\\s+").matcher(input).find();
     }
 
@@ -596,6 +586,14 @@ public class Utils {
             retVal[i] = (short) ((data[i * 2] & 0xff) | (data[i * 2 + 1] & 0xff) << 8);
         }
         return retVal;
+    }
+
+    public String streamTypeToString(int mStreamType) {
+        String str = MyApplication.getInstance().getString(R.string.stream_type_main);
+        if (mStreamType == ConstUtil.STREAMTYPE_CHILD) {
+            str = MyApplication.getInstance().getString(R.string.stream_type_child);
+        }
+        return str;
     }
 
 }

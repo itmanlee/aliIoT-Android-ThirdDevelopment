@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.aliIoT.demo.util.ASlideDialog;
 import com.aliIoT.demo.util.MyApplication;
-import com.alibaba.sdk.android.openaccount.OauthService;
 import com.alibaba.sdk.android.openaccount.OpenAccountSDK;
 import com.alibaba.sdk.android.openaccount.callback.LoginCallback;
 import com.alibaba.sdk.android.openaccount.model.OpenAccountSession;

@@ -29,18 +29,6 @@ public class TitleItemBean<T> {
         return objectTitleItemBean;
     }
 
-    public void setRightImageResId(int rightImageResId) {
-        this.rightImageResId = rightImageResId;
-    }
-
-    public void setItemRightInfo(String itemRightInfo) {
-        this.itemRightInfo = itemRightInfo;
-    }
-
-    public void setSelectStatus(boolean selectStatus) {
-        this.selectStatus = selectStatus;
-    }
-
     public String getItemName() {
         return itemName;
     }
@@ -49,8 +37,16 @@ public class TitleItemBean<T> {
         return itemRightInfo;
     }
 
+    public void setItemRightInfo(String itemRightInfo) {
+        this.itemRightInfo = itemRightInfo;
+    }
+
     public int getRightImageResId() {
         return rightImageResId;
+    }
+
+    public void setRightImageResId(int rightImageResId) {
+        this.rightImageResId = rightImageResId;
     }
 
     public boolean getRightImIsSelect() {
@@ -59,6 +55,10 @@ public class TitleItemBean<T> {
 
     public boolean getSelectStatus() {
         return selectStatus;
+    }
+
+    public void setSelectStatus(boolean selectStatus) {
+        this.selectStatus = selectStatus;
     }
 
     public int getItemType() {
@@ -86,12 +86,12 @@ public class TitleItemBean<T> {
         init(itemName, rightImageResId, "", itemType);
     }
 
-    public void init(String itemName, int rightImageResId, int itemType,boolean isUpgradeStatus) { //固件升级专用
-        init(itemName, rightImageResId, itemType, t, "", false, false,isUpgradeStatus);
+    public void init(String itemName, int rightImageResId, int itemType, boolean isUpgradeStatus) { //固件升级专用
+        init(itemName, rightImageResId, itemType, t, "", false, false, isUpgradeStatus);
     }
 
     public void init(String itemName, int rightImageResId, int itemType, T t) {
-        init(itemName, rightImageResId, itemType, t, "", false, false,false);
+        init(itemName, rightImageResId, itemType, t, "", false, false, false);
     }
 
     public void init(String itemName, int rightImageResId, String itemRightInfo, int itemType) {
@@ -99,11 +99,11 @@ public class TitleItemBean<T> {
     }
 
     public void init(String itemName, int rightImageResId, String itemRightInfo, int itemType, T t) {
-        init(itemName, rightImageResId, itemType, t, itemRightInfo, false, false,false);
+        init(itemName, rightImageResId, itemType, t, itemRightInfo, false, false, false);
     }
 
     public void init(String itemName, int rightImageResId, int itemType, boolean rightImIsSelect, boolean selectStatus) {
-        init(itemName, rightImageResId, itemType, null, "", rightImIsSelect, selectStatus,false);
+        init(itemName, rightImageResId, itemType, null, "", rightImIsSelect, selectStatus, false);
 
     }
 

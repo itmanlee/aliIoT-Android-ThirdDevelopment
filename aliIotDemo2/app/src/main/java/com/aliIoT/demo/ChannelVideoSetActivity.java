@@ -4,10 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.Group;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -23,6 +19,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Group;
 
 import com.aliIoT.demo.model.RecordPlanBean;
 import com.aliIoT.demo.model.RecordPlanTime;
@@ -48,6 +49,10 @@ import java.util.Map;
  */
 public class ChannelVideoSetActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String TAG = "ChannelVideoSetFragment";
+    static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
+    static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
+    static final int ALIYUNSERVICE_GET_CHANNELABILITY = 3;
+    static final int ALIYUNSERVICE_DEVICE_RECORDING_PLAN = 5;
     ImageView mBackView;
     TextView mSaveView;
     TextView channelVideoSetLayoutTvRight;
@@ -102,20 +107,15 @@ public class ChannelVideoSetActivity extends AppCompatActivity implements View.O
     ConstraintLayout channelVideoSetLayoutPrerecordTimeCl;
     TextView channelVideoSetLayoutVideoDelayTvRight;
     ConstraintLayout channelVideoSetLayoutVideoDelayCl;
-
     int showTimeQuantum = 0;
-    private RecordPlanBean mRecordPlanBean;
     ImageView channelVideoSetLayoutIVRight;
-
     String iotID = MyApplication.getInstance().getIotID();
     Gson gson = new Gson();
-
-    static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
-    static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
-    static final int ALIYUNSERVICE_GET_CHANNELABILITY = 3;
-    static final int ALIYUNSERVICE_DEVICE_RECORDING_PLAN = 5;
-
-
+    PopupWindow mSerarchWindow = null;
+    PopupWindow mTimeWindow = null;
+    int hour = 0;
+    int minute = 0;
+    private RecordPlanBean mRecordPlanBean;
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
@@ -725,7 +725,6 @@ public class ChannelVideoSetActivity extends AppCompatActivity implements View.O
         Toast.makeText(this, str, Toast.LENGTH_LONG).show();
     }
 
-
     private void initData(RecordPlanBean mRecordPlanBean) {
         channelVideoSetLayoutVideoModelTvRight.setText(mRecordPlanBean.recordModeToString());
         channelVideoSetLayoutWeekTvRight.setText(TimeUtils.intToWeek2(0));
@@ -1083,9 +1082,6 @@ public class ChannelVideoSetActivity extends AppCompatActivity implements View.O
                 , "RecordConfig", jsonObject);
     }
 
-
-    PopupWindow mSerarchWindow = null;
-
     public void showDialog(int mType, String title, List<String> lists) {
 
         LayoutInflater layoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -1115,10 +1111,6 @@ public class ChannelVideoSetActivity extends AppCompatActivity implements View.O
     public void showWindow(View view) {
         mSerarchWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
     }
-
-    PopupWindow mTimeWindow = null;
-    int hour = 0;
-    int minute = 0;
 
     public void showTimeDialog(int mType, String nowTime) {
 

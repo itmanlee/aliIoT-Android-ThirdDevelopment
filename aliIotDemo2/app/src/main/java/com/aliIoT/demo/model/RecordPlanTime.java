@@ -7,10 +7,31 @@ import android.os.Parcelable;
  * Created by hjt on 2020/8/4
  */
 public class RecordPlanTime implements Parcelable {
+    public static final Creator<RecordPlanTime> CREATOR = new Creator<RecordPlanTime>() {
+        @Override
+        public RecordPlanTime createFromParcel(Parcel source) {
+            return new RecordPlanTime(source);
+        }
+
+        @Override
+        public RecordPlanTime[] newArray(int size) {
+            return new RecordPlanTime[size];
+        }
+    };
     private int startHour;
     private int startMinute;
     private int endHour;
     private int endMinute;
+
+    public RecordPlanTime() {
+    }
+
+    protected RecordPlanTime(Parcel in) {
+        this.startHour = in.readInt();
+        this.startMinute = in.readInt();
+        this.endHour = in.readInt();
+        this.endMinute = in.readInt();
+    }
 
     public int getStartHour() {
         return startHour;
@@ -56,26 +77,4 @@ public class RecordPlanTime implements Parcelable {
         dest.writeInt(this.endHour);
         dest.writeInt(this.endMinute);
     }
-
-    public RecordPlanTime() {
-    }
-
-    protected RecordPlanTime(Parcel in) {
-        this.startHour = in.readInt();
-        this.startMinute = in.readInt();
-        this.endHour = in.readInt();
-        this.endMinute = in.readInt();
-    }
-
-    public static final Creator<RecordPlanTime> CREATOR = new Creator<RecordPlanTime>() {
-        @Override
-        public RecordPlanTime createFromParcel(Parcel source) {
-            return new RecordPlanTime(source);
-        }
-
-        @Override
-        public RecordPlanTime[] newArray(int size) {
-            return new RecordPlanTime[size];
-        }
-    };
 }

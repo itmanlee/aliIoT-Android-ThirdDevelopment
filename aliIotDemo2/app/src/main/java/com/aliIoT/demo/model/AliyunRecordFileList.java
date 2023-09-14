@@ -7,6 +7,7 @@ import java.util.List;
  */
 public class AliyunRecordFileList {
     private List<TimeListBean> TimeList;
+    private String iotid;
 
     public String getIotid() {
         return iotid;
@@ -16,7 +17,6 @@ public class AliyunRecordFileList {
         this.iotid = iotid;
     }
 
-    private String iotid;
     public List<TimeListBean> getTimeList() {
         return TimeList;
     }

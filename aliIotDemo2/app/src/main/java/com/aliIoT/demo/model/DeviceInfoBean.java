@@ -3,14 +3,24 @@ package com.aliIoT.demo.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import com.aliIoT.demo.util.ConstUtil;
+import com.alibaba.fastjson.annotation.JSONField;
 
 /**
  * Created by hjt on 2020/5/9
  */
 public class DeviceInfoBean implements Parcelable {
+    public static final Creator<DeviceInfoBean> CREATOR = new Creator<DeviceInfoBean>() {
+        @Override
+        public DeviceInfoBean createFromParcel(Parcel source) {
+            return new DeviceInfoBean(source);
+        }
+
+        @Override
+        public DeviceInfoBean[] newArray(int size) {
+            return new DeviceInfoBean[size];
+        }
+    };
     @JSONField(name = "iotId")
     public String deviceId;
     @JSONField(name = "deviceName")
@@ -54,6 +64,34 @@ public class DeviceInfoBean implements Parcelable {
     @JSONField(name = "bound")
     public int childBound;
     private DevicePropertyBean mDevicePropertyBean;
+
+    public DeviceInfoBean() {
+    }
+
+    protected DeviceInfoBean(Parcel in) {
+        this.deviceId = in.readString();
+        this.deviceName = in.readString();
+        this.deviceNickName = in.readString();
+        this.productKey = in.readString();
+        this.productName = in.readString();
+        this.productImage = in.readString();
+        this.productModel = in.readString();
+        this.categoryImage = in.readString();
+        this.netType = in.readString();
+        this.thingType = in.readString();
+        this.identityAlias = in.readString();
+        this.status = in.readInt();
+        this.owned = in.readInt();
+        this.nodeType = in.readString();
+        this.subDevice = in.readByte() != 0;
+        this.gmtModified = in.readString();
+        this.deviceHasAI = in.readByte() != 0;
+        this.deviceHasYun = in.readByte() != 0;
+        this.isEdgeGateway = in.readByte() != 0;
+        this.bindTime = in.readLong();
+        this.identityId = in.readString();
+        this.childBound = in.readInt();
+    }
 
     public DevicePropertyBean getmDevicePropertyBean() {
         return mDevicePropertyBean;
@@ -183,7 +221,6 @@ public class DeviceInfoBean implements Parcelable {
         this.identityAlias = identityAlias;
     }
 
-
     public int getStatus() {
         return status;
     }
@@ -228,18 +265,6 @@ public class DeviceInfoBean implements Parcelable {
         return deviceHasAI;
     }
 
-    public void setDeviceHasAI(boolean deviceHasAI) {
-        this.deviceHasAI = deviceHasAI;
-    }
-
-    public boolean isDeviceHasYun() {
-        return deviceHasYun;
-    }
-
-    public void setDeviceHasYun(boolean deviceHasYun) {
-        this.deviceHasYun = deviceHasYun;
-    }
-
 
 
     /* "identityId":"xxx",
@@ -260,8 +285,16 @@ public class DeviceInfoBean implements Parcelable {
              "subDevice":false,
              "gmtModified":"xxx"*/
 
+    public void setDeviceHasAI(boolean deviceHasAI) {
+        this.deviceHasAI = deviceHasAI;
+    }
 
-    public DeviceInfoBean() {
+    public boolean isDeviceHasYun() {
+        return deviceHasYun;
+    }
+
+    public void setDeviceHasYun(boolean deviceHasYun) {
+        this.deviceHasYun = deviceHasYun;
     }
 
     public int getDeviceType() {
@@ -271,7 +304,6 @@ public class DeviceInfoBean implements Parcelable {
             return ConstUtil.DEVICE_TYPE_IPC;
         }
     }
-
 
     @Override
     public int describeContents() {
@@ -303,41 +335,4 @@ public class DeviceInfoBean implements Parcelable {
         dest.writeString(this.identityId);
         dest.writeInt(this.childBound);
     }
-
-    protected DeviceInfoBean(Parcel in) {
-        this.deviceId = in.readString();
-        this.deviceName = in.readString();
-        this.deviceNickName = in.readString();
-        this.productKey = in.readString();
-        this.productName = in.readString();
-        this.productImage = in.readString();
-        this.productModel = in.readString();
-        this.categoryImage = in.readString();
-        this.netType = in.readString();
-        this.thingType = in.readString();
-        this.identityAlias = in.readString();
-        this.status = in.readInt();
-        this.owned = in.readInt();
-        this.nodeType = in.readString();
-        this.subDevice = in.readByte() != 0;
-        this.gmtModified = in.readString();
-        this.deviceHasAI = in.readByte() != 0;
-        this.deviceHasYun = in.readByte() != 0;
-        this.isEdgeGateway = in.readByte() != 0;
-        this.bindTime = in.readLong();
-        this.identityId = in.readString();
-        this.childBound = in.readInt();
-    }
-
-    public static final Creator<DeviceInfoBean> CREATOR = new Creator<DeviceInfoBean>() {
-        @Override
-        public DeviceInfoBean createFromParcel(Parcel source) {
-            return new DeviceInfoBean(source);
-        }
-
-        @Override
-        public DeviceInfoBean[] newArray(int size) {
-            return new DeviceInfoBean[size];
-        }
-    };
 }

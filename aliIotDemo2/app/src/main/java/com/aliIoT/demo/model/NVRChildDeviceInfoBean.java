@@ -1,7 +1,7 @@
 package com.aliIoT.demo.model;
 
-import android.os.Parcelable;
 import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -11,8 +11,19 @@ import java.util.List;
  * Created by Administrator on 2021/6/7 0007.
  */
 
-public class NVRChildDeviceInfoBean implements Parcelable{
+public class NVRChildDeviceInfoBean implements Parcelable {
 
+    public static final Creator<NVRChildDeviceInfoBean> CREATOR = new Creator<NVRChildDeviceInfoBean>() {
+        @Override
+        public NVRChildDeviceInfoBean createFromParcel(Parcel in) {
+            return new NVRChildDeviceInfoBean(in);
+        }
+
+        @Override
+        public NVRChildDeviceInfoBean[] newArray(int size) {
+            return new NVRChildDeviceInfoBean[size];
+        }
+    };
     @SerializedName("WebApiVersion")
     private WebApiVersionDTO webApiVersion;
     @SerializedName("FaceDetectNum")
@@ -117,18 +128,6 @@ public class NVRChildDeviceInfoBean implements Parcelable{
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<NVRChildDeviceInfoBean> CREATOR = new Creator<NVRChildDeviceInfoBean>() {
-        @Override
-        public NVRChildDeviceInfoBean createFromParcel(Parcel in) {
-            return new NVRChildDeviceInfoBean(in);
-        }
-
-        @Override
-        public NVRChildDeviceInfoBean[] newArray(int size) {
-            return new NVRChildDeviceInfoBean[size];
-        }
-    };
 
     public WebApiVersionDTO getWebApiVersion() {
         return webApiVersion;
@@ -243,6 +242,17 @@ public class NVRChildDeviceInfoBean implements Parcelable{
     }
 
     public static class WebApiVersionDTO implements Parcelable {
+        public static final Creator<WebApiVersionDTO> CREATOR = new Creator<WebApiVersionDTO>() {
+            @Override
+            public WebApiVersionDTO createFromParcel(Parcel in) {
+                return new WebApiVersionDTO(in);
+            }
+
+            @Override
+            public WebApiVersionDTO[] newArray(int size) {
+                return new WebApiVersionDTO[size];
+            }
+        };
         @SerializedName("Standard")
         private String standard;
         @SerializedName("Build")
@@ -264,18 +274,6 @@ public class NVRChildDeviceInfoBean implements Parcelable{
             return 0;
         }
 
-        public static final Creator<WebApiVersionDTO> CREATOR = new Creator<WebApiVersionDTO>() {
-            @Override
-            public WebApiVersionDTO createFromParcel(Parcel in) {
-                return new WebApiVersionDTO(in);
-            }
-
-            @Override
-            public WebApiVersionDTO[] newArray(int size) {
-                return new WebApiVersionDTO[size];
-            }
-        };
-
         public String getStandard() {
             return standard;
         }
@@ -295,6 +293,17 @@ public class NVRChildDeviceInfoBean implements Parcelable{
 
 
     public static class FunctionInfoDTO implements Parcelable {
+        public static final Creator<FunctionInfoDTO> CREATOR = new Creator<FunctionInfoDTO>() {
+            @Override
+            public FunctionInfoDTO createFromParcel(Parcel in) {
+                return new FunctionInfoDTO(in);
+            }
+
+            @Override
+            public FunctionInfoDTO[] newArray(int size) {
+                return new FunctionInfoDTO[size];
+            }
+        };
         @SerializedName("SmartInfo")
         private SmartInfoDTO smartInfo;
         @SerializedName("PersonRecord")
@@ -329,18 +338,6 @@ public class NVRChildDeviceInfoBean implements Parcelable{
             return 0;
         }
 
-        public static final Creator<FunctionInfoDTO> CREATOR = new Creator<FunctionInfoDTO>() {
-            @Override
-            public FunctionInfoDTO createFromParcel(Parcel in) {
-                return new FunctionInfoDTO(in);
-            }
-
-            @Override
-            public FunctionInfoDTO[] newArray(int size) {
-                return new FunctionInfoDTO[size];
-            }
-        };
-
         public SmartInfoDTO getSmartInfo() {
             return smartInfo;
         }
@@ -366,6 +363,17 @@ public class NVRChildDeviceInfoBean implements Parcelable{
         }
 
         public static class SmartInfoDTO implements Parcelable {
+            public static final Creator<SmartInfoDTO> CREATOR = new Creator<SmartInfoDTO>() {
+                @Override
+                public SmartInfoDTO createFromParcel(Parcel in) {
+                    return new SmartInfoDTO(in);
+                }
+
+                @Override
+                public SmartInfoDTO[] newArray(int size) {
+                    return new SmartInfoDTO[size];
+                }
+            };
             @SerializedName("AbilityList")
             private List<String> abilityList;
             @SerializedName("AbilityVersionList")
@@ -384,18 +392,6 @@ public class NVRChildDeviceInfoBean implements Parcelable{
             public int describeContents() {
                 return 0;
             }
-
-            public static final Creator<SmartInfoDTO> CREATOR = new Creator<SmartInfoDTO>() {
-                @Override
-                public SmartInfoDTO createFromParcel(Parcel in) {
-                    return new SmartInfoDTO(in);
-                }
-
-                @Override
-                public SmartInfoDTO[] newArray(int size) {
-                    return new SmartInfoDTO[size];
-                }
-            };
 
             public List<String> getAbilityList() {
                 return abilityList;
@@ -416,6 +412,17 @@ public class NVRChildDeviceInfoBean implements Parcelable{
 
 
         public static class FaceDTO implements Parcelable {
+            public static final Creator<FaceDTO> CREATOR = new Creator<FaceDTO>() {
+                @Override
+                public FaceDTO createFromParcel(Parcel in) {
+                    return new FaceDTO(in);
+                }
+
+                @Override
+                public FaceDTO[] newArray(int size) {
+                    return new FaceDTO[size];
+                }
+            };
             @SerializedName("EnableFaceTest")
             private Integer enableFaceTest;
             @SerializedName("EnableFaceSnap")
@@ -467,18 +474,6 @@ public class NVRChildDeviceInfoBean implements Parcelable{
             public int describeContents() {
                 return 0;
             }
-
-            public static final Creator<FaceDTO> CREATOR = new Creator<FaceDTO>() {
-                @Override
-                public FaceDTO createFromParcel(Parcel in) {
-                    return new FaceDTO(in);
-                }
-
-                @Override
-                public FaceDTO[] newArray(int size) {
-                    return new FaceDTO[size];
-                }
-            };
 
             public Integer getEnableFaceTest() {
                 return enableFaceTest;

@@ -13,24 +13,58 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.ViewTreeObserver;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 /**
  * yxy 2020/2/3
  * 实现app图片加载的缩放、拖动功能；
  */
-public class ScalableImageView extends android.support.v7.widget.AppCompatImageView implements ScaleGestureDetector.OnScaleGestureListener, ViewTreeObserver.OnGlobalLayoutListener {
+public class ScalableImageView extends AppCompatImageView implements ScaleGestureDetector.OnScaleGestureListener, ViewTreeObserver.OnGlobalLayoutListener {
 
     private static final String TAG = "ScalableImageView";
-
-    private int gesture;//yxy用户手势类型，是拖动还是缩放
     private static final int GESTURE_DRAG = 1;//yxy拖动图片
     private static final int GESTURE_ZOOM = 2;//yxy手势缩放图片
     private static final float MAX_SCALE = 4.0f;//  最大的缩放比例
+    private static final int SPRING_BACK = 0;
+    private static final int COUNTS = 25;
+    private static final int DELAY_MILLIS = 2;
+    private final float[] matrixValues = new float[9];
+    private int gesture;//yxy用户手势类型，是拖动还是缩放
     private float initScale = 1.0f;//初始化时的缩放比例，如果图片宽或高大于屏幕，此值将小于1
     private Matrix mMatrix = new Matrix();
     private ScaleGestureDetector mScaleGestureDetector;//yxy缩放实现对象实体类
     private int viewWidth;//yxy当前视图屏幕宽度
     private int viewHeight;//yxy当前屏幕视图高度
     private Drawable mDrawable;
+    private float mLastX;
+    private float mLastY;
+    private boolean resetFactor;
+    private boolean onZoomFinished;
+    private int mCount;
+    private Handler mHandler = new Handler() {
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case SPRING_BACK: {
+                    mCount++;
+                    if (mCount <= COUNTS) {
+                        //使用浮点数，避免回弹后出现间隙
+                        mMatrix.postTranslate(msg.arg1 * 1.0f / COUNTS, msg.arg2 * 1.0f / COUNTS);
+                        setImageMatrix(mMatrix);
+                        Message next = Message.obtain(mHandler, SPRING_BACK, msg.arg1, msg.arg2);
+                        mHandler.sendMessageDelayed(next, DELAY_MILLIS);
+                    } else {
+                        mCount = 0;
+                    }
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
+    };
+    private RectF mRectF;
+    //onGlobalLayoutListener可能会多次触发
+    private boolean isFirstTime = true;
 
     public ScalableImageView(Context context) {
         this(context, null);
@@ -66,8 +100,6 @@ public class ScalableImageView extends android.support.v7.widget.AppCompatImageV
 
     }
 
-    private final float[] matrixValues = new float[9];
-
     //获取全局缩放比例(相对于未缩放时的缩放比例),和直接用getScaleX()有区别！
     private float getScale() {
         mMatrix.getValues(matrixValues);
@@ -85,11 +117,6 @@ public class ScalableImageView extends android.support.v7.widget.AppCompatImageV
     public void onScaleEnd(ScaleGestureDetector scaleGestureDetector) {
 
     }
-
-    private float mLastX;
-    private float mLastY;
-    private boolean resetFactor;
-    private boolean onZoomFinished;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -139,7 +166,7 @@ public class ScalableImageView extends android.support.v7.widget.AppCompatImageV
                 int springBackX = Math.round(delta.x);
                 int springBackY = Math.round(delta.y);
                 if (springBackX != 0 || springBackY != 0) {
-                    Message msg = Message.obtain(mHandler,SPRING_BACK,springBackX,springBackY);
+                    Message msg = Message.obtain(mHandler, SPRING_BACK, springBackX, springBackY);
                     mHandler.sendMessage(msg);
                 }
                 break;
@@ -148,33 +175,6 @@ public class ScalableImageView extends android.support.v7.widget.AppCompatImageV
         mLastY = y;
         return true;
     }
-
-    private static final int SPRING_BACK = 0;
-    private static final int COUNTS = 25;
-    private static final int DELAY_MILLIS = 2;
-
-    private int mCount;
-    private Handler mHandler = new Handler() {
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case SPRING_BACK: {
-                    mCount++;
-                    if (mCount <= COUNTS) {
-                        //使用浮点数，避免回弹后出现间隙
-                        mMatrix.postTranslate(msg.arg1*1.0f/COUNTS, msg.arg2*1.0f/COUNTS);
-                        setImageMatrix(mMatrix);
-                        Message next = Message.obtain(mHandler,SPRING_BACK,msg.arg1,msg.arg2);
-                        mHandler.sendMessageDelayed(next, DELAY_MILLIS);
-                    } else {
-                        mCount = 0;
-                    }
-                    break;
-                }
-                default:
-                    break;
-            }
-        }
-    };
 
     @Override
     public void computeScroll() {
@@ -215,8 +215,6 @@ public class ScalableImageView extends android.support.v7.widget.AppCompatImageV
         return new PointF(dx, dy);
     }
 
-    private RectF mRectF;
-
     public RectF getRectF() {
         if (mDrawable == null) {
             mDrawable = getDrawable();
@@ -230,9 +228,6 @@ public class ScalableImageView extends android.support.v7.widget.AppCompatImageV
         }
         return mRectF;
     }
-
-    //onGlobalLayoutListener可能会多次触发
-    private boolean isFirstTime = true;
 
     //观察布局变化，目的是获取View的尺寸，在测量之前执行onMeasure getWidth()和getHeight()可能为0
     @Override

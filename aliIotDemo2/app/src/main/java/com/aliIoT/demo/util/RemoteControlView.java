@@ -7,10 +7,11 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.aliIoT.demo.R;
 
@@ -20,6 +21,8 @@ import com.aliIoT.demo.R;
  */
 
 public class RemoteControlView extends View {
+    public int mCmd = ConstUtil.CLOUDEYE_PTZ_CTRL_STOP;
+    public int mlastCmd = ConstUtil.CLOUDEYE_PTZ_CTRL_STOP;
     private float scale = this.getResources().getDisplayMetrics().density;
     private Paint mPaint;
     private int mWidth;
@@ -28,9 +31,7 @@ public class RemoteControlView extends View {
     private float posY;
     private float mDefaultposX;
     private float mDefaultposY;
-
     private int minRadius = 0;
-
     private Bitmap bitmap;
     private RemoteViewBg remoteViewBg;
     private Rect src;
@@ -50,9 +51,11 @@ public class RemoteControlView extends View {
     private Bitmap bitmap2;
     private Rect srcNoActive;
     private Rect dstNoActive;
+    /**
+     * 设置控件移动方向回调接口
+     */
 
-    public int mCmd = ConstUtil.CLOUDEYE_PTZ_CTRL_STOP;
-    public int mlastCmd = ConstUtil.CLOUDEYE_PTZ_CTRL_STOP;
+    private RemoteListener remoteListener;
 
     public RemoteControlView(Context context) {
         super(context);
@@ -99,8 +102,8 @@ public class RemoteControlView extends View {
         mDefaultposX = mWidth / 2;
         mDefaultposY = mHeight / 2;
 
-        dst = new Rect((int) mWidth / 2 - bitmap.getWidth() / 2 , (int) mHeight / 2 - bitmap.getHeight() / 2 , (int) mWidth / 2 + bitmap.getWidth() / 2 , (int) mHeight / 2 + bitmap.getHeight() / 2 );
-        dstNoActive = new Rect((int) mWidth / 2 - bitmap2.getWidth() / 2 , (int) mHeight / 2 - bitmap2.getHeight() / 2 , (int) mWidth / 2 + bitmap2.getWidth() / 2 , (int) mHeight / 2 + bitmap2.getHeight() / 2 );
+        dst = new Rect((int) mWidth / 2 - bitmap.getWidth() / 2, (int) mHeight / 2 - bitmap.getHeight() / 2, (int) mWidth / 2 + bitmap.getWidth() / 2, (int) mHeight / 2 + bitmap.getHeight() / 2);
+        dstNoActive = new Rect((int) mWidth / 2 - bitmap2.getWidth() / 2, (int) mHeight / 2 - bitmap2.getHeight() / 2, (int) mWidth / 2 + bitmap2.getWidth() / 2, (int) mHeight / 2 + bitmap2.getHeight() / 2);
     }
 
     @Override
@@ -161,13 +164,12 @@ public class RemoteControlView extends View {
             tempRad = 0;
 
             if (remoteListener != null) {
-                remoteListener.onRemoteListener(ConstUtil.CLOUDEYE_PTZ_CTRL_STOP,0,0);
+                remoteListener.onRemoteListener(ConstUtil.CLOUDEYE_PTZ_CTRL_STOP, 0, 0);
             }
         }
         invalidate();
         return true;
     }
-
 
     private float getAngle(float xTouch, float yTouch) {
         RockerCircleX = mWidth / 2;
@@ -186,6 +188,7 @@ public class RemoteControlView extends View {
 
     /**
      * 计算角度来获取方向
+     *
      * @param x
      * @param y
      * @param R
@@ -217,9 +220,9 @@ public class RemoteControlView extends View {
             mCmd = ConstUtil.CLOUDEYE_PTZ_CTRL_MOVE_DOWNRIGHT;
         }
 
-        if(mlastCmd != mCmd){
+        if (mlastCmd != mCmd) {
             if (remoteListener != null) {
-                remoteListener.onRemoteListener(mCmd,0,0);
+                remoteListener.onRemoteListener(mCmd, 0, 0);
             }
         }
 
@@ -245,16 +248,6 @@ public class RemoteControlView extends View {
         return rad;
     }
 
-    /**
-     * 设置控件移动方向回调接口
-     */
-
-    private RemoteListener remoteListener;
-
-    public interface RemoteListener {
-        void onRemoteListener(int cmd, int Speed, int PersetIndex);
-    }
-
     public void onMove(RemoteListener remoteListener) {
         this.remoteListener = remoteListener;
     }
@@ -266,6 +259,10 @@ public class RemoteControlView extends View {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
+    }
+
+    public interface RemoteListener {
+        void onRemoteListener(int cmd, int Speed, int PersetIndex);
     }
 
 }

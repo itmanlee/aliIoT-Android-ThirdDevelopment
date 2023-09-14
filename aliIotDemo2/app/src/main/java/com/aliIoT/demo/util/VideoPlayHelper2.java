@@ -20,16 +20,38 @@ import com.google.android.exoplayer2.Player;
 
 import java.io.File;
 
-import com.aliIoT.demo.R;
-
 /**
- *
  * 回放播放辅助类
  */
 public class VideoPlayHelper2 {
+    private static final String TAG = "VideoPlayHelper2";
+    final int GET_VIDEO_CURRENT = 1;
+    int mRecordReferenceTime;
+    VideoCallBack mListen = null;
+    float[] mPlaybackSpeed = {1 / 16f, 1 / 8f, 1 / 4f, 1 / 2f, 1, 2, 4, 8, 16};
+    int nowSpeedIndex = 4;
+    Context mContext;
     private int startTime;
     private int endTime;
-    int mRecordReferenceTime;
+    private String iotId;
+    private PlayLayout mTextureView;
+    private PlayStatus playStatus = PlayStatus.NO_PALY;
+    private VodPlayer mLivePlayer = null;
+    Handler hand = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what) {
+                case GET_VIDEO_CURRENT: {
+                    getVideoCurrent();
+                    break;
+                }
+            }
+        }
+    };
+
+    public VideoPlayHelper2(Context mContext) {
+        this.mContext = mContext;
+    }
 
     public void setRecordReferenceTime(int arg1) {
         mRecordReferenceTime = arg1;
@@ -64,25 +86,9 @@ public class VideoPlayHelper2 {
         //mLivePlayer.setPlaybackSpeed(mPlaybackSpeed[nowSpeedIndex]);
     }
 
-    public interface VideoCallBack {
-        void videoCurrent(long l);
-
-        void videoStausCallBack(PlayStatus status);
-
-        void playNextTimePart(int startTime, int endTime);
-    }
-
-    VideoCallBack mListen = null;
-    final int GET_VIDEO_CURRENT = 1;
-
     public void setVideoCurrentListen(VideoCallBack c) {
         mListen = c;
     }
-
-    private static final String TAG = "VideoPlayHelper2";
-
-    float[] mPlaybackSpeed = {1 / 16f, 1 / 8f, 1 / 4f, 1 / 2f, 1, 2, 4, 8, 16};
-    int nowSpeedIndex = 4;
 
     public String getIotid() {
         return iotId;
@@ -91,18 +97,6 @@ public class VideoPlayHelper2 {
     public void setIotid(String iotid) {
         iotId = iotid;
     }
-
-    Handler hand = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case GET_VIDEO_CURRENT: {
-                    getVideoCurrent();
-                    break;
-                }
-            }
-        }
-    };
 
     private void getVideoCurrent() {
         long videoCurrentPosition = getVideoCurrentPosition();
@@ -132,14 +126,6 @@ public class VideoPlayHelper2 {
         this.startTime = startTime;
         this.endTime = endTime;
     }
-
-    private String iotId;
-    private PlayLayout mTextureView;
-
-
-    private PlayStatus playStatus = PlayStatus.NO_PALY;
-    private VodPlayer mLivePlayer = null;
-    Context mContext;
 
     public PlayStatus getPlayStatus() {
         return playStatus;
@@ -239,13 +225,6 @@ public class VideoPlayHelper2 {
         return Utils.speed(mPlaybackSpeed[nowSpeedIndex]);
     }
 
-
-    public enum PlayStatus {NO_PALY, PREPARE, PREPARE_PLAY, BUFFING_PLAY, PAUSE_PLAY/*, END_PALY*/}
-
-    public VideoPlayHelper2(Context mContext) {
-        this.mContext = mContext;
-    }
-
     public void setTextureView(PlayLayout view) {
         mTextureView = view;
     }
@@ -332,7 +311,6 @@ public class VideoPlayHelper2 {
 //        return sharedPreferencesDataBool;
         return false;
     }
-
 
     private void playerListener() {
         mLivePlayer.setDecoderStrategy(softDecode() ? HardwareDecoderable.DecoderStrategy.FORCE_SOFTWARE : HardwareDecoderable.DecoderStrategy.HARDWARE_FIRST);
@@ -425,7 +403,6 @@ public class VideoPlayHelper2 {
         });
     }
 
-
     public void stop() {
         if (mLivePlayer != null && playStatus != PlayStatus.NO_PALY /*&& playStatus != PlayStatus.END_PALY*/) {
             nowSpeedIndex = 4;
@@ -440,7 +417,6 @@ public class VideoPlayHelper2 {
         }
     }
 
-
     public boolean screenShot(File file) {
         return mLivePlayer.snapShotToFile(file);
     }
@@ -451,5 +427,15 @@ public class VideoPlayHelper2 {
 
     public boolean stopRecord() {
         return mLivePlayer.stopRecordingContent();
+    }
+
+    public enum PlayStatus {NO_PALY, PREPARE, PREPARE_PLAY, BUFFING_PLAY, PAUSE_PLAY/*, END_PALY*/}
+
+    public interface VideoCallBack {
+        void videoCurrent(long l);
+
+        void videoStausCallBack(PlayStatus status);
+
+        void playNextTimePart(int startTime, int endTime);
     }
 }

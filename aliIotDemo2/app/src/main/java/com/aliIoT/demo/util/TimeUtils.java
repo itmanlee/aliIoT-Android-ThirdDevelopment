@@ -1,5 +1,7 @@
 package com.aliIoT.demo.util;
 
+import com.aliIoT.demo.R;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -7,8 +9,6 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import com.aliIoT.demo.R;
 
 public class TimeUtils {
     public static final int TWO_MINUTES = 120;

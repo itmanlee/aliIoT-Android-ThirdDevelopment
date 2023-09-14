@@ -20,7 +20,7 @@ import okhttp3.MediaType;
 
 public class HttpUtils {
 
-    public static RequestCall post(String url,String content){
+    public static RequestCall post(String url, String content) {
 
         PackageInfo pInfo = null;
         try {
@@ -42,7 +42,7 @@ public class HttpUtils {
 
     }
 
-    public static RequestCall get(String url){
+    public static RequestCall get(String url) {
 
         PackageInfo pInfo = null;
         try {
@@ -63,7 +63,7 @@ public class HttpUtils {
 
     }
 
-    public static IoTRequest creatIoTRequest(String path, String apiVersion, String type, Map<String,Object> param){
+    public static IoTRequest creatIoTRequest(String path, String apiVersion, String type, Map<String, Object> param) {
         IoTRequest request = new IoTRequestBuilder()
                 .setScheme(Scheme.HTTPS) // 设置Scheme方式，取值范围：Scheme.HTTP或Scheme.HTTPS，默认为Scheme.HTTPS
                 .setPath(path) // 参照API文档，设置API接口描述中的Path，本示例为uc/listBindingByDev

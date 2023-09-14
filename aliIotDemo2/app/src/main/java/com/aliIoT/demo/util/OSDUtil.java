@@ -1,13 +1,12 @@
 package com.aliIoT.demo.util;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
 import com.aliIoT.demo.model.TransControlV2Bean;
 import com.aliIoT.demo.model.TransControlV2DataBean;
 import com.aliIoT.demo.model.TransControlV2NVRBean;
 import com.aliIoT.demo.model.TransControlV2NVRDataBean;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 public class OSDUtil {
     public static TransControlV2Bean creatTransControlV2Bean(int type) {

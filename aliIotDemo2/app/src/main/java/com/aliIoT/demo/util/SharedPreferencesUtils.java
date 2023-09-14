@@ -71,11 +71,12 @@ public class SharedPreferencesUtils {
 
     /**
      * 查询某个key是否已经存在
+     *
      * @param context
      * @param key
      * @return
      */
-    public static boolean contains(Context context, String key,String mSharedPreferences){
+    public static boolean contains(Context context, String key, String mSharedPreferences) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(mSharedPreferences, Context.MODE_MULTI_PROCESS);
         return sharedPreferences.contains(key);
     }
@@ -87,7 +88,7 @@ public class SharedPreferencesUtils {
      * @param map map数据
      * @return 保存结果
      */
-    public static <K, V> boolean putHashMapData(String key, Map<K, V> map,String mSharedPreferences) {
+    public static <K, V> boolean putHashMapData(String key, Map<K, V> map, String mSharedPreferences) {
         boolean result;
         SharedPreferences sharedPreferences = MyApplication.getInstance().getSharedPreferences(mSharedPreferences, Context.MODE_MULTI_PROCESS);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -104,10 +105,10 @@ public class SharedPreferencesUtils {
         return result;
     }
 
-    public static HashMap<String, String> getMapData(String key,String mSharedPreferences){
+    public static HashMap<String, String> getMapData(String key, String mSharedPreferences) {
         SharedPreferences sharedPreferences = MyApplication.getInstance().getSharedPreferences(mSharedPreferences, Context.MODE_MULTI_PROCESS);
         String json = sharedPreferences.getString(key, "");
-        HashMap<String, String> map = new Gson().fromJson(json,HashMap.class);
+        HashMap<String, String> map = new Gson().fromJson(json, HashMap.class);
         return map;
     }
 
@@ -117,7 +118,7 @@ public class SharedPreferencesUtils {
      * @param key key
      * @return HashMap
      */
-    public static <V> HashMap<String, V> getHashMapData(String key, Class<V> clsV,String mSharedPreferences) {
+    public static <V> HashMap<String, V> getHashMapData(String key, Class<V> clsV, String mSharedPreferences) {
         SharedPreferences sharedPreferences = MyApplication.getInstance().getSharedPreferences(mSharedPreferences, Context.MODE_MULTI_PROCESS);
         String json = sharedPreferences.getString(key, "");
         HashMap<String, V> map = new HashMap<>();

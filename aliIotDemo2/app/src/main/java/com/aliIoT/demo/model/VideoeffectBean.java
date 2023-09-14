@@ -8,12 +8,39 @@ import android.os.Parcelable;
  */
 public class VideoeffectBean implements Parcelable {
 
+    public static final Creator<VideoeffectBean> CREATOR = new Creator<VideoeffectBean>() {
+        @Override
+        public VideoeffectBean createFromParcel(Parcel source) {
+            return new VideoeffectBean(source);
+        }
+
+        @Override
+        public VideoeffectBean[] newArray(int size) {
+            return new VideoeffectBean[size];
+        }
+    };
     int Brigthness;
     int Contrast;
     int Saturation;
     int Hue;
 
+    public VideoeffectBean(int Brigthness, int Contrast, int Saturation, int Hue) {
 
+        this.Brigthness = Brigthness;
+        this.Contrast = Contrast;
+        this.Saturation = Saturation;
+        this.Hue = Hue;
+    }
+
+    public VideoeffectBean() {
+    }
+
+    protected VideoeffectBean(Parcel in) {
+        this.Brigthness = in.readInt();
+        this.Contrast = in.readInt();
+        this.Saturation = in.readInt();
+        this.Hue = in.readInt();
+    }
 
     public int getBrigthness() {
         return Brigthness;
@@ -47,14 +74,6 @@ public class VideoeffectBean implements Parcelable {
         Hue = hue;
     }
 
-    public VideoeffectBean(int Brigthness, int Contrast, int Saturation, int Hue) {
-
-        this.Brigthness = Brigthness;
-        this.Contrast = Contrast;
-        this.Saturation = Saturation;
-        this.Hue = Hue;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -67,26 +86,4 @@ public class VideoeffectBean implements Parcelable {
         dest.writeInt(this.Saturation);
         dest.writeInt(this.Hue);
     }
-
-    public VideoeffectBean() {
-    }
-
-    protected VideoeffectBean(Parcel in) {
-        this.Brigthness = in.readInt();
-        this.Contrast = in.readInt();
-        this.Saturation = in.readInt();
-        this.Hue = in.readInt();
-    }
-
-    public static final Creator<VideoeffectBean> CREATOR = new Creator<VideoeffectBean>() {
-        @Override
-        public VideoeffectBean createFromParcel(Parcel source) {
-            return new VideoeffectBean(source);
-        }
-
-        @Override
-        public VideoeffectBean[] newArray(int size) {
-            return new VideoeffectBean[size];
-        }
-    };
 }

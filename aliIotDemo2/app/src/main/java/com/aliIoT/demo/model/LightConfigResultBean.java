@@ -10,7 +10,7 @@ import java.util.List;
  * yxy 2002/11/17
  * 灯板控制结果实体类，请求结果、配置结果；
  */
-public class LightConfigResultBean{
+public class LightConfigResultBean {
 
 
     /**
@@ -30,6 +30,19 @@ public class LightConfigResultBean{
     private int MinorMode;
     private DayNightMode DayNightMode;
     private List<String> SupportLights;
+
+    public LightConfigResultBean() {
+    }
+
+    protected LightConfigResultBean(Parcel in) {
+        this.ResultCode = in.readInt();
+        this.LightType = in.readString();
+        this.IcrLightMode = in.readInt();
+        this.IcrLightAue = in.readInt();
+        this.SupportTWDR = in.readInt();
+        this.DayNightMode = in.readParcelable(LightConfigResultBean.DayNightMode.class.getClassLoader());
+        this.SupportLights = in.createStringArrayList();
+    }
 
     public int getMinorMode() {
         return MinorMode;
@@ -95,18 +108,25 @@ public class LightConfigResultBean{
         this.SupportLights = SupportLights;
     }
 
-    public LightConfigResultBean() {
-    }
-
-    public static class DayNightMode{
-        @JSONField(name="DayNightMode")
+    public static class DayNightMode {
+        @JSONField(name = "DayNightMode")
         private int DayNightMode;
-        @JSONField(name="Delay")
+        @JSONField(name = "Delay")
         private int Delay;
-        @JSONField(name="NightToDayThreshold")
+        @JSONField(name = "NightToDayThreshold")
         private int NightToDayThreshold;
-        @JSONField(name="DayToNightThreshold")
+        @JSONField(name = "DayToNightThreshold")
         private int DayToNightThreshold;
+
+        public DayNightMode() {
+        }
+
+        protected DayNightMode(Parcel in) {
+            this.DayNightMode = in.readInt();
+            this.Delay = in.readInt();
+            this.NightToDayThreshold = in.readInt();
+            this.DayToNightThreshold = in.readInt();
+        }
 
         public int getDayNightMode() {
             return DayNightMode;
@@ -140,26 +160,6 @@ public class LightConfigResultBean{
             DayToNightThreshold = dayToNightThreshold;
         }
 
-        public DayNightMode() {
-        }
-
-        protected DayNightMode(Parcel in) {
-            this.DayNightMode = in.readInt();
-            this.Delay = in.readInt();
-            this.NightToDayThreshold = in.readInt();
-            this.DayToNightThreshold = in.readInt();
-        }
-
-    }
-
-    protected LightConfigResultBean(Parcel in) {
-        this.ResultCode = in.readInt();
-        this.LightType = in.readString();
-        this.IcrLightMode = in.readInt();
-        this.IcrLightAue = in.readInt();
-        this.SupportTWDR = in.readInt();
-        this.DayNightMode = in.readParcelable(LightConfigResultBean.DayNightMode.class.getClassLoader());
-        this.SupportLights = in.createStringArrayList();
     }
 
 }

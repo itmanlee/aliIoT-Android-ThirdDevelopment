@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -21,6 +17,11 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.aliIoT.demo.model.AliyunChannelEncodeBean;
 import com.aliIoT.demo.model.ChannelEcondeAbilityBean;
@@ -48,27 +49,23 @@ import java.util.List;
 public class ChannelEncodesetActivity extends AppCompatActivity implements View.OnClickListener, DeviceSetAdapter.OnItemClick {
 
     public static final String TAG = "ChannelEncodeSet";
-    ImageView mBackView;
-    TextView mSaveView;
-    RecyclerView channelChannelEncodeSetLayoutRl;
-    private DeviceSetAdapter deviceSetAdapter;
-    //    private Map<String, ChannelEncodeBean> map;
-    private ChannelEncodeBean nowChannelEncodeBean;
-    //private ChannelEncodeSetDialogFragment mChannelEncodeSetDialogFragment;
-    //private CustomBiteDialogFragment customBiteDialogFragment;
-
-    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanMain;
-    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanChild;
-
-    Gson gson = new Gson();
-    String iotID = MyApplication.getInstance().getIotID();
-
-    int method = 1;
     static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
     static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
     static final int ALIYUNSERVICE_DEVICE_ENCODE_SET_MAIN = 3;
     static final int ALIYUNSERVICE_DEVICE_ENCODE_SET_CHILD = 4;
+    ImageView mBackView;
+    //private ChannelEncodeSetDialogFragment mChannelEncodeSetDialogFragment;
+    //private CustomBiteDialogFragment customBiteDialogFragment;
+    TextView mSaveView;
+    RecyclerView channelChannelEncodeSetLayoutRl;
+    Gson gson = new Gson();
+    String iotID = MyApplication.getInstance().getIotID();
 
+    int method = 1;
+    PopupWindow mSerarchWindow = null;
+    private DeviceSetAdapter deviceSetAdapter;
+    //    private Map<String, ChannelEncodeBean> map;
+    private ChannelEncodeBean nowChannelEncodeBean;
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
@@ -111,6 +108,8 @@ public class ChannelEncodesetActivity extends AppCompatActivity implements View.
             return false;
         }
     });
+    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanMain;
+    private ChannelEcondeAbilityBean mChannelEcondeAbilityBeanChild;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -583,8 +582,6 @@ public class ChannelEncodesetActivity extends AppCompatActivity implements View.
             return mChannelEcondeAbilityBeanChild;
         }
     }
-
-    PopupWindow mSerarchWindow = null;
 
     public void showDialog(int mType, String title, List<String> lists) {
 

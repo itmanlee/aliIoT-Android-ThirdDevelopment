@@ -7,6 +7,17 @@ import android.os.Parcelable;
  *
  */
 public class AuthCodeBean implements Parcelable {
+    public static final Creator<AuthCodeBean> CREATOR = new Creator<AuthCodeBean>() {
+        @Override
+        public AuthCodeBean createFromParcel(Parcel source) {
+            return new AuthCodeBean(source);
+        }
+
+        @Override
+        public AuthCodeBean[] newArray(int size) {
+            return new AuthCodeBean[size];
+        }
+    };
     /**
      * resultCode : 0
      * msg : success
@@ -22,6 +33,18 @@ public class AuthCodeBean implements Parcelable {
     private String serverSite;
     private String identityId;
     private String account;
+
+    public AuthCodeBean() {
+    }
+
+    protected AuthCodeBean(Parcel in) {
+        this.userId = in.readString();
+        this.token = in.readString();
+        this.authCode = in.readString();
+        this.serverSite = in.readString();
+        this.identityId = in.readString();
+        this.account = in.readString();
+    }
 
     public String getAccount() {
         return account;
@@ -55,10 +78,6 @@ public class AuthCodeBean implements Parcelable {
         this.authCode = authCode;
     }
 
-
-    public AuthCodeBean() {
-    }
-
     public String getUserId() {
         return userId;
     }
@@ -89,25 +108,4 @@ public class AuthCodeBean implements Parcelable {
         dest.writeString(this.identityId);
         dest.writeString(this.account);
     }
-
-    protected AuthCodeBean(Parcel in) {
-        this.userId = in.readString();
-        this.token = in.readString();
-        this.authCode = in.readString();
-        this.serverSite = in.readString();
-        this.identityId = in.readString();
-        this.account = in.readString();
-    }
-
-    public static final Creator<AuthCodeBean> CREATOR = new Creator<AuthCodeBean>() {
-        @Override
-        public AuthCodeBean createFromParcel(Parcel source) {
-            return new AuthCodeBean(source);
-        }
-
-        @Override
-        public AuthCodeBean[] newArray(int size) {
-            return new AuthCodeBean[size];
-        }
-    };
 }

@@ -8,6 +8,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class TransControlV2NVRBean implements Parcelable {
 
+    public static final Creator<TransControlV2NVRBean> CREATOR = new Creator<TransControlV2NVRBean>() {
+        @Override
+        public TransControlV2NVRBean createFromParcel(Parcel in) {
+            return new TransControlV2NVRBean(in);
+        }
+
+        @Override
+        public TransControlV2NVRBean[] newArray(int size) {
+            return new TransControlV2NVRBean[size];
+        }
+    };
     @SerializedName("TransType")
     private Integer transType;
     @SerializedName("Opt")
@@ -21,6 +32,33 @@ public class TransControlV2NVRBean implements Parcelable {
     @SerializedName("Payload")
     private String payload;
 
+    public TransControlV2NVRBean() {
+    }
+
+    protected TransControlV2NVRBean(Parcel in) {
+        if (in.readByte() == 0) {
+            transType = null;
+        } else {
+            transType = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            opt = null;
+        } else {
+            opt = in.readInt();
+        }
+        transUrl = in.readString();
+        if (in.readByte() == 0) {
+            payloadType = null;
+        } else {
+            payloadType = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            payloadLen = null;
+        } else {
+            payloadLen = in.readInt();
+        }
+        payload = in.readString();
+    }
 
     public Integer getTransType() {
         return transType;
@@ -70,36 +108,6 @@ public class TransControlV2NVRBean implements Parcelable {
         this.payload = payload;
     }
 
-    public TransControlV2NVRBean() {
-    }
-
-
-
-    protected TransControlV2NVRBean(Parcel in) {
-        if (in.readByte() == 0) {
-            transType = null;
-        } else {
-            transType = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            opt = null;
-        } else {
-            opt = in.readInt();
-        }
-        transUrl = in.readString();
-        if (in.readByte() == 0) {
-            payloadType = null;
-        } else {
-            payloadType = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            payloadLen = null;
-        } else {
-            payloadLen = in.readInt();
-        }
-        payload = in.readString();
-    }
-
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         if (transType == null) {
@@ -134,16 +142,4 @@ public class TransControlV2NVRBean implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<TransControlV2NVRBean> CREATOR = new Creator<TransControlV2NVRBean>() {
-        @Override
-        public TransControlV2NVRBean createFromParcel(Parcel in) {
-            return new TransControlV2NVRBean(in);
-        }
-
-        @Override
-        public TransControlV2NVRBean[] newArray(int size) {
-            return new TransControlV2NVRBean[size];
-        }
-    };
 }

@@ -2,9 +2,9 @@
 <set xmlns:android="http://schemas.android.com/apk/res/android">
     <!--从全无到全显，持续时间100ms，重复次数，无数次，从头开始变化-->
     <alpha
-        android:fromAlpha="0.0"
-        android:toAlpha="1"
         android:duration="100"
+        android:fromAlpha="0.0"
         android:repeatCount="infinite"
-        android:repeatMode="reverse"/>
+        android:repeatMode="reverse"
+        android:toAlpha="1" />
 </set>

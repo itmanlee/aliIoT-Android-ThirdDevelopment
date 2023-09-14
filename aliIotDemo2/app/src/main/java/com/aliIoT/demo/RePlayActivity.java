@@ -3,15 +3,16 @@ package com.aliIoT.demo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.aliIoT.demo.model.AliyunRecordFileList;
 import com.aliIoT.demo.model.AliyunServiceResultBean;
@@ -37,27 +38,6 @@ import java.util.List;
  */
 public class RePlayActivity extends AppCompatActivity implements View.OnClickListener, PermissionUtils.PermissionGrant {
 
-    ImageView mBackView;
-    Button mCaptureButton;
-    Button mRecordButton;
-    Button mAudioButton;
-    Button mFindFileButton;
-    Button mStopButton;
-    Button mStartButton;
-    Button mSlowButton;
-    Button mTextButton;
-    Button mFastButton;
-
-    PlayLayout mViewLinearLayout;
-    VideoPlayHelper2 videoPlayHelper = new VideoPlayHelper2(MyApplication.getInstance());
-    String iotID = MyApplication.getInstance().getIotID();
-
-    String permissionRead_Write[] = new String[]{PermissionUtils.PERMISSION_READ_EXTERNAL_STORAGE, PermissionUtils.PERMISSION_WRITE_EXTERNAL_STORAGE};
-    String permissionAudio[] = new String[]{PermissionUtils.PERMISSION_RECORD_AUDIO, PermissionUtils.PERMISSION_RECORD_AUDIO};
-
-    List<AliyunRecordFileList.TimeListBean> lists = null;
-
-    Gson gson = new Gson();
     //!请求type
     static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
     static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
@@ -69,8 +49,26 @@ public class RePlayActivity extends AppCompatActivity implements View.OnClickLis
     static final int ALIYUNSERVICE_GET_VIDEOEFFECT = 8;
     static final int ALIYUNSERVICE_SET_VIDEOEFFECT = 9;
     static final int GET_RECORD_LIST = 10;
-
-
+    ImageView mBackView;
+    Button mCaptureButton;
+    Button mRecordButton;
+    Button mAudioButton;
+    Button mFindFileButton;
+    Button mStopButton;
+    Button mStartButton;
+    Button mSlowButton;
+    Button mTextButton;
+    Button mFastButton;
+    PlayLayout mViewLinearLayout;
+    VideoPlayHelper2 videoPlayHelper = new VideoPlayHelper2(MyApplication.getInstance());
+    String iotID = MyApplication.getInstance().getIotID();
+    String permissionRead_Write[] = new String[]{PermissionUtils.PERMISSION_READ_EXTERNAL_STORAGE, PermissionUtils.PERMISSION_WRITE_EXTERNAL_STORAGE};
+    String permissionAudio[] = new String[]{PermissionUtils.PERMISSION_RECORD_AUDIO, PermissionUtils.PERMISSION_RECORD_AUDIO};
+    List<AliyunRecordFileList.TimeListBean> lists = null;
+    Gson gson = new Gson();
+    boolean isFirstEnter = false;
+    boolean recordVideo = false;
+    int startTime = 0;
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
@@ -114,8 +112,6 @@ public class RePlayActivity extends AppCompatActivity implements View.OnClickLis
         init();
         isFirstEnter = true;
     }
-
-    boolean isFirstEnter = false;
 
     @Override
     protected void onResume() {
@@ -275,8 +271,6 @@ public class RePlayActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    boolean recordVideo = false;
-
     private void screenShot(VideoPlayHelper2 videoPlayHelper) {
         if ((!ActivityCompat.shouldShowRequestPermissionRationale(this, permissionRead_Write[0]) || !ActivityCompat.shouldShowRequestPermissionRationale(this, permissionRead_Write[1]))
                 && !PermissionUtils.requestMultiPermissions(this, new int[]{6, 7}, this)) {
@@ -348,8 +342,6 @@ public class RePlayActivity extends AppCompatActivity implements View.OnClickLis
             }
         }
     }
-
-    int startTime = 0;
 
     public void queryRecordList(String mDeviceId) {
         String nowTimeDay = TimeUtils.getNowTimeDay();

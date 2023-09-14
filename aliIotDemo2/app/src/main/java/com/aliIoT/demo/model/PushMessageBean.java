@@ -2,14 +2,26 @@ package com.aliIoT.demo.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
 import android.util.Log;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by hjt on 2020/9/3
  */
 public class PushMessageBean implements Parcelable, Comparable<PushMessageBean> {
 
+    public static final Creator<PushMessageBean> CREATOR = new Creator<PushMessageBean>() {
+        @Override
+        public PushMessageBean createFromParcel(Parcel source) {
+            return new PushMessageBean(source);
+        }
+
+        @Override
+        public PushMessageBean[] newArray(int size) {
+            return new PushMessageBean[size];
+        }
+    };
     /**
      * deviceType : ALL
      * eventId : 46743
@@ -52,12 +64,37 @@ public class PushMessageBean implements Parcelable, Comparable<PushMessageBean> 
     private String gatewayId;
     private String nvrDeviceName;//用于展示NVR设备报警消息设备名称
 
+    public PushMessageBean() {
+    }
+
+    protected PushMessageBean(Parcel in) {
+        this.deviceType = in.readString();
+        this.eventId = in.readString();
+        this.gmtModified = in.readLong();
+        this.isRead = in.readInt();
+        this.keyId = in.readString();
+        this.messageId = in.readString();
+        this.gmtCreate = in.readLong();
+        this.type = in.readString();
+        this.title = in.readString();
+        this.body = in.readString();
+        this.target = in.readString();
+        this.iotId = in.readString();
+        this.messageType = in.readString();
+        this.extData = in.readParcelable(ExtDataBean.class.getClassLoader());
+        this.targetValue = in.readString();
+        this.id = in.readLong();
+        this.tag = in.readInt();
+        this.gatewayId = in.readString();
+        this.nvrDeviceName = in.readString();
+    }
+
     public String getNvrDeviceName() {
         return nvrDeviceName;
     }
 
     public void setNvrDeviceName(String nvrDeviceName) {
-        Log.e("nvrDeviceName",nvrDeviceName);
+        Log.e("nvrDeviceName", nvrDeviceName);
         this.nvrDeviceName = nvrDeviceName;
     }
 
@@ -236,43 +273,6 @@ public class PushMessageBean implements Parcelable, Comparable<PushMessageBean> 
         dest.writeString(this.gatewayId);
         dest.writeString(this.nvrDeviceName);
     }
-
-    public PushMessageBean() {
-    }
-
-    protected PushMessageBean(Parcel in) {
-        this.deviceType = in.readString();
-        this.eventId = in.readString();
-        this.gmtModified = in.readLong();
-        this.isRead = in.readInt();
-        this.keyId = in.readString();
-        this.messageId = in.readString();
-        this.gmtCreate = in.readLong();
-        this.type = in.readString();
-        this.title = in.readString();
-        this.body = in.readString();
-        this.target = in.readString();
-        this.iotId = in.readString();
-        this.messageType = in.readString();
-        this.extData = in.readParcelable(ExtDataBean.class.getClassLoader());
-        this.targetValue = in.readString();
-        this.id = in.readLong();
-        this.tag = in.readInt();
-        this.gatewayId = in.readString();
-        this.nvrDeviceName = in.readString();
-    }
-
-    public static final Creator<PushMessageBean> CREATOR = new Creator<PushMessageBean>() {
-        @Override
-        public PushMessageBean createFromParcel(Parcel source) {
-            return new PushMessageBean(source);
-        }
-
-        @Override
-        public PushMessageBean[] newArray(int size) {
-            return new PushMessageBean[size];
-        }
-    };
 
     @Override
     public int compareTo(@NonNull PushMessageBean o) {

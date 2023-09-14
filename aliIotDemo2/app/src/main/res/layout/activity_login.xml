@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:background="@mipmap/arrow_left_white"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,9 +35,9 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
-        android:orientation="horizontal"
         android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="25dp"
@@ -67,14 +66,14 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/bai_s"/>
+        android:background="@color/bai_s" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:orientation="horizontal"
         android:focusable="true"
-        android:focusableInTouchMode="true">
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="25dp"
@@ -103,7 +102,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/bai_s"/>
+        android:background="@color/bai_s" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -113,41 +112,43 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/login_regist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="用户注册"/>
+            android:text="用户注册" />
+
         <ImageView
             android:layout_width="0.5dp"
             android:layout_height="match_parent"
-            android:background="@color/bai_s"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/bai_s" />
+
         <TextView
             android:id="@+id/login_resetpsw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="忘记密码"/>
+            android:text="忘记密码" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
     </LinearLayout>
 
     <Button
         android:id="@+id/login_login"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
         android:background="@drawable/circle_rectangle_blue_base"
         android:foreground="@drawable/ripple_bg_gray"
         android:text="登录"

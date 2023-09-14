@@ -1,23 +1,22 @@
-
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
-
-        mavenLocal()
-
-        maven {
-            url "http://maven.aliyun.com/nexus/content/repositories/releases"
-        }
-
-        maven {
-            url "http://maven.aliyun.com/nexus/content/repositories/snapshots"
-        }
-
-        jcenter()
-
-        google()
+repositories {
+    flatDir {
+        dirs 'libs'
     }
+
+    mavenLocal()
+
+    maven {
+        url "http://maven.aliyun.com/nexus/content/repositories/releases"
+    }
+
+    maven {
+        url "http://maven.aliyun.com/nexus/content/repositories/snapshots"
+    }
+
+    jcenter()
+
+    google()
+}
 dependencies {
     api 'com.aliyun.iot.aep.sdk:apiclient:0.1.2'
     api 'com.aliyun.iot.aep.sdk:sdk-framework:0.1.7.1'
@@ -39,6 +38,7 @@ dependencies {
 
     api 'com.alibaba.ailabs.iot:aisbase:1.0.0.57'
     api 'com.alibaba.sdk.android.openaccount:openaccount-ui-default:3.6.4'
+
 //    api 'com.aliyun.iot.aep.sdk:apiclient:0.1.2'
 //    api 'com.aliyun.iot.aep.sdk:sdk-framework:0.1.7.6'
 //    api 'com.aliyun.ams:alicloud-android-utdid:1.1.5.3'

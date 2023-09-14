@@ -4,19 +4,29 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.util.Map;
-
 import com.aliIoT.demo.R;
 import com.aliIoT.demo.util.ConstUtil;
 import com.aliIoT.demo.util.MyApplication;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.Map;
 
 /**
  * Created by hjt on 2020/8/3
  */
 public class AliyunChannelEncodeBean implements Parcelable {
 
+    public static final Creator<AliyunChannelEncodeBean> CREATOR = new Creator<AliyunChannelEncodeBean>() {
+        @Override
+        public AliyunChannelEncodeBean createFromParcel(Parcel source) {
+            return new AliyunChannelEncodeBean(source);
+        }
+
+        @Override
+        public AliyunChannelEncodeBean[] newArray(int size) {
+            return new AliyunChannelEncodeBean[size];
+        }
+    };
     /**
      * StreamType : 0
      * AVType : 1
@@ -44,6 +54,24 @@ public class AliyunChannelEncodeBean implements Parcelable {
     private int Resolution;
     private int H264Profile;
     private int InBit;
+
+    public AliyunChannelEncodeBean() {
+    }
+
+    protected AliyunChannelEncodeBean(Parcel in) {
+        this.StreamType = in.readInt();
+        this.AVType = in.readInt();
+        this.VideoEncType = in.readInt();
+        this.FrameRate = in.readInt();
+        this.BitType = in.readInt();
+        this.PicQuality = in.readInt();
+        this.Bitrate = in.readInt();
+        this.IFrameInterval = in.readInt();
+        // this.ResultCode = in.readInt();
+        this.Resolution = in.readInt();
+        this.H264Profile = in.readInt();
+        this.InBit = in.readInt();
+    }
 
     public int getStreamType() {
         return StreamType;
@@ -104,6 +132,13 @@ public class AliyunChannelEncodeBean implements Parcelable {
     public int getIFrameInterval() {
         return IFrameInterval;
     }
+//    public int getResultCode() {
+//        return ResultCode;
+//    }
+//
+//    public void setResultCode(int ResultCode) {
+//        this.ResultCode = ResultCode;
+//    }
 
     public void setIFrameInterval(int IFrameInterval) {
         this.IFrameInterval = IFrameInterval;
@@ -116,13 +151,6 @@ public class AliyunChannelEncodeBean implements Parcelable {
     public void setInBit(int inBit) {
         InBit = inBit;
     }
-//    public int getResultCode() {
-//        return ResultCode;
-//    }
-//
-//    public void setResultCode(int ResultCode) {
-//        this.ResultCode = ResultCode;
-//    }
 
     public int getResolution() {
         return Resolution;
@@ -160,36 +188,6 @@ public class AliyunChannelEncodeBean implements Parcelable {
         dest.writeInt(this.H264Profile);
         dest.writeInt(this.InBit);
     }
-
-    public AliyunChannelEncodeBean() {
-    }
-
-    protected AliyunChannelEncodeBean(Parcel in) {
-        this.StreamType = in.readInt();
-        this.AVType = in.readInt();
-        this.VideoEncType = in.readInt();
-        this.FrameRate = in.readInt();
-        this.BitType = in.readInt();
-        this.PicQuality = in.readInt();
-        this.Bitrate = in.readInt();
-        this.IFrameInterval = in.readInt();
-        // this.ResultCode = in.readInt();
-        this.Resolution = in.readInt();
-        this.H264Profile = in.readInt();
-        this.InBit = in.readInt();
-    }
-
-    public static final Creator<AliyunChannelEncodeBean> CREATOR = new Creator<AliyunChannelEncodeBean>() {
-        @Override
-        public AliyunChannelEncodeBean createFromParcel(Parcel source) {
-            return new AliyunChannelEncodeBean(source);
-        }
-
-        @Override
-        public AliyunChannelEncodeBean[] newArray(int size) {
-            return new AliyunChannelEncodeBean[size];
-        }
-    };
 
     public String streamTypeToString() {
         String str = MyApplication.getInstance().getResources().getString(R.string.stream_type_main);

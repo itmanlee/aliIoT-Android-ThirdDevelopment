@@ -7,25 +7,25 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+
+import com.aliIoT.demo.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.aliIoT.demo.R;
-
 /**
  * Created by qianxiaoai on 2016/7/7.
  */
 public class PermissionUtils {
 
-    private static final String TAG = PermissionUtils.class.getSimpleName();
     public static final int CODE_RECORD_AUDIO = 0;
     public static final int CODE_GET_ACCOUNTS = 1;
     public static final int CODE_READ_PHONE_STATE = 2;
@@ -36,7 +36,6 @@ public class PermissionUtils {
     public static final int CODE_READ_EXTERNAL_STORAGE = 7;
     public static final int CODE_WRITE_EXTERNAL_STORAGE = 8;
     public static final int CODE_MULTI_PERMISSION = 100;
-
     public static final String PERMISSION_RECORD_AUDIO = Manifest.permission.RECORD_AUDIO;
     public static final String PERMISSION_GET_ACCOUNTS = Manifest.permission.GET_ACCOUNTS;
     public static final String PERMISSION_READ_PHONE_STATE = Manifest.permission.READ_PHONE_STATE;
@@ -46,7 +45,7 @@ public class PermissionUtils {
     public static final String PERMISSION_ACCESS_COARSE_LOCATION = Manifest.permission.ACCESS_COARSE_LOCATION;
     public static final String PERMISSION_READ_EXTERNAL_STORAGE = Manifest.permission.READ_EXTERNAL_STORAGE;
     public static final String PERMISSION_WRITE_EXTERNAL_STORAGE = Manifest.permission.WRITE_EXTERNAL_STORAGE;
-
+    private static final String TAG = PermissionUtils.class.getSimpleName();
     private static final String[] requestPermissions = {
             PERMISSION_RECORD_AUDIO,
             PERMISSION_GET_ACCOUNTS,
@@ -58,11 +57,6 @@ public class PermissionUtils {
             PERMISSION_READ_EXTERNAL_STORAGE,
             PERMISSION_WRITE_EXTERNAL_STORAGE
     };
-
-    public interface PermissionGrant {
-        void onPermissionGranted(int requestCode);
-    }
-
 
     /**
      * Requests permission.
@@ -151,7 +145,6 @@ public class PermissionUtils {
         return true;
     }
 
-
     /**
      * 一次申请多个权限
      */
@@ -217,7 +210,7 @@ public class PermissionUtils {
         final List<String> permissionsList = getNoGrantedPermission(activity, ints, false);
         final List<String> shouldRationalePermissionsList = getNoGrantedPermission(activity, ints, true);
         ArrayList<String> noGrantedPermission = getNoGrantedPermission(activity, ints, false);
-        if (noGrantedPermission!=null&&noGrantedPermission.size()>0&&!requestMultiResult(activity, permissions, ints, grant)) {
+        if (noGrantedPermission != null && noGrantedPermission.size() > 0 && !requestMultiResult(activity, permissions, ints, grant)) {
             return false;
         }
         //TODO checkSelfPermission
@@ -342,7 +335,6 @@ public class PermissionUtils {
         });
     }
 
-
     /**
      * @param activity
      * @param isShouldRationale true: return no granted and shouldShowRequestPermissionRationale permissions, false:return no granted and !shouldShowRequestPermissionRationale
@@ -435,6 +427,7 @@ public class PermissionUtils {
 
         return permissions;
     }
+
     public static ArrayList<String> getNoGrantedPermission2(Activity activity, int[] ints, boolean isShouldRationale) {
 
         ArrayList<String> permissions = new ArrayList<>();
@@ -475,6 +468,10 @@ public class PermissionUtils {
         }
 
         return permissions;
+    }
+
+    public interface PermissionGrant {
+        void onPermissionGranted(int requestCode);
     }
 
 }

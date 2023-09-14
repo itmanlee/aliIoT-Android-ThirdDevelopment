@@ -4,10 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,6 +16,11 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.aliIoT.demo.model.ChannelEncodeBean;
 import com.aliIoT.demo.model.NVRChildDeviceInfoBean;
@@ -48,23 +49,20 @@ import java.util.List;
 public class ChannelChildActivity extends AppCompatActivity implements View.OnClickListener, DeviceSetAdapter.OnItemClick {
 
     public static final String TAG = "ChannelChildInfoNVRFragment";
-
-    ImageView mBackView;
-    RecyclerView channelChannelEncodeSetLayoutRl;
-    private DeviceSetAdapter deviceSetAdapter;
-    private ChannelEncodeBean nowChannelEncodeBean;
-    int nowSelect = 0;
-    private NVRChildDeviceInfoBean nvrChildDeviceInfo;
-
-    String iotID = MyApplication.getInstance().getIotID();
-    Gson gson = new Gson();
-
     static final int ALIYUNSERVICE_PTZ_CONTROL = 1;
     static final int ALIYUNSERVICE_PTZ_CONTROL_STOP = 2;
     static final int ALIYUNSERVICE_GET_CHANNELABILITY = 3;
     static final int ALIYUNSERVICE_DEVICE_RECORDING_PLAN = 5;
     static final int GET_NVR_CHILD_DEVICE_INFO = 6;
-
+    ImageView mBackView;
+    RecyclerView channelChannelEncodeSetLayoutRl;
+    int nowSelect = 0;
+    String iotID = MyApplication.getInstance().getIotID();
+    Gson gson = new Gson();
+    PopupWindow mSerarchWindow = null;
+    private DeviceSetAdapter deviceSetAdapter;
+    private ChannelEncodeBean nowChannelEncodeBean;
+    private NVRChildDeviceInfoBean nvrChildDeviceInfo;
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
@@ -207,7 +205,6 @@ public class ChannelChildActivity extends AppCompatActivity implements View.OnCl
         return Integer.parseInt(ch) - 1;
     }
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -233,8 +230,6 @@ public class ChannelChildActivity extends AppCompatActivity implements View.OnCl
             e.printStackTrace();
         }
     }
-
-    PopupWindow mSerarchWindow = null;
 
     public void showDialog(int mType, String title, List<String> lists) {
 

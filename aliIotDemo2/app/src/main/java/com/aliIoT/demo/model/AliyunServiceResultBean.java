@@ -7,6 +7,10 @@ import org.json.JSONObject;
  * Created by hjt on 2020/7/16
  */
 public class AliyunServiceResultBean {
+    private int code;
+    private String id;
+    private Object data;
+
     public int getCode() {
         return code;
     }
@@ -23,14 +27,9 @@ public class AliyunServiceResultBean {
         this.id = id;
     }
 
-    private int code;
-    private String id;
-
     public Object getData() {
         return data;
     }
-
-    private Object data;
 
     public void parseJSON(String string, String iotId) {
         try {

@@ -10,7 +10,8 @@ import java.io.IOException;
 
 public class FileUtils {
 
-    static  String  LOCAL_FILE_ADDRESS ="aliiotdemo";
+    static String LOCAL_FILE_ADDRESS = "aliiotdemo";
+
     /**
      * @Description 判断是否插入SD卡
      */
@@ -62,9 +63,9 @@ public class FileUtils {
         }
         String APK_dir = "";
         if (isHasSdcard()) {
-            APK_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + LOCAL_FILE_ADDRESS + "/" + uid+"/"; // 保存到SD卡路径下
+            APK_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + LOCAL_FILE_ADDRESS + "/" + uid + "/"; // 保存到SD卡路径下
         } else {
-            APK_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + LOCAL_FILE_ADDRESS + "/" + uid+"/"; // 保存到app的包名路径下
+            APK_dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + LOCAL_FILE_ADDRESS + "/" + uid + "/"; // 保存到app的包名路径下
         }
         File destDir = new File(APK_dir);
         if (!destDir.exists()) {// 判断文件夹是否存在
@@ -72,6 +73,7 @@ public class FileUtils {
         }
         return APK_dir;
     }
+
     public static String getFileStoragePathCover() {
         String APK_dir = "";
         if (isHasSdcard()) {
@@ -85,6 +87,7 @@ public class FileUtils {
         }
         return APK_dir;
     }
+
     public static String getFileStoragePathAlarm() {
         String APK_dir = "";
         if (isHasSdcard()) {
@@ -98,6 +101,7 @@ public class FileUtils {
         }
         return APK_dir;
     }
+
     public static String getFileStoragePathTemp() {
         String APK_dir = "";
         if (isHasSdcard()) {

@@ -3,6 +3,8 @@ package com.aliIoT.demo.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.aliIoT.demo.R;
+import com.aliIoT.demo.util.MyApplication;
 import com.google.gson.annotations.Expose;
 
 import org.json.JSONArray;
@@ -13,14 +15,22 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.aliIoT.demo.R;
-import com.aliIoT.demo.util.MyApplication;
-
 /**
  * Created by hjt on 2020/8/4
  */
 public class RecordPlanBean implements Parcelable {
 
+    public static final Creator<RecordPlanBean> CREATOR = new Creator<RecordPlanBean>() {
+        @Override
+        public RecordPlanBean createFromParcel(Parcel source) {
+            return new RecordPlanBean(source);
+        }
+
+        @Override
+        public RecordPlanBean[] newArray(int size) {
+            return new RecordPlanBean[size];
+        }
+    };
     /**
      * RecordTime : 3
      * PreRecordTime : 0
@@ -46,6 +56,24 @@ public class RecordPlanBean implements Parcelable {
     private Map<Integer, List<RecordPlanTime>> mRecordSchedMap;
     @Expose(serialize = false, deserialize = false)
     private String iotid;
+
+    public RecordPlanBean() {
+    }
+
+    protected RecordPlanBean(Parcel in) {
+        this.RecordTime = in.readInt();
+        this.PreRecordTime = in.readInt();
+        this.RecordMode = in.readInt();
+        this.RecordSched = in.readString();
+        this.ResultCode = in.readInt();
+        int RecordSchedMapSize = in.readInt();
+        this.mRecordSchedMap = new HashMap<Integer, List<RecordPlanTime>>(RecordSchedMapSize);
+        for (int i = 0; i < RecordSchedMapSize; i++) {
+            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
+            List<RecordPlanTime> value = in.createTypedArrayList(RecordPlanTime.CREATOR);
+            this.mRecordSchedMap.put(key, value);
+        }
+    }
 
     public String getIotid() {
         return iotid;
@@ -79,7 +107,6 @@ public class RecordPlanBean implements Parcelable {
             e.printStackTrace();
         }
     }
-
 
     public Map<Integer, List<RecordPlanTime>> getRecordSchedMap() {
         return mRecordSchedMap;
@@ -147,36 +174,6 @@ public class RecordPlanBean implements Parcelable {
             dest.writeTypedList(entry.getValue());
         }
     }
-
-    public RecordPlanBean() {
-    }
-
-    protected RecordPlanBean(Parcel in) {
-        this.RecordTime = in.readInt();
-        this.PreRecordTime = in.readInt();
-        this.RecordMode = in.readInt();
-        this.RecordSched = in.readString();
-        this.ResultCode = in.readInt();
-        int RecordSchedMapSize = in.readInt();
-        this.mRecordSchedMap = new HashMap<Integer, List<RecordPlanTime>>(RecordSchedMapSize);
-        for (int i = 0; i < RecordSchedMapSize; i++) {
-            Integer key = (Integer) in.readValue(Integer.class.getClassLoader());
-            List<RecordPlanTime> value = in.createTypedArrayList(RecordPlanTime.CREATOR);
-            this.mRecordSchedMap.put(key, value);
-        }
-    }
-
-    public static final Creator<RecordPlanBean> CREATOR = new Creator<RecordPlanBean>() {
-        @Override
-        public RecordPlanBean createFromParcel(Parcel source) {
-            return new RecordPlanBean(source);
-        }
-
-        @Override
-        public RecordPlanBean[] newArray(int size) {
-            return new RecordPlanBean[size];
-        }
-    };
 
     public String recordTimeToString() {
         String str = "";

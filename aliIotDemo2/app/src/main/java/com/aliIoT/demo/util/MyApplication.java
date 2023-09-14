@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.text.TextUtils;
 
+import com.aliIoT.demo.model.AuthCodeBean;
 import com.alibaba.fastjson.JSON;
 import com.aliyun.alink.linksdk.tools.ALog;
 import com.aliyun.iot.aep.sdk.IoTSmart;
@@ -18,8 +19,6 @@ import com.aliyun.iot.aep.sdk.framework.AApplication;
 
 import java.util.List;
 
-import com.aliIoT.demo.model.AuthCodeBean;
-
 /**
  * 必须继承阿里的AApplication。否则阿里的sdk初始化报错
  */
@@ -28,6 +27,54 @@ public class MyApplication extends AApplication {
 
     private static MyApplication mApplication = null;
     Context mApplicationContext;
+    AuthCodeBean mAuthCodeBean = null;
+
+    public static MyApplication getInstance() {
+        return mApplication;
+    }
+
+    private static String tostring(IoTRequest request) {
+        return new StringBuilder("Request:").append("\r\n")
+                .append("url:").append(request.getScheme()).append("://").append(null == request.getHost() ? "" : request.getHost()).append(request.getPath()).append("\r\n")
+                .append("apiVersion:").append(request.getAPIVersion()).append("\r\n")
+                .append("params:").append(null == request.getParams() ? "" : JSON.toJSONString(request.getParams())).append("\r\n").toString();
+    }
+
+    private static String tostring(IoTRequestWrapper wrapper) {
+        IoTRequest request = wrapper.request;
+        return new StringBuilder("Request:").append("\r\n")
+                .append("id:").append(wrapper.payload.getId()).append("\r\n")
+                .append("apiEnv:").append("").append("\r\n")
+                .append("url:").append(request.getScheme()).append("://").append(TextUtils.isEmpty(wrapper.request.getHost()) ? "" : wrapper.request.getHost()).append(request.getPath()).append("\r\n")
+                .append("apiVersion:").append(request.getAPIVersion()).append("\r\n")
+                .append("params:").append(null == request.getParams() ? "" : JSON.toJSONString(request.getParams())).append("\r\n")
+                .append("payload:").append(JSON.toJSONString(wrapper.payload)).append("\r\n").toString();
+    }
+
+    private static String tostring(IoTResponse response) {
+        return new StringBuilder("Response:").append("\r\n")
+                .append("id:").append(response.getId()).append("\r\n")
+                .append("code:").append(response.getCode()).append("\r\n")
+                .append("message:").append(response.getMessage()).append("\r\n")
+                .append("localizedMsg:").append(response.getLocalizedMsg()).append("\r\n")
+                .append("data:").append(null == response.getData() ? "" : response.getData().toString()).append("\r\n").toString();
+    }
+
+    public static String getProcessName(Context context) {
+        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> runningApps = am.getRunningAppProcesses();
+        if (runningApps == null) {
+            return null;
+        }
+        for (ActivityManager.RunningAppProcessInfo proInfo : runningApps) {
+            if (proInfo.pid == android.os.Process.myPid()) {
+                if (proInfo.processName != null) {
+                    return proInfo.processName;
+                }
+            }
+        }
+        return null;
+    }
 
     @Override
     public void onCreate() {
@@ -41,12 +88,6 @@ public class MyApplication extends AApplication {
         }
 
     }
-
-    public static MyApplication getInstance() {
-        return mApplication;
-    }
-
-    AuthCodeBean mAuthCodeBean = null;
 
     public AuthCodeBean getAuthCodeBean() {
         return mAuthCodeBean;
@@ -117,49 +158,6 @@ public class MyApplication extends AApplication {
                 ALog.i(TAG, "onResponse:\r\n" + tostring(request) + tostring(response));
             }
         });
-    }
-
-    private static String tostring(IoTRequest request) {
-        return new StringBuilder("Request:").append("\r\n")
-                .append("url:").append(request.getScheme()).append("://").append(null == request.getHost() ? "" : request.getHost()).append(request.getPath()).append("\r\n")
-                .append("apiVersion:").append(request.getAPIVersion()).append("\r\n")
-                .append("params:").append(null == request.getParams() ? "" : JSON.toJSONString(request.getParams())).append("\r\n").toString();
-    }
-
-    private static String tostring(IoTRequestWrapper wrapper) {
-        IoTRequest request = wrapper.request;
-        return new StringBuilder("Request:").append("\r\n")
-                .append("id:").append(wrapper.payload.getId()).append("\r\n")
-                .append("apiEnv:").append("").append("\r\n")
-                .append("url:").append(request.getScheme()).append("://").append(TextUtils.isEmpty(wrapper.request.getHost()) ? "" : wrapper.request.getHost()).append(request.getPath()).append("\r\n")
-                .append("apiVersion:").append(request.getAPIVersion()).append("\r\n")
-                .append("params:").append(null == request.getParams() ? "" : JSON.toJSONString(request.getParams())).append("\r\n")
-                .append("payload:").append(JSON.toJSONString(wrapper.payload)).append("\r\n").toString();
-    }
-
-    private static String tostring(IoTResponse response) {
-        return new StringBuilder("Response:").append("\r\n")
-                .append("id:").append(response.getId()).append("\r\n")
-                .append("code:").append(response.getCode()).append("\r\n")
-                .append("message:").append(response.getMessage()).append("\r\n")
-                .append("localizedMsg:").append(response.getLocalizedMsg()).append("\r\n")
-                .append("data:").append(null == response.getData() ? "" : response.getData().toString()).append("\r\n").toString();
-    }
-
-    public static String getProcessName(Context context) {
-        ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-        List<ActivityManager.RunningAppProcessInfo> runningApps = am.getRunningAppProcesses();
-        if (runningApps == null) {
-            return null;
-        }
-        for (ActivityManager.RunningAppProcessInfo proInfo : runningApps) {
-            if (proInfo.pid == android.os.Process.myPid()) {
-                if (proInfo.processName != null) {
-                    return proInfo.processName;
-                }
-            }
-        }
-        return null;
     }
 
     public String getIotID() {

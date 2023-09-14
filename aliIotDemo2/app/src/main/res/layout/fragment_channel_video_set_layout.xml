@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +20,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:background="@mipmap/arrow_left_white"
-            android:foreground="@drawable/ripple_bg_gray"/>
+            android:foreground="@drawable/ripple_bg_gray" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,10 +37,10 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
+            android:foreground="@drawable/ripple_bg_gray"
             android:text="完成"
             android:textColor="@color/bai"
-            android:textSize="18sp"
-            android:foreground="@drawable/ripple_bg_gray"/>
+            android:textSize="18sp" />
 
     </RelativeLayout>
 
@@ -52,12 +52,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_title">
 
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/bai">
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_choose_channel_cl"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
@@ -70,9 +70,9 @@
                     android:id="@+id/channel_video_set_layout_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="10dp"
                     android:background="@mipmap/arrow_left_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -100,8 +100,7 @@
                     android:background="@mipmap/arrow_left_white"
                     app:layout_constraintBottom_toBottomOf="@id/channel_video_set_layout_im"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_im"
-                    />
+                    app:layout_constraintTop_toTopOf="@id/channel_video_set_layout_im" />
 
                 <TextView
                     android:id="@+id/channel_video_set_layout_tv_right"
@@ -125,9 +124,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_video_model_cl"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -140,9 +139,9 @@
                     android:id="@+id/channel_video_set_layout_video_model_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -194,9 +193,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_week_cl"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -209,9 +208,9 @@
                     android:id="@+id/channel_video_set_layout_week_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -263,9 +262,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -278,9 +277,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -307,9 +306,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start1"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -322,9 +321,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start1_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -377,9 +376,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end1"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -392,9 +391,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end1_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -447,9 +446,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -457,7 +456,7 @@
                 app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start1
                 ,channel_video_set_layout_time_quantum_cl_end1" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start2"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -470,9 +469,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start2_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -525,9 +524,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end2"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -540,9 +539,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end2_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -595,9 +594,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -605,7 +604,7 @@
                 app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start2
                 ,channel_video_set_layout_time_quantum_cl_end2" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start3"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -618,9 +617,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start3_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -673,9 +672,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end3"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -688,9 +687,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end3_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -743,9 +742,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -753,7 +752,7 @@
                 app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start3
                 ,channel_video_set_layout_time_quantum_cl_end3" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start4"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -766,9 +765,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start4_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -821,9 +820,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end4"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -836,9 +835,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end4_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -891,9 +890,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -901,7 +900,7 @@
                 app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start4
                 ,channel_video_set_layout_time_quantum_cl_end4" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start5"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -914,9 +913,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start5_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -969,9 +968,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end5"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -984,9 +983,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end5_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1039,9 +1038,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -1049,7 +1048,7 @@
                 app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start5
                 ,channel_video_set_layout_time_quantum_cl_end5" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start6"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1062,9 +1061,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start6_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1117,9 +1116,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end6"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1132,9 +1131,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end6_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1187,9 +1186,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -1197,7 +1196,7 @@
                 app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start6
                 ,channel_video_set_layout_time_quantum_cl_end6" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start7"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1210,9 +1209,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start7_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1265,9 +1264,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end7"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1280,9 +1279,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end7_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1335,9 +1334,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -1345,7 +1344,7 @@
                 app:constraint_referenced_ids="channel_video_set_layout_time_quantum_cl_start7
                 ,channel_video_set_layout_time_quantum_cl_end7" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_start8"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1358,9 +1357,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_start8_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1413,9 +1412,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_end8"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1428,9 +1427,9 @@
                     android:id="@+id/channel_video_set_layout_time_quantum_cl_end8_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     android:visibility="invisible"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -1483,9 +1482,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.Group
+            <androidx.constraintlayout.Group
                 android:id="@+id/channel_video_set_layout_time_quantum_cl_8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -1499,7 +1498,7 @@
                 android:layout_height="@dimen/dp_48"
                 android:orientation="horizontal"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end8" >
+                app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_quantum_cl_end8">
 
                 <RelativeLayout
                     android:id="@+id/channel_video_set_layout_remove_time_quantum"
@@ -1512,7 +1511,7 @@
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:layout_centerInParent="true"
-                        android:background="@mipmap/icon_sub_gray"/>
+                        android:background="@mipmap/icon_sub_gray" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -1526,7 +1525,7 @@
                         android:layout_width="32dp"
                         android:layout_height="25dp"
                         android:layout_centerInParent="true"
-                        android:background="@mipmap/icon_add_gray"/>
+                        android:background="@mipmap/icon_add_gray" />
                 </RelativeLayout>
             </LinearLayout>
 
@@ -1539,7 +1538,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/channel_video_set_layout_time_ly" />
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_prerecord_time_cl"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1552,9 +1551,9 @@
                     android:id="@+id/channel_video_set_layout_prerecord_time_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -1606,9 +1605,9 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
+            <androidx.constraintlayout.ConstraintLayout
                 android:id="@+id/channel_video_set_layout_video_delay_cl"
                 android:layout_width="@dimen/dp_0"
                 android:layout_height="@dimen/dp_48"
@@ -1621,9 +1620,9 @@
                     android:id="@+id/channel_video_set_layout_video_delay_im"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dp_10"
                     android:layout_marginLeft="@dimen/dp_15"
                     android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_10"
                     android:background="@mipmap/arrow_left_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -1675,7 +1674,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent" />
-            </android.support.constraint.ConstraintLayout>
-        </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.ConstraintLayout>
+        </androidx.constraintlayout.ConstraintLayout>
     </ScrollView>
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.ConstraintLayout>

@@ -6,10 +6,32 @@ import android.os.Parcelable;
 import com.google.gson.JsonObject;
 
 public class TransControlV2DataBean implements Parcelable {
+    public static final Creator<TransControlV2DataBean> CREATOR = new Creator<TransControlV2DataBean>() {
+        @Override
+        public TransControlV2DataBean createFromParcel(Parcel in) {
+            return new TransControlV2DataBean(in);
+        }
+
+        @Override
+        public TransControlV2DataBean[] newArray(int size) {
+            return new TransControlV2DataBean[size];
+        }
+    };
     private int Type;
     private int Dev;
     private int Ch;
     private JsonObject Data;
+
+    public TransControlV2DataBean() {
+
+    }
+
+    protected TransControlV2DataBean(Parcel in) {
+        Type = in.readInt();
+        Dev = in.readInt();
+        Ch = in.readInt();
+
+    }
 
     public int getType() {
         return Type;
@@ -43,17 +65,6 @@ public class TransControlV2DataBean implements Parcelable {
         Data = data;
     }
 
-    public TransControlV2DataBean() {
-
-    }
-
-    protected TransControlV2DataBean(Parcel in) {
-        Type = in.readInt();
-        Dev = in.readInt();
-        Ch = in.readInt();
-
-    }
-
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(Type);
@@ -66,17 +77,5 @@ public class TransControlV2DataBean implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<TransControlV2DataBean> CREATOR = new Creator<TransControlV2DataBean>() {
-        @Override
-        public TransControlV2DataBean createFromParcel(Parcel in) {
-            return new TransControlV2DataBean(in);
-        }
-
-        @Override
-        public TransControlV2DataBean[] newArray(int size) {
-            return new TransControlV2DataBean[size];
-        }
-    };
 
 }

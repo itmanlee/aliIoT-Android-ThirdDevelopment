@@ -11,10 +11,31 @@ import javax.annotation.Nonnull;
  * Created by hjt on 2020/7/29
  */
 public class ChannelAbilityBean implements Parcelable {
+    public static final Creator<ChannelAbilityBean> CREATOR = new Creator<ChannelAbilityBean>() {
+        @Override
+        public ChannelAbilityBean createFromParcel(Parcel source) {
+            return new ChannelAbilityBean(source);
+        }
+
+        @Override
+        public ChannelAbilityBean[] newArray(int size) {
+            return new ChannelAbilityBean[size];
+        }
+    };
     private boolean hasEncodeConfig;
     private boolean hasRecordConfig;
     private int EncodeConfigRWMode;
     private int RecordConfigRWMode;
+
+    public ChannelAbilityBean() {
+    }
+
+    protected ChannelAbilityBean(Parcel in) {
+        this.hasEncodeConfig = in.readByte() != 0;
+        this.hasRecordConfig = in.readByte() != 0;
+        this.EncodeConfigRWMode = in.readInt();
+        this.RecordConfigRWMode = in.readInt();
+    }
 
     public boolean isHasEncodeConfig() {
         return hasEncodeConfig;
@@ -60,28 +81,6 @@ public class ChannelAbilityBean implements Parcelable {
         dest.writeInt(this.EncodeConfigRWMode);
         dest.writeInt(this.RecordConfigRWMode);
     }
-
-    public ChannelAbilityBean() {
-    }
-
-    protected ChannelAbilityBean(Parcel in) {
-        this.hasEncodeConfig = in.readByte() != 0;
-        this.hasRecordConfig = in.readByte() != 0;
-        this.EncodeConfigRWMode = in.readInt();
-        this.RecordConfigRWMode = in.readInt();
-    }
-
-    public static final Creator<ChannelAbilityBean> CREATOR = new Creator<ChannelAbilityBean>() {
-        @Override
-        public ChannelAbilityBean createFromParcel(Parcel source) {
-            return new ChannelAbilityBean(source);
-        }
-
-        @Override
-        public ChannelAbilityBean[] newArray(int size) {
-            return new ChannelAbilityBean[size];
-        }
-    };
 
     public void aliyunChannelAbilityBeanToChannelAbilityBean(@Nonnull AliyunChannelAbilityBean bean) {
         List<AliyunChannelAbilityBean.AbilityBean> ability = bean.getAbility();

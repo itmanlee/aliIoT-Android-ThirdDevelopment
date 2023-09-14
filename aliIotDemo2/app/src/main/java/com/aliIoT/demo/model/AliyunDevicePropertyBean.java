@@ -69,16 +69,16 @@ public class AliyunDevicePropertyBean {
         return AlarmFrequencyLevel;
     }
 
+    public void setAlarmFrequencyLevel(AliyunDevicePropertyBean.AlarmFrequencyLevel alarmFrequencyLevel) {
+        AlarmFrequencyLevel = alarmFrequencyLevel;
+    }
+
     public AliyunDevicePropertyBean.NetDefaultConfig getNetDefaultConfig() {
         return DefaultRouteConfig;
     }
 
     public void setNetDefaultConfig(AliyunDevicePropertyBean.NetDefaultConfig netDefaultConfig) {
         DefaultRouteConfig = netDefaultConfig;
-    }
-
-    public void setAlarmFrequencyLevel(AliyunDevicePropertyBean.AlarmFrequencyLevel alarmFrequencyLevel) {
-        AlarmFrequencyLevel = alarmFrequencyLevel;
     }
 
     public AliyunDevicePropertyBean.AlarmOutCount getAlarmOutCount() {

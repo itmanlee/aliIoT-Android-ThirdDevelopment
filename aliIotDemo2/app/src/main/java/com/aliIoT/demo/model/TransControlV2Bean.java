@@ -4,6 +4,17 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class TransControlV2Bean implements Parcelable {
+    public static final Creator<TransControlV2Bean> CREATOR = new Creator<TransControlV2Bean>() {
+        @Override
+        public TransControlV2Bean createFromParcel(Parcel in) {
+            return new TransControlV2Bean(in);
+        }
+
+        @Override
+        public TransControlV2Bean[] newArray(int size) {
+            return new TransControlV2Bean[size];
+        }
+    };
     private int TransType;
     private int Opt;
     private String TransUrl;
@@ -12,6 +23,15 @@ public class TransControlV2Bean implements Parcelable {
     private String Payload;
 
     public TransControlV2Bean() {
+    }
+
+    protected TransControlV2Bean(Parcel in) {
+        TransType = in.readInt();
+        Opt = in.readInt();
+        TransUrl = in.readString();
+        PayloadType = in.readInt();
+        PayloadLen = in.readInt();
+        Payload = in.readString();
     }
 
     public int getTransType() {
@@ -62,15 +82,6 @@ public class TransControlV2Bean implements Parcelable {
         Payload = payload;
     }
 
-    protected TransControlV2Bean(Parcel in) {
-        TransType = in.readInt();
-        Opt = in.readInt();
-        TransUrl = in.readString();
-        PayloadType = in.readInt();
-        PayloadLen = in.readInt();
-        Payload = in.readString();
-    }
-
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(TransType);
@@ -85,18 +96,6 @@ public class TransControlV2Bean implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<TransControlV2Bean> CREATOR = new Creator<TransControlV2Bean>() {
-        @Override
-        public TransControlV2Bean createFromParcel(Parcel in) {
-            return new TransControlV2Bean(in);
-        }
-
-        @Override
-        public TransControlV2Bean[] newArray(int size) {
-            return new TransControlV2Bean[size];
-        }
-    };
 
 
 }

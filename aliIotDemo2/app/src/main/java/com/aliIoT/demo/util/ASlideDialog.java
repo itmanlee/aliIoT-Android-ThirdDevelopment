@@ -40,16 +40,6 @@ public class ASlideDialog extends Dialog {
         return ret;
     }
 
-    public void setCustomContext(Object customContext) {
-        this.customContext = customContext;
-    }
-
-    public Object getCustomContext() {
-        return this.customContext;
-    }
-
-    /* methods: helper */
-
     static private void configure(ASlideDialog dialog, Gravity gravity) {
         if (null == dialog)
             return;
@@ -64,6 +54,8 @@ public class ASlideDialog extends Dialog {
 
         return ret;
     }
+
+    /* methods: helper */
 
     static private WindowManager.LayoutParams getLayoutParams(WindowManager.LayoutParams lp, Gravity gravity) {
         if (null == lp)
@@ -91,7 +83,20 @@ public class ASlideDialog extends Dialog {
         return lp;
     }
 
+    public Object getCustomContext() {
+        return this.customContext;
+    }
+
+    public void setCustomContext(Object customContext) {
+        this.customContext = customContext;
+    }
+
     /* inner type */
+
+    public void setWindowAnimations(int resId) {
+        Window window = this.getWindow();
+        window.setWindowAnimations(resId);
+    }
 
     public enum Gravity {
         Left(android.view.Gravity.LEFT),
@@ -107,10 +112,5 @@ public class ASlideDialog extends Dialog {
         }
 
 
-    }
-
-    public void setWindowAnimations(int resId) {
-        Window window = this.getWindow();
-        window.setWindowAnimations(resId);
     }
 }

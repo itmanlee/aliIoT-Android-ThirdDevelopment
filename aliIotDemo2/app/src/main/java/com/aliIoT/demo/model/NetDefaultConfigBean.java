@@ -4,6 +4,17 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NetDefaultConfigBean implements Parcelable {
+    public static final Creator<NetDefaultConfigBean> CREATOR = new Creator<NetDefaultConfigBean>() {
+        @Override
+        public NetDefaultConfigBean createFromParcel(Parcel in) {
+            return new NetDefaultConfigBean(in);
+        }
+
+        @Override
+        public NetDefaultConfigBean[] newArray(int size) {
+            return new NetDefaultConfigBean[size];
+        }
+    };
     private String DefaultRoute;
     private int NetType;
 
@@ -22,18 +33,6 @@ public class NetDefaultConfigBean implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<NetDefaultConfigBean> CREATOR = new Creator<NetDefaultConfigBean>() {
-        @Override
-        public NetDefaultConfigBean createFromParcel(Parcel in) {
-            return new NetDefaultConfigBean(in);
-        }
-
-        @Override
-        public NetDefaultConfigBean[] newArray(int size) {
-            return new NetDefaultConfigBean[size];
-        }
-    };
 
     public String getDefaultRoute() {
         return DefaultRoute;

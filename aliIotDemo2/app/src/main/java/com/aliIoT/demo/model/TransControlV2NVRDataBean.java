@@ -9,6 +9,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class TransControlV2NVRDataBean implements Parcelable {
 
+    public static final Creator<TransControlV2NVRDataBean> CREATOR = new Creator<TransControlV2NVRDataBean>() {
+        @Override
+        public TransControlV2NVRDataBean createFromParcel(Parcel in) {
+            return new TransControlV2NVRDataBean(in);
+        }
+
+        @Override
+        public TransControlV2NVRDataBean[] newArray(int size) {
+            return new TransControlV2NVRDataBean[size];
+        }
+    };
     @SerializedName("Type")
     private Integer type;
     @SerializedName("Ch")
@@ -17,6 +28,23 @@ public class TransControlV2NVRDataBean implements Parcelable {
     private String command;
     @SerializedName("Data")
     private JsonObject data;
+
+    public TransControlV2NVRDataBean() {
+    }
+
+    protected TransControlV2NVRDataBean(Parcel in) {
+        if (in.readByte() == 0) {
+            type = null;
+        } else {
+            type = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            ch = null;
+        } else {
+            ch = in.readInt();
+        }
+        command = in.readString();
+    }
 
     public Integer getType() {
         return type;
@@ -50,24 +78,6 @@ public class TransControlV2NVRDataBean implements Parcelable {
         this.data = data;
     }
 
-    public TransControlV2NVRDataBean() {
-    }
-
-
-    protected TransControlV2NVRDataBean(Parcel in) {
-        if (in.readByte() == 0) {
-            type = null;
-        } else {
-            type = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            ch = null;
-        } else {
-            ch = in.readInt();
-        }
-        command = in.readString();
-    }
-
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         if (type == null) {
@@ -89,16 +99,4 @@ public class TransControlV2NVRDataBean implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<TransControlV2NVRDataBean> CREATOR = new Creator<TransControlV2NVRDataBean>() {
-        @Override
-        public TransControlV2NVRDataBean createFromParcel(Parcel in) {
-            return new TransControlV2NVRDataBean(in);
-        }
-
-        @Override
-        public TransControlV2NVRDataBean[] newArray(int size) {
-            return new TransControlV2NVRDataBean[size];
-        }
-    };
 }

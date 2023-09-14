@@ -1,10 +1,12 @@
 package com.aliIoT.demo.util;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.widget.ImageView;
+
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
@@ -90,10 +92,12 @@ public class GlideUtils {
         RequestOptions requestOptions = RequestOptions.circleCropTransform();
         return requestOptions;
     }
+
     public static RequestOptions creatRequestfitCenterOptions() {
         RequestOptions requestOptions = RequestOptions.fitCenterTransform().disallowHardwareConfig();
         return requestOptions;
     }
+
     public static RequestOptions optionsAddDefultErrorImage(RequestOptions mRequestOptions, int errorImage, int defultImage) {
         mRequestOptions = optionsAddDefultImage(mRequestOptions, defultImage);
         mRequestOptions = optionsAddErrorImage(mRequestOptions, errorImage);

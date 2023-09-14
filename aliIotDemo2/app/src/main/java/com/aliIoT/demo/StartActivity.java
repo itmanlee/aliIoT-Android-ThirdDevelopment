@@ -2,20 +2,18 @@ package com.aliIoT.demo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.aliIoT.demo.model.ParameterVerifyBean;
 import com.aliIoT.demo.util.ConstUtil;
 import com.aliIoT.demo.util.EncryptionUtil;
 import com.aliIoT.demo.util.HttpUtils;
 import com.aliIoT.demo.util.MyApplication;
-import com.aliIoT.demo.util.SharedPreferencesUtil;
-import com.alibaba.sdk.android.openaccount.ui.OpenAccountUIConfigs;
 import com.aliyun.iot.aep.sdk.credential.IotCredentialManager.IoTCredentialListener;
 import com.aliyun.iot.aep.sdk.credential.IotCredentialManager.IoTCredentialManage;
 import com.aliyun.iot.aep.sdk.credential.IotCredentialManager.IoTCredentialManageError;
@@ -41,13 +39,12 @@ public class StartActivity extends AppCompatActivity {
 
     Button mButton1;
     Button mButton2;
+    //! 用户跳转到授权界面后返回时再次检查权限的flag。
+    boolean authorizationIsCheck = false;
 
     public void setAuthorizationIsCheck(boolean authorizationIsCheck) {
         this.authorizationIsCheck = authorizationIsCheck;
     }
-
-    //! 用户跳转到授权界面后返回时再次检查权限的flag。
-    boolean authorizationIsCheck = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

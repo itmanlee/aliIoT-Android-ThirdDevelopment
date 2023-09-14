@@ -7,6 +7,17 @@ import android.os.Parcelable;
  * Created by hjt on 2020/9/23
  */
 public class AlarmEventIdPicBean implements Parcelable {
+    public static final Creator<AlarmEventIdPicBean> CREATOR = new Creator<AlarmEventIdPicBean>() {
+        @Override
+        public AlarmEventIdPicBean createFromParcel(Parcel source) {
+            return new AlarmEventIdPicBean(source);
+        }
+
+        @Override
+        public AlarmEventIdPicBean[] newArray(int size) {
+            return new AlarmEventIdPicBean[size];
+        }
+    };
     /**
      * eventId : b8406b5a31c54ba8acdd584f1dcd1123_1600850882071
      * picUrl : https://link-vision-picture-sh.oss-cn-shanghai.aliyuncs.com/BR0PrzsMWr86zbVndKMYs8BlxG3obt1uJXqAiIlG3lQ/c75867ab11b24fbf82d0979a41ccfd76?Expires=1600854483&OSSAccessKeyId=LTAILduaCDAC561K&Signature=pA%2BB9RXyhlAwHg3vqZ2qgVB6sXU%3D
@@ -24,6 +35,19 @@ public class AlarmEventIdPicBean implements Parcelable {
     private String pictureTimeUTC;
     private String thumbUrl;
     private String pictureTime;
+
+    public AlarmEventIdPicBean() {
+    }
+
+    protected AlarmEventIdPicBean(Parcel in) {
+        this.eventId = in.readString();
+        this.picUrl = in.readString();
+        this.iotId = in.readString();
+        this.alarmPicId = in.readString();
+        this.pictureTimeUTC = in.readString();
+        this.thumbUrl = in.readString();
+        this.pictureTime = in.readString();
+    }
 
     public String getEventId() {
         return eventId;
@@ -96,29 +120,4 @@ public class AlarmEventIdPicBean implements Parcelable {
         dest.writeString(this.thumbUrl);
         dest.writeString(this.pictureTime);
     }
-
-    public AlarmEventIdPicBean() {
-    }
-
-    protected AlarmEventIdPicBean(Parcel in) {
-        this.eventId = in.readString();
-        this.picUrl = in.readString();
-        this.iotId = in.readString();
-        this.alarmPicId = in.readString();
-        this.pictureTimeUTC = in.readString();
-        this.thumbUrl = in.readString();
-        this.pictureTime = in.readString();
-    }
-
-    public static final Creator<AlarmEventIdPicBean> CREATOR = new Creator<AlarmEventIdPicBean>() {
-        @Override
-        public AlarmEventIdPicBean createFromParcel(Parcel source) {
-            return new AlarmEventIdPicBean(source);
-        }
-
-        @Override
-        public AlarmEventIdPicBean[] newArray(int size) {
-            return new AlarmEventIdPicBean[size];
-        }
-    };
 }

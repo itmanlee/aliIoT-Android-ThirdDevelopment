@@ -1,7 +1,6 @@
 package com.aliIoT.demo.util;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -16,9 +15,10 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.aliyun.iotx.linkvisual.media.video.views.ZoomableTextureView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.aliIoT.demo.R;
+import com.aliyun.iotx.linkvisual.media.video.views.ZoomableTextureView;
 
 /**
  * 自定义播放视图
@@ -26,6 +26,9 @@ import com.aliIoT.demo.R;
 public class PlayLayout extends RelativeLayout implements View.OnClickListener, View.OnTouchListener {
     private static final String TAG = "PlayLayout";
     Context context;
+    status mNowStatus = status.NO_STATUS;
+    PointerModel mPointerModel = PointerModel.SING_POINTRER;
+    boolean showResetFlag = false;
     private ZoomableTextureView mTextureView;
     private ProgressBar bar;
     private TextView tv;
@@ -48,42 +51,6 @@ public class PlayLayout extends RelativeLayout implements View.OnClickListener, 
     private ImageView ptz_direction_right_down;//右下
     private TextView mChannelName;
 
-    public void setChannelName(String s) {
-        if (mChannelName != null) {
-            if (mChannelName.getVisibility() == GONE)
-                mChannelName.setVisibility(VISIBLE);
-            mChannelName.setText(s);
-        }
-    }
-
-    public interface PlayLayoutListener {
-        void PlayLayoutRefreshVideo();
-
-        void calculateDistanceTraveled(float starX, float starY, float x, float y);
-    }
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.video_reset: {
-                if (mListener != null) {
-                    mListener.PlayLayoutRefreshVideo();
-                }
-                hideReset();
-                break;
-            }
-        }
-    }
-
-    enum status {NO_STATUS, ZOOM_STATE, MOVE_STATE}
-
-    status mNowStatus = status.NO_STATUS;
-
-    public void setClick(PlayLayoutListener mListener) {
-        this.mListener = mListener;
-
-    }
-
     public PlayLayout(Context context) {
         super(context);
         this.context = context;
@@ -100,6 +67,32 @@ public class PlayLayout extends RelativeLayout implements View.OnClickListener, 
         super(context, attrs, defStyleAttr);
         this.context = context;
         init();
+    }
+
+    public void setChannelName(String s) {
+        if (mChannelName != null) {
+            if (mChannelName.getVisibility() == GONE)
+                mChannelName.setVisibility(VISIBLE);
+            mChannelName.setText(s);
+        }
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.video_reset: {
+                if (mListener != null) {
+                    mListener.PlayLayoutRefreshVideo();
+                }
+                hideReset();
+                break;
+            }
+        }
+    }
+
+    public void setClick(PlayLayoutListener mListener) {
+        this.mListener = mListener;
+
     }
 
     public TextureView getTextureView() {
@@ -254,10 +247,6 @@ public class PlayLayout extends RelativeLayout implements View.OnClickListener, 
         mVideoReset.setVisibility(GONE);
     }
 
-    enum PointerModel {SING_POINTRER, DOUBLE_PONTRER_START, DOUBLE_PONTRER_END}
-
-    PointerModel mPointerModel = PointerModel.SING_POINTRER;
-
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.e(TAG, "event.getActionMasked()=" + event.getActionMasked());
@@ -393,8 +382,6 @@ public class PlayLayout extends RelativeLayout implements View.OnClickListener, 
         bar.setVisibility(GONE);
     }
 
-    boolean showResetFlag = false;
-
     public boolean isShowResetFlag() {
         return showResetFlag;
     }
@@ -437,5 +424,15 @@ public class PlayLayout extends RelativeLayout implements View.OnClickListener, 
             return true;
         }
         return false;
+    }
+
+    enum status {NO_STATUS, ZOOM_STATE, MOVE_STATE}
+
+    enum PointerModel {SING_POINTRER, DOUBLE_PONTRER_START, DOUBLE_PONTRER_END}
+
+    public interface PlayLayoutListener {
+        void PlayLayoutRefreshVideo();
+
+        void calculateDistanceTraveled(float starX, float starY, float x, float y);
     }
 }

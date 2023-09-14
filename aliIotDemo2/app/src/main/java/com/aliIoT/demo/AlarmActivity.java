@@ -4,19 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.aliIoT.demo.model.AlarmEventIdPicBean;
 import com.aliIoT.demo.model.PushMessageBean;
@@ -52,6 +53,16 @@ import java.util.Map;
 
 public class AlarmActivity extends AppCompatActivity implements View.OnClickListener, SwipeRefreshLayout.OnRefreshListener {
 
+    public static final int TYPE_SHOW = 0;
+    public static final int TYPE_EDIT = 1;
+    public static final int TYPE_EVENT = 0;
+    public static final int TYPE_DEVICE = 1;
+    public static final int GET_ALARM_MESSAGE_LIST = 1;
+    public static final int GET_ALARM_PIC_LIST = 2;
+    public static final int GET_ALARM_MESSAGE_LIST_MORE = 3;
+    public static final int GET_ALARM_MESSAGE_LIST_DELETE = 4;
+    public static final int GET_ALARM_MESSAGE_LIST_READ = 5;
+    public static Map<String, AlarmEventIdPicBean> mAlarmEventIdPicBeanMap = new HashMap<>();
     TextView alarmLayoutTitleLeft;
     TextView alarmLayoutTitleRight;
     TextView alarmLayoutTitle;
@@ -65,31 +76,15 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
     ImageView alarmLayoutRead;
     ImageView alarmLayoutOperationDelet;
     ImageView alarmLayoutDelete;
-    public static final int TYPE_SHOW = 0;
-    public static final int TYPE_EDIT = 1;
-    public static final int TYPE_EVENT = 0;
-    public static final int TYPE_DEVICE = 1;
     int nowType = TYPE_SHOW;
     ConstraintLayout alarmLayoutOperationCl;
     ConstraintLayout alarmLayoutReadDelete;
     SwipeRefreshLayout alarmLayoutSwipeRefresh;
-    private AlarmMessageAdapter alarmMessageAdapter;
-    private LinkedHashMap<String, String> mDeviceNameMap;
-    private List<String> mAlarmEventList;
-
-
     List<PushMessageBean> listForDeviceIdAndEvevtType = new ArrayList<>();
-    public static Map<String, AlarmEventIdPicBean> mAlarmEventIdPicBeanMap = new HashMap<>();
-
-    public static final int GET_ALARM_MESSAGE_LIST = 1;
-    public static final int GET_ALARM_PIC_LIST = 2;
-    public static final int GET_ALARM_MESSAGE_LIST_MORE = 3;
-    public static final int GET_ALARM_MESSAGE_LIST_DELETE = 4;
-    public static final int GET_ALARM_MESSAGE_LIST_READ = 5;
-
-
     String iotID = MyApplication.getInstance().getIotID();
-
+    int nextToken = 0;
+    int maxResults = 0;
+    private AlarmMessageAdapter alarmMessageAdapter;
     Handler handler = new Handler(new Handler.Callback() {
         @Override
         public boolean handleMessage(Message message) {
@@ -194,7 +189,8 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
             return false;
         }
     });
-
+    private LinkedHashMap<String, String> mDeviceNameMap;
+    private List<String> mAlarmEventList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -412,9 +408,6 @@ public class AlarmActivity extends AppCompatActivity implements View.OnClickList
             return false;
         }
     }
-
-    int nextToken = 0;
-    int maxResults = 0;
 
     public void getHistoryMessage() {
         nextToken = 0;

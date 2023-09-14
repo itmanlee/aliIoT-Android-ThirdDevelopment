@@ -4,6 +4,17 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class NetLteConfigBean implements Parcelable {
+    public static final Creator<NetLteConfigBean> CREATOR = new Creator<NetLteConfigBean>() {
+        @Override
+        public NetLteConfigBean createFromParcel(Parcel in) {
+            return new NetLteConfigBean(in);
+        }
+
+        @Override
+        public NetLteConfigBean[] newArray(int size) {
+            return new NetLteConfigBean[size];
+        }
+    };
     private int LinkStatus;
     private String CCID;
     private String IMEI;
@@ -35,18 +46,6 @@ public class NetLteConfigBean implements Parcelable {
     public int describeContents() {
         return 0;
     }
-
-    public static final Creator<NetLteConfigBean> CREATOR = new Creator<NetLteConfigBean>() {
-        @Override
-        public NetLteConfigBean createFromParcel(Parcel in) {
-            return new NetLteConfigBean(in);
-        }
-
-        @Override
-        public NetLteConfigBean[] newArray(int size) {
-            return new NetLteConfigBean[size];
-        }
-    };
 
     public int getLinkStatus() {
         return LinkStatus;

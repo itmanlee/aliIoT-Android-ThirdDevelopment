@@ -1,5 +1,10 @@
 package com.aliIoT.demo.util;
 
+import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.BUFFING_PLAY;
+import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.NO_PALY;
+import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.PREPARE;
+import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.PREPARE_PLAY;
+
 import android.content.Context;
 import android.media.MediaCodec;
 import android.text.TextUtils;
@@ -25,23 +30,33 @@ import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
-import com.aliIoT.demo.R;
-
-import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.BUFFING_PLAY;
-import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.NO_PALY;
-import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.PREPARE;
-import static com.aliIoT.demo.util.VideoPlayHelper.playStatus.PREPARE_PLAY;
-
 
 /**
- *
  * 预览播放辅助类
  */
 public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
     private static final String TAG = "VideoPlayHelper";
+    boolean isShowToast = true;
+    PlayStatusListener mPlayStatusListener = null;
+    Context mContext;
+    boolean mSmartRuleFlag = false;
+    boolean mSmartReSultFlag = false;
     private float starY = -1;
     private float starX = -1;
-    boolean isShowToast = true;
+    private String path;
+    private PlayLayout mTextureView;
+    private playStatus playStatus = NO_PALY;
+    private int stream = C.STREAM_TYPE_MINOR;
+    private LivePlayer mLivePlayer = null;
+    private int[] videoResolution = new int[]{0, 0};
+    /********************************拉流失败重连****************************************/
+    private int resetConnationCount = 0;
+
+    public VideoPlayHelper(Context mContext) {
+        starX = -1;
+        starY = -1;
+        this.mContext = mContext;
+    }
 
     public void setShowToast(boolean showToast) {
         isShowToast = showToast;
@@ -52,18 +67,9 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
         refreshVideo();
     }
 
-
-    public interface PlayStatusListener {
-        void changePlayStatus(String iotid, playStatus status);
-
-        void moveVideo(boolean flag);
-    }
-
     public void setPlayStatusListener(PlayStatusListener mPlayStatusListener) {
         this.mPlayStatusListener = mPlayStatusListener;
     }
-
-    PlayStatusListener mPlayStatusListener = null;
 
     public String getIotid() {
         return path;
@@ -73,22 +79,26 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
         path = iotid;
     }
 
-    private String path;
-
     public PlayLayout getPlayLayout() {
         return mTextureView;
     }
 
-    private PlayLayout mTextureView;
-    private playStatus playStatus = NO_PALY;
-
-    private int stream = C.STREAM_TYPE_MINOR;
-    private LivePlayer mLivePlayer = null;
-    Context mContext;
-    private int[] videoResolution = new int[]{0, 0};
-
     public int getStream() {
         return stream;
+    }
+
+    public void setStream(boolean b) {
+        if (b) {
+            stream = C.STREAM_TYPE_MAJOR;
+        } else {
+            stream = C.STREAM_TYPE_MINOR;
+        }
+    }
+
+    public void setStream(int i) {
+        if (i == 0 || i == 1) {
+            stream = i;
+        }
     }
 
     /**
@@ -127,28 +137,6 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
         return videoResolution;
     }
 
-    public void setStream(boolean b) {
-        if (b) {
-            stream = C.STREAM_TYPE_MAJOR;
-        } else {
-            stream = C.STREAM_TYPE_MINOR;
-        }
-    }
-
-    public void setStream(int i) {
-        if (i == 0 || i == 1) {
-            stream = i;
-        }
-    }
-
-    public enum playStatus {NO_PALY, PREPARE, PREPARE_PLAY, BUFFING_PLAY, STOP_PLAY}
-
-    public VideoPlayHelper(Context mContext) {
-        starX = -1;
-        starY = -1;
-        this.mContext = mContext;
-    }
-
     public void setTextureView(PlayLayout view) {
         mTextureView = view;
         mTextureView.setClick(this);
@@ -182,7 +170,6 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
 //            }
 //        });
     }
-
 
     public void calculateDistanceTraveled(float starX, float starY, float x, float y) {
         if (starX == -1 && starY == -1) return;
@@ -226,7 +213,6 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
         }
     }
 
-
     public boolean startVideo() {
         if (mLivePlayer == null || TextUtils.isEmpty(path)) {
             return false;
@@ -254,13 +240,9 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
         return true;
     }
 
-
     public VideoPlayHelper.playStatus getPlayStatus() {
         return playStatus;
     }
-
-    /********************************拉流失败重连****************************************/
-    private int resetConnationCount = 0;
 
     /*********************************************************************/
     private void playerListener() {
@@ -406,9 +388,6 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
 //        return res;
 //    }
 
-    boolean mSmartRuleFlag = false;
-    boolean mSmartReSultFlag = false;
-
     public boolean isSmartRuleFlag() {
         return mSmartRuleFlag;
     }
@@ -532,5 +511,13 @@ public class VideoPlayHelper implements PlayLayout.PlayLayoutListener {
 
     public boolean stopRecord() {
         return mLivePlayer.stopRecordingContent();
+    }
+
+    public enum playStatus {NO_PALY, PREPARE, PREPARE_PLAY, BUFFING_PLAY, STOP_PLAY}
+
+    public interface PlayStatusListener {
+        void changePlayStatus(String iotid, playStatus status);
+
+        void moveVideo(boolean flag);
     }
 }
